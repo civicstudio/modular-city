@@ -1,12 +1,8 @@
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
+# baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/jekyll-with-tailwind-to-s3-via-github-actions"
+
 title: "" # the name of your site, e.g. ACME Corp.
-
-plugins:
-  - jekyll-postcss
-
-postcss:
-  cache: false
 
 exclude:
   - package.json

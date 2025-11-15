@@ -8,13 +8,11 @@ module.exports = {
     './*.html',
   ],
   theme: {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['"Public Sans"', 'sans-serif'], // this overrides default `font-sans`
-        },
+    extend: {
+      fontFamily: {
+        sans: ['"Public Sans"', 'sans-serif'],
       },
     },
   },
-  plugins: []
-}
+  plugins: [],
+};
