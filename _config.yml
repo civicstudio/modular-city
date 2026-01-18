@@ -1,7 +1,7 @@
-url: "https://idealville.org"
+url: "https://modularcity.org"
 baseurl: ""
 
-title: "City of Idealville"
+title: "Modular City"
 description: "A model municipal website demonstrating best practices for civic web presence, open data, and transparent government."
 
 plugins:

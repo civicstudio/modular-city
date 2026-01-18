@@ -1,0 +1,186 @@
+{
+  "events": [
+    {
+      "id": "cc-2026-01-21",
+      "title": "City Council Meeting",
+      "date": "2026-01-21",
+      "time": "7:00 PM",
+      "end_time": "9:00 PM",
+      "location": "City Hall, Council Chambers",
+      "address": "100 Main Street, Modular City, EX 00001",
+      "description": "Regular meeting of the City Council. Public comment period at 7:15 PM.",
+      "category": "meeting",
+      "agency_id": "modular-city-city-council",
+      "recurring": "2nd and 4th Tuesday",
+      "agenda_url": "/documents/agendas/2026-01-21-council.pdf",
+      "public_comment": true
+    },
+    {
+      "id": "pc-2026-01-23",
+      "title": "Planning Commission Meeting",
+      "date": "2026-01-23",
+      "time": "6:00 PM",
+      "end_time": "8:00 PM",
+      "location": "City Hall, Conference Room A",
+      "address": "100 Main Street, Modular City, EX 00001",
+      "description": "Review of pending development applications and zoning amendments.",
+      "category": "meeting",
+      "agency_id": "modular-city-planning",
+      "recurring": "4th Thursday",
+      "public_comment": true
+    },
+    {
+      "id": "pr-2026-01-25",
+      "title": "Winter Festival",
+      "date": "2026-01-25",
+      "time": "10:00 AM",
+      "end_time": "4:00 PM",
+      "location": "Central Park",
+      "address": "50 Recreation Lane, Modular City, EX 00001",
+      "description": "Annual winter celebration with ice skating, hot cocoa, live music, and family activities.",
+      "category": "event",
+      "agency_id": "modular-city-parks-recreation",
+      "public_comment": false
+    },
+    {
+      "id": "cc-2026-02-04",
+      "title": "City Council Meeting",
+      "date": "2026-02-04",
+      "time": "7:00 PM",
+      "end_time": "9:00 PM",
+      "location": "City Hall, Council Chambers",
+      "address": "100 Main Street, Modular City, EX 00001",
+      "description": "Regular meeting of the City Council. Budget workshop to follow.",
+      "category": "meeting",
+      "agency_id": "modular-city-city-council",
+      "recurring": "2nd and 4th Tuesday",
+      "public_comment": true
+    },
+    {
+      "id": "fd-2026-02-08",
+      "title": "Fire Safety Open House",
+      "date": "2026-02-08",
+      "time": "11:00 AM",
+      "end_time": "3:00 PM",
+      "location": "Fire Station #1",
+      "address": "400 Emergency Drive, Modular City, EX 00001",
+      "description": "Meet firefighters, tour the station, and learn about fire safety. Free smoke detector batteries available.",
+      "category": "event",
+      "agency_id": "modular-city-fire",
+      "public_comment": false
+    },
+    {
+      "id": "pw-2026-02-10",
+      "title": "Public Works Town Hall",
+      "date": "2026-02-10",
+      "time": "6:30 PM",
+      "end_time": "8:00 PM",
+      "location": "Community Center",
+      "address": "75 Community Way, Modular City, EX 00001",
+      "description": "Discussion of 2026 road improvement projects and water infrastructure upgrades.",
+      "category": "meeting",
+      "agency_id": "modular-city-public-works",
+      "public_comment": true
+    },
+    {
+      "id": "cc-2026-02-18",
+      "title": "City Council Meeting",
+      "date": "2026-02-18",
+      "time": "7:00 PM",
+      "end_time": "9:00 PM",
+      "location": "City Hall, Council Chambers",
+      "address": "100 Main Street, Modular City, EX 00001",
+      "description": "Regular meeting of the City Council.",
+      "category": "meeting",
+      "agency_id": "modular-city-city-council",
+      "recurring": "2nd and 4th Tuesday",
+      "public_comment": true
+    },
+    {
+      "id": "pr-2026-02-22",
+      "title": "Youth Basketball Registration Deadline",
+      "date": "2026-02-22",
+      "time": "11:59 PM",
+      "location": "Online",
+      "description": "Last day to register for spring youth basketball league. Ages 6-14.",
+      "category": "deadline",
+      "agency_id": "modular-city-parks-recreation",
+      "url": "/services/program-registration/",
+      "public_comment": false
+    },
+    {
+      "id": "pc-2026-02-27",
+      "title": "Planning Commission Meeting",
+      "date": "2026-02-27",
+      "time": "6:00 PM",
+      "end_time": "8:00 PM",
+      "location": "City Hall, Conference Room A",
+      "address": "100 Main Street, Modular City, EX 00001",
+      "description": "Review of pending development applications.",
+      "category": "meeting",
+      "agency_id": "modular-city-planning",
+      "recurring": "4th Thursday",
+      "public_comment": true
+    },
+    {
+      "id": "cc-2026-03-04",
+      "title": "City Council Meeting",
+      "date": "2026-03-04",
+      "time": "7:00 PM",
+      "end_time": "9:00 PM",
+      "location": "City Hall, Council Chambers",
+      "address": "100 Main Street, Modular City, EX 00001",
+      "description": "Regular meeting of the City Council.",
+      "category": "meeting",
+      "agency_id": "modular-city-city-council",
+      "recurring": "2nd and 4th Tuesday",
+      "public_comment": true
+    },
+    {
+      "id": "el-2026-03-10",
+      "title": "Voter Registration Deadline",
+      "date": "2026-03-10",
+      "time": "5:00 PM",
+      "location": "City Clerk's Office or Online",
+      "description": "Deadline to register to vote in the April municipal primary election.",
+      "category": "deadline",
+      "agency_id": "modular-city-city-clerk",
+      "url": "/services/voter-registration/",
+      "public_comment": false
+    },
+    {
+      "id": "pr-2026-03-15",
+      "title": "Community Cleanup Day",
+      "date": "2026-03-15",
+      "time": "9:00 AM",
+      "end_time": "12:00 PM",
+      "location": "Various Locations",
+      "description": "Join neighbors to clean up parks and public spaces. Supplies provided. Meet at Central Park pavilion.",
+      "category": "event",
+      "agency_id": "modular-city-parks-recreation",
+      "public_comment": false
+    }
+  ],
+  "categories": {
+    "meeting": {
+      "label": "Public Meeting",
+      "color": "primary",
+      "icon": "users"
+    },
+    "event": {
+      "label": "Community Event",
+      "color": "success",
+      "icon": "calendar"
+    },
+    "deadline": {
+      "label": "Deadline",
+      "color": "warning",
+      "icon": "clock"
+    },
+    "holiday": {
+      "label": "City Holiday",
+      "color": "secondary",
+      "icon": "star"
+    }
+  }
+}
