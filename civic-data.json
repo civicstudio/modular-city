@@ -1,0 +1,487 @@
+{
+  "$schema": "https://civic.bot/schema/civic-data.schema.json",
+  "version": "1.0",
+  "generated_at": "2026-01-18T12:00:00Z",
+  "jurisdiction": {
+    "id": "idealville-ex",
+    "name": "City of Idealville",
+    "short_name": "Idealville",
+    "type": "municipal",
+    "parent_id": "example-state",
+    "population": 45000,
+    "website": "https://idealville.org",
+    "timezone": "America/New_York"
+  },
+  "agencies": [
+    {
+      "id": "idealville-ex-city-council",
+      "name": "City Council",
+      "jurisdiction_id": "idealville-ex",
+      "type": "legislative",
+      "description": "Elected governing body of the City of Idealville",
+      "website": "https://idealville.org/council/",
+      "phone": "(555) 555-1000",
+      "email": "council@idealville.org",
+      "address": {
+        "street": "100 Main Street",
+        "city": "Idealville",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "8:00 AM - 5:00 PM",
+        "tuesday": "8:00 AM - 5:00 PM",
+        "wednesday": "8:00 AM - 5:00 PM",
+        "thursday": "8:00 AM - 5:00 PM",
+        "friday": "8:00 AM - 5:00 PM",
+        "saturday": null,
+        "sunday": null
+      }
+    },
+    {
+      "id": "idealville-ex-city-clerk",
+      "name": "City Clerk",
+      "jurisdiction_id": "idealville-ex",
+      "type": "department",
+      "description": "Official records, elections, and licensing",
+      "website": "https://idealville.org/departments/clerk/",
+      "phone": "(555) 555-1001",
+      "email": "clerk@idealville.org",
+      "address": {
+        "street": "100 Main Street",
+        "city": "Idealville",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "8:00 AM - 5:00 PM",
+        "tuesday": "8:00 AM - 5:00 PM",
+        "wednesday": "8:00 AM - 5:00 PM",
+        "thursday": "8:00 AM - 5:00 PM",
+        "friday": "8:00 AM - 5:00 PM",
+        "saturday": null,
+        "sunday": null
+      }
+    },
+    {
+      "id": "idealville-ex-public-works",
+      "name": "Public Works",
+      "jurisdiction_id": "idealville-ex",
+      "type": "department",
+      "description": "Roads, water, and utilities",
+      "website": "https://idealville.org/departments/public-works/",
+      "phone": "(555) 555-1002",
+      "email": "publicworks@idealville.org",
+      "address": {
+        "street": "200 Infrastructure Way",
+        "city": "Idealville",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "7:00 AM - 4:00 PM",
+        "tuesday": "7:00 AM - 4:00 PM",
+        "wednesday": "7:00 AM - 4:00 PM",
+        "thursday": "7:00 AM - 4:00 PM",
+        "friday": "7:00 AM - 4:00 PM",
+        "saturday": null,
+        "sunday": null
+      }
+    },
+    {
+      "id": "idealville-ex-parks-recreation",
+      "name": "Parks & Recreation",
+      "jurisdiction_id": "idealville-ex",
+      "type": "department",
+      "description": "Parks, programs, and facilities",
+      "website": "https://idealville.org/departments/parks/",
+      "phone": "(555) 555-1003",
+      "email": "parks@idealville.org",
+      "address": {
+        "street": "50 Recreation Lane",
+        "city": "Idealville",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "8:00 AM - 6:00 PM",
+        "tuesday": "8:00 AM - 6:00 PM",
+        "wednesday": "8:00 AM - 6:00 PM",
+        "thursday": "8:00 AM - 6:00 PM",
+        "friday": "8:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 3:00 PM",
+        "sunday": null
+      }
+    },
+    {
+      "id": "idealville-ex-police",
+      "name": "Police Department",
+      "jurisdiction_id": "idealville-ex",
+      "type": "department",
+      "description": "Public safety and law enforcement",
+      "website": "https://idealville.org/departments/police/",
+      "phone": "(555) 555-1004",
+      "email": "police@idealville.org",
+      "address": {
+        "street": "300 Safety Boulevard",
+        "city": "Idealville",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "24 hours",
+        "tuesday": "24 hours",
+        "wednesday": "24 hours",
+        "thursday": "24 hours",
+        "friday": "24 hours",
+        "saturday": "24 hours",
+        "sunday": "24 hours"
+      }
+    },
+    {
+      "id": "idealville-ex-fire",
+      "name": "Fire Department",
+      "jurisdiction_id": "idealville-ex",
+      "type": "department",
+      "description": "Fire, EMS, and prevention services",
+      "website": "https://idealville.org/departments/fire/",
+      "phone": "(555) 555-1005",
+      "email": "fire@idealville.org",
+      "address": {
+        "street": "400 Emergency Drive",
+        "city": "Idealville",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "24 hours",
+        "tuesday": "24 hours",
+        "wednesday": "24 hours",
+        "thursday": "24 hours",
+        "friday": "24 hours",
+        "saturday": "24 hours",
+        "sunday": "24 hours"
+      }
+    },
+    {
+      "id": "idealville-ex-planning",
+      "name": "Planning & Zoning",
+      "jurisdiction_id": "idealville-ex",
+      "type": "department",
+      "description": "Permits, land use, and inspections",
+      "website": "https://idealville.org/departments/planning/",
+      "phone": "(555) 555-1006",
+      "email": "planning@idealville.org",
+      "address": {
+        "street": "100 Main Street",
+        "city": "Idealville",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "8:00 AM - 5:00 PM",
+        "tuesday": "8:00 AM - 5:00 PM",
+        "wednesday": "8:00 AM - 5:00 PM",
+        "thursday": "8:00 AM - 5:00 PM",
+        "friday": "8:00 AM - 5:00 PM",
+        "saturday": null,
+        "sunday": null
+      }
+    },
+    {
+      "id": "idealville-ex-finance",
+      "name": "Finance Department",
+      "jurisdiction_id": "idealville-ex",
+      "type": "department",
+      "description": "Budget, taxes, and procurement",
+      "website": "https://idealville.org/departments/finance/",
+      "phone": "(555) 555-1007",
+      "email": "finance@idealville.org",
+      "address": {
+        "street": "100 Main Street",
+        "city": "Idealville",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "8:00 AM - 5:00 PM",
+        "tuesday": "8:00 AM - 5:00 PM",
+        "wednesday": "8:00 AM - 5:00 PM",
+        "thursday": "8:00 AM - 5:00 PM",
+        "friday": "8:00 AM - 5:00 PM",
+        "saturday": null,
+        "sunday": null
+      }
+    }
+  ],
+  "services": [
+    {
+      "id": "idealville-ex-business-license",
+      "name": "Business License Application",
+      "agency_id": "idealville-ex-city-clerk",
+      "category": "permits_licenses",
+      "description": "Apply for or renew a business license to operate in Idealville",
+      "url": "https://idealville.org/services/business-license/",
+      "fees": "$75 annual fee",
+      "eligibility": "Any business operating within Idealville city limits",
+      "documents_required": [
+        "Completed application form",
+        "State tax ID",
+        "Proof of insurance"
+      ],
+      "processing_time": "3-5 business days",
+      "online_available": true
+    },
+    {
+      "id": "idealville-ex-public-records",
+      "name": "Public Records Request",
+      "agency_id": "idealville-ex-city-clerk",
+      "category": "records_documents",
+      "description": "Request copies of public records",
+      "url": "https://idealville.org/services/records-request/",
+      "fees": "$0.25 per page for copies",
+      "eligibility": "Any person",
+      "processing_time": "5-10 business days",
+      "online_available": true
+    },
+    {
+      "id": "idealville-ex-voter-registration",
+      "name": "Voter Registration",
+      "agency_id": "idealville-ex-city-clerk",
+      "category": "elections_voting",
+      "description": "Register to vote in local elections",
+      "url": "https://idealville.org/services/voter-registration/",
+      "fees": "Free",
+      "eligibility": "U.S. citizens 18 years or older residing in Idealville",
+      "documents_required": [
+        "Proof of identity",
+        "Proof of residence"
+      ],
+      "processing_time": "Immediate",
+      "online_available": true
+    },
+    {
+      "id": "idealville-ex-pothole-report",
+      "name": "Report a Pothole",
+      "agency_id": "idealville-ex-public-works",
+      "category": "transportation",
+      "description": "Report a pothole on a city street for repair",
+      "url": "https://idealville.org/services/pothole-report/",
+      "fees": "Free",
+      "eligibility": "Anyone",
+      "processing_time": "7-14 days for repair",
+      "online_available": true
+    },
+    {
+      "id": "idealville-ex-water-service",
+      "name": "Water Service Start/Stop",
+      "agency_id": "idealville-ex-public-works",
+      "category": "utilities",
+      "description": "Start or stop water service at your address",
+      "url": "https://idealville.org/services/water-service/",
+      "fees": "$25 service connection fee",
+      "eligibility": "Property owners and tenants within city water service area",
+      "documents_required": [
+        "Proof of identity",
+        "Lease agreement or deed"
+      ],
+      "processing_time": "2-3 business days",
+      "online_available": true
+    },
+    {
+      "id": "idealville-ex-streetlight-outage",
+      "name": "Street Light Outage",
+      "agency_id": "idealville-ex-public-works",
+      "category": "utilities",
+      "description": "Report a broken or flickering street light",
+      "url": "https://idealville.org/services/streetlight-outage/",
+      "fees": "Free",
+      "processing_time": "5-7 business days",
+      "online_available": true
+    },
+    {
+      "id": "idealville-ex-facility-rental",
+      "name": "Facility Rental",
+      "agency_id": "idealville-ex-parks-recreation",
+      "category": "recreation",
+      "description": "Rent park pavilions, community rooms, and athletic fields",
+      "url": "https://idealville.org/services/facility-rental/",
+      "fees": "$50-$200 depending on facility",
+      "eligibility": "Residents and non-residents",
+      "processing_time": "Subject to availability",
+      "online_available": true
+    },
+    {
+      "id": "idealville-ex-program-registration",
+      "name": "Recreation Program Registration",
+      "agency_id": "idealville-ex-parks-recreation",
+      "category": "recreation",
+      "description": "Register for sports leagues, classes, and activities",
+      "url": "https://idealville.org/services/program-registration/",
+      "fees": "Varies by program",
+      "eligibility": "All ages",
+      "online_available": true
+    },
+    {
+      "id": "idealville-ex-building-permit",
+      "name": "Building Permit",
+      "agency_id": "idealville-ex-planning",
+      "category": "permits_licenses",
+      "description": "Apply for permits for construction, renovation, or demolition",
+      "url": "https://idealville.org/services/building-permit/",
+      "fees": "Based on project valuation",
+      "documents_required": [
+        "Site plan",
+        "Construction drawings",
+        "Contractor license"
+      ],
+      "processing_time": "10-15 business days",
+      "online_available": true
+    },
+    {
+      "id": "idealville-ex-tax-payment",
+      "name": "Property Tax Payment",
+      "agency_id": "idealville-ex-finance",
+      "category": "payments_taxes",
+      "description": "Pay property taxes online or in person",
+      "url": "https://idealville.org/services/tax-payment/",
+      "fees": "No fee for online payment",
+      "eligibility": "Property owners",
+      "online_available": true
+    }
+  ],
+  "officials": [
+    {
+      "id": "idealville-ex-mayor-rodriguez",
+      "name": "Eleanor Rodriguez",
+      "title": "Mayor",
+      "agency_id": "idealville-ex-city-council",
+      "type": "elected",
+      "email": "mayor@idealville.org",
+      "phone": "(555) 555-1000",
+      "term_start": "2024-01-01",
+      "term_end": "2028-01-01"
+    },
+    {
+      "id": "idealville-ex-council-johnson",
+      "name": "Marcus Johnson",
+      "title": "Council Member - District 1",
+      "agency_id": "idealville-ex-city-council",
+      "type": "elected",
+      "email": "mjohnson@idealville.org",
+      "term_start": "2024-01-01",
+      "term_end": "2028-01-01"
+    },
+    {
+      "id": "idealville-ex-council-park",
+      "name": "Lisa Park",
+      "title": "Council Member - District 2",
+      "agency_id": "idealville-ex-city-council",
+      "type": "elected",
+      "email": "lpark@idealville.org",
+      "term_start": "2024-01-01",
+      "term_end": "2028-01-01"
+    },
+    {
+      "id": "idealville-ex-council-williams",
+      "name": "Thomas Williams",
+      "title": "Council Member - District 3",
+      "agency_id": "idealville-ex-city-council",
+      "type": "elected",
+      "email": "twilliams@idealville.org",
+      "term_start": "2024-01-01",
+      "term_end": "2028-01-01"
+    },
+    {
+      "id": "idealville-ex-council-chen",
+      "name": "Amanda Chen",
+      "title": "Council Member - At Large",
+      "agency_id": "idealville-ex-city-council",
+      "type": "elected",
+      "email": "achen@idealville.org",
+      "term_start": "2024-01-01",
+      "term_end": "2028-01-01"
+    },
+    {
+      "id": "idealville-ex-manager-foster",
+      "name": "Dr. William Foster",
+      "title": "City Manager",
+      "agency_id": "idealville-ex-city-council",
+      "type": "appointed",
+      "email": "manager@idealville.org",
+      "phone": "(555) 555-1000"
+    },
+    {
+      "id": "idealville-ex-attorney-walsh",
+      "name": "Jennifer Walsh",
+      "title": "City Attorney",
+      "agency_id": "idealville-ex-city-council",
+      "type": "appointed",
+      "email": "attorney@idealville.org",
+      "phone": "(555) 555-1010"
+    },
+    {
+      "id": "idealville-ex-clerk-santos",
+      "name": "Maria Santos",
+      "title": "City Clerk",
+      "agency_id": "idealville-ex-city-clerk",
+      "type": "appointed",
+      "email": "clerk@idealville.org",
+      "phone": "(555) 555-1001"
+    },
+    {
+      "id": "idealville-ex-pw-chen",
+      "name": "James Chen",
+      "title": "Director of Public Works",
+      "agency_id": "idealville-ex-public-works",
+      "type": "appointed",
+      "email": "jchen@idealville.org",
+      "phone": "(555) 555-1002"
+    },
+    {
+      "id": "idealville-ex-parks-williams",
+      "name": "Angela Williams",
+      "title": "Director of Parks & Recreation",
+      "agency_id": "idealville-ex-parks-recreation",
+      "type": "appointed",
+      "email": "awilliams@idealville.org",
+      "phone": "(555) 555-1003"
+    },
+    {
+      "id": "idealville-ex-police-kim",
+      "name": "Robert Kim",
+      "title": "Chief of Police",
+      "agency_id": "idealville-ex-police",
+      "type": "appointed",
+      "email": "rkim@idealville.org",
+      "phone": "(555) 555-1004"
+    },
+    {
+      "id": "idealville-ex-fire-okonkwo",
+      "name": "Patricia Okonkwo",
+      "title": "Fire Chief",
+      "agency_id": "idealville-ex-fire",
+      "type": "appointed",
+      "email": "pokonkwo@idealville.org",
+      "phone": "(555) 555-1005"
+    },
+    {
+      "id": "idealville-ex-planning-martinez",
+      "name": "David Martinez",
+      "title": "Director of Planning & Zoning",
+      "agency_id": "idealville-ex-planning",
+      "type": "appointed",
+      "email": "dmartinez@idealville.org",
+      "phone": "(555) 555-1006"
+    },
+    {
+      "id": "idealville-ex-finance-thompson",
+      "name": "Sarah Thompson",
+      "title": "Finance Director",
+      "agency_id": "idealville-ex-finance",
+      "type": "appointed",
+      "email": "sthompson@idealville.org",
+      "phone": "(555) 555-1007"
+    }
+  ]
+}
