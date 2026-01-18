@@ -1,0 +1,106 @@
+---
+layout: default
+title: "Services"
+---
+
+<main class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:text-center">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        City Services
+      </h1>
+      <p class="mt-4 text-lg text-gray-600">
+        Access {{ site.data.civic.services | size }} services online from the {{ site.data.civic.jurisdiction.name }}.
+      </p>
+    </div>
+
+    {% assign categories = site.data.civic.services | map: "category" | uniq | sort %}
+
+    {% for category in categories %}
+    <div
+      id="{{ category }}"
+      class="mt-16 scroll-mt-24"
+    >
+      <h2 class="text-2xl font-bold text-gray-900 capitalize">
+        {{ category | replace: "_", " " | replace: "permits licenses", "Permits & Licenses" | replace: "records documents", "Records & Documents" | replace: "payments taxes", "Payments & Taxes" | replace: "elections voting", "Elections & Voting" }}
+      </h2>
+      <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {% for service in site.data.civic.services %}
+        {% if service.category == category %}
+        <article class="relative flex flex-col rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-lg font-semibold text-gray-900">
+            {{ service.name }}
+          </h3>
+          <p class="mt-2 text-sm text-gray-600 flex-1">
+            {{ service.description }}
+          </p>
+          <dl class="mt-4 space-y-2 text-sm">
+            {% if service.fees %}
+            <div class="flex justify-between">
+              <dt class="text-gray-500">
+                Fee
+              </dt>
+              <dd class="text-gray-900 font-medium">
+                {{ service.fees }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if service.processing_time %}
+            <div class="flex justify-between">
+              <dt class="text-gray-500">
+                Processing
+              </dt>
+              <dd class="text-gray-900">
+                {{ service.processing_time }}
+              </dd>
+            </div>
+            {% endif %}
+            {% if service.online_available %}
+            <div class="flex justify-between">
+              <dt class="text-gray-500">
+                Online
+              </dt>
+              <dd class="text-success-600 font-medium">
+                Available
+              </dd>
+            </div>
+            {% endif %}
+          </dl>
+          {% if service.documents_required %}
+          <details class="mt-4">
+            <summary class="text-sm text-primary-600 cursor-pointer hover:text-primary-500">
+              Required documents
+            </summary>
+            <ul class="mt-2 text-sm text-gray-600 list-disc list-inside">
+              {% for doc in service.documents_required %}
+              <li>{{ doc }}</li>
+              {% endfor %}
+            </ul>
+          </details>
+          {% endif %}
+          {% assign agency = site.data.civic.agencies | where: "id", service.agency_id | first %}
+          {% if agency %}
+          <p class="mt-4 text-xs text-gray-500">
+            Provided by: {{ agency.name }}
+          </p>
+          {% endif %}
+        </article>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="mt-16 text-center">
+      <p class="text-sm text-gray-500">
+        Data source:
+        <a
+          href="/civic-data.json"
+          class="text-primary-600 hover:text-primary-500"
+        >
+          civic-data.json
+        </a>
+      </p>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,205 @@
+---
+layout: default
+title: "Your Government"
+---
+
+<main class="bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:text-center">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Your Government
+      </h1>
+      <p class="mt-4 text-lg text-gray-600">
+        {{ site.data.civic.jurisdiction.name }} operates under a Council-Manager form of government, with elected officials setting policy and professional staff managing daily operations.
+      </p>
+    </div>
+
+    <!-- Elected Officials -->
+    <div class="mt-16">
+      <h2 class="text-2xl font-bold text-gray-900">
+        Elected Officials
+      </h2>
+      <p class="mt-2 text-gray-600">
+        Your elected representatives on the City Council.
+      </p>
+      <ul
+        role="list"
+        class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        {% assign elected = site.data.civic.officials | where: "type", "elected" %}
+        {% for official in elected %}
+        <li class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div class="flex items-center gap-x-4">
+            <div class="flex size-14 items-center justify-center rounded-full bg-primary-600 text-white text-xl font-semibold">
+              {{ official.name | split: " " | first | slice: 0 }}{{ official.name | split: " " | last | slice: 0 }}
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900">
+                {{ official.name }}
+              </h3>
+              <p class="text-sm text-primary-600">
+                {{ official.title }}
+              </p>
+            </div>
+          </div>
+          <dl class="mt-4 space-y-2 text-sm">
+            {% if official.email %}
+            <div class="flex gap-x-2">
+              <dt class="text-gray-400">
+                <svg
+                  class="size-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                  />
+                </svg>
+              </dt>
+              <dd>
+                <a
+                  href="mailto:{{ official.email }}"
+                  class="text-primary-600 hover:text-primary-500"
+                >
+                  {{ official.email }}
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+            {% if official.term_end %}
+            <div class="flex gap-x-2">
+              <dt class="text-gray-400">
+                <svg
+                  class="size-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                  />
+                </svg>
+              </dt>
+              <dd class="text-gray-600">
+                Term ends {{ official.term_end | date: "%B %Y" }}
+              </dd>
+            </div>
+            {% endif %}
+          </dl>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Appointed Officials -->
+    <div class="mt-16">
+      <h2 class="text-2xl font-bold text-gray-900">
+        Appointed Officials
+      </h2>
+      <p class="mt-2 text-gray-600">
+        Professional staff appointed to lead city departments and operations.
+      </p>
+      <ul
+        role="list"
+        class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+      >
+        {% assign appointed = site.data.civic.officials | where: "type", "appointed" %}
+        {% for official in appointed %}
+        <li class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div class="flex items-center gap-x-4">
+            <div class="flex size-12 items-center justify-center rounded-full bg-gray-100 text-gray-600 text-sm font-semibold">
+              {{ official.name | split: " " | first | slice: 0 }}{{ official.name | split: " " | last | slice: 0 }}
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-gray-900">
+                {{ official.name }}
+              </h3>
+              <p class="text-sm text-gray-600">
+                {{ official.title }}
+              </p>
+            </div>
+          </div>
+          <dl class="mt-4 space-y-1 text-sm">
+            {% if official.email %}
+            <dd>
+              <a
+                href="mailto:{{ official.email }}"
+                class="text-primary-600 hover:text-primary-500"
+              >
+                {{ official.email }}
+              </a>
+            </dd>
+            {% endif %}
+            {% if official.phone %}
+            <dd class="text-gray-600">
+              {{ official.phone }}
+            </dd>
+            {% endif %}
+          </dl>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- About the Government -->
+    <div class="mt-16 rounded-lg border border-gray-200 bg-gray-50 p-8">
+      <h2 class="text-2xl font-bold text-gray-900">
+        About {{ site.data.civic.jurisdiction.short_name }}
+      </h2>
+      <dl class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <dt class="text-sm text-gray-500">
+            Population
+          </dt>
+          <dd class="mt-1 text-2xl font-bold text-gray-900">
+            {{ site.data.civic.jurisdiction.population | divided_by: 1000 }},000+
+          </dd>
+        </div>
+        <div>
+          <dt class="text-sm text-gray-500">
+            Jurisdiction Type
+          </dt>
+          <dd class="mt-1 text-2xl font-bold text-gray-900 capitalize">
+            {{ site.data.civic.jurisdiction.type }}
+          </dd>
+        </div>
+        <div>
+          <dt class="text-sm text-gray-500">
+            Departments
+          </dt>
+          <dd class="mt-1 text-2xl font-bold text-gray-900">
+            {% assign depts = site.data.civic.agencies | where: "type", "department" %}
+            {{ depts | size }}
+          </dd>
+        </div>
+        <div>
+          <dt class="text-sm text-gray-500">
+            Services
+          </dt>
+          <dd class="mt-1 text-2xl font-bold text-gray-900">
+            {{ site.data.civic.services | size }}
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-sm text-gray-500">
+        Data source:
+        <a
+          href="/civic-data.json"
+          class="text-primary-600 hover:text-primary-500"
+        >
+          civic-data.json
+        </a>
+      </p>
+    </div>
+  </div>
+</main>
