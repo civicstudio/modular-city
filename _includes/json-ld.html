@@ -1,0 +1,163 @@
+{% comment %}
+JSON-LD Structured Data for SEO and discoverability
+{% endcomment %}
+
+{% if page.layout == 'default' or page.layout == nil %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentOrganization",
+  "name": "{{ site.data.civic.jurisdiction.name }}",
+  "url": "{{ site.url }}{{ site.baseurl }}/",
+  "logo": "{{ site.url }}{{ site.baseurl }}/assets/img/mark.svg",
+  "description": "{{ site.description }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "100 Main Street",
+    "addressLocality": "Modular City",
+    "addressRegion": "EX",
+    "postalCode": "00001",
+    "addressCountry": "US"
+  },
+  "telephone": "(555) 555-1000",
+  "email": "info@modularcity.org",
+  "sameAs": [
+    "https://github.com/afomi/modular-city"
+  ],
+  "areaServed": {
+    "@type": "City",
+    "name": "Modular City"
+  }
+}
+</script>
+{% endif %}
+
+{% if page.url == '/index.html' or page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}{{ site.baseurl }}/",
+  "description": "{{ site.description }}",
+  "publisher": {
+    "@type": "GovernmentOrganization",
+    "name": "{{ site.data.civic.jurisdiction.name }}"
+  }
+}
+</script>
+{% endif %}
+
+{% if page.url == '/services.html' or page.url == '/services' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "City Services",
+  "description": "Government services provided by {{ site.data.civic.jurisdiction.name }}",
+  "numberOfItems": {{ site.data.civic.services | size }},
+  "itemListElement": [
+    {% for service in site.data.civic.services %}
+    {
+      "@type": "GovernmentService",
+      "position": {{ forloop.index }},
+      "name": "{{ service.name }}",
+      "description": "{{ service.description }}",
+      "serviceType": "{{ service.category | replace: '_', ' ' | capitalize }}",
+      "provider": {
+        "@type": "GovernmentOrganization",
+        "name": "{{ site.data.civic.jurisdiction.name }}"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Modular City"
+      }
+      {% if service.url %},
+      "url": "{{ service.url }}"
+      {% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% if page.url == '/government.html' or page.url == '/government' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Elected Officials",
+  "description": "Elected officials of {{ site.data.civic.jurisdiction.name }}",
+  "itemListElement": [
+    {% assign elected = site.data.civic.officials | where: "type", "elected" %}
+    {% for official in elected %}
+    {
+      "@type": "Person",
+      "position": {{ forloop.index }},
+      "name": "{{ official.name }}",
+      "jobTitle": "{{ official.title }}",
+      "email": "{{ official.email }}",
+      "worksFor": {
+        "@type": "GovernmentOrganization",
+        "name": "{{ site.data.civic.jurisdiction.name }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% if page.url == '/calendar.html' or page.url == '/calendar' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Upcoming Events",
+  "description": "Public meetings and events in {{ site.data.civic.jurisdiction.name }}",
+  "itemListElement": [
+    {% assign sorted_events = site.data.calendar.events | sort: "date" %}
+    {% for event in sorted_events limit: 10 %}
+    {
+      "@type": "Event",
+      "position": {{ forloop.index }},
+      "name": "{{ event.title }}",
+      "description": "{{ event.description }}",
+      "startDate": "{{ event.date }}T{{ event.time | default: '00:00' | replace: ' AM', '' | replace: ' PM', '' }}",
+      {% if event.end_time %}
+      "endDate": "{{ event.date }}T{{ event.end_time | replace: ' AM', '' | replace: ' PM', '' }}",
+      {% endif %}
+      "location": {
+        "@type": "Place",
+        "name": "{{ event.location }}",
+        "address": "{{ event.address | default: 'Modular City, EX' }}"
+      },
+      "organizer": {
+        "@type": "GovernmentOrganization",
+        "name": "{{ site.data.civic.jurisdiction.name }}"
+      },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% if page.url contains '/blog' and page.layout != 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "{{ site.title }} News",
+  "description": "Official news and announcements from {{ site.data.civic.jurisdiction.name }}",
+  "url": "{{ site.url }}{{ site.baseurl }}/blog",
+  "publisher": {
+    "@type": "GovernmentOrganization",
+    "name": "{{ site.data.civic.jurisdiction.name }}"
+  }
+}
+</script>
+{% endif %}

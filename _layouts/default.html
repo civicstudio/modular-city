@@ -20,6 +20,13 @@
       href="{{ '/assets/img/mark.svg' | relative_url }}"
       type="image/svg+xml"
     >
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="{{ site.title }} RSS Feed"
+      href="{{ '/feed.xml' | absolute_url }}"
+    >
+    {% include json-ld.html %}
   </head>
   <body class="bg-white">
     {% include header.html %}

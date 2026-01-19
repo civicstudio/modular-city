@@ -15,7 +15,7 @@
           src="{{ '/assets/img/mark.svg' | relative_url }}"
           alt="Modular City seal"
         >
-        <span class="text-lg font-bold text-gray-900 hidden sm:block">
+        <span class="text-lg font-bold text-gray-900">
           Modular City
         </span>
       </a>
@@ -23,13 +23,15 @@
     <div class="flex lg:hidden">
       <button
         type="button"
+        id="mobile-menu-button"
         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
         aria-expanded="false"
         aria-controls="mobile-menu"
-        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
       >
         <span class="sr-only">Open main menu</span>
+        <!-- Hamburger icon -->
         <svg
+          id="menu-icon-open"
           class="size-6"
           fill="none"
           viewBox="0 0 24 24"
@@ -43,36 +45,52 @@
             d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
           />
         </svg>
+        <!-- Close icon (hidden by default) -->
+        <svg
+          id="menu-icon-close"
+          class="size-6 hidden"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-8">
       <a
         href="/services"
-        class="text-sm font-semibold leading-6 {% if page.url == '/services.html' or page.url == '/services' %}text-primary-700 border-b-2 border-primary-600{% else %}text-gray-900 hover:text-primary-700{% endif %}"
+        class="text-sm font-semibold leading-6 {% if page.url == '/services.html' or page.url == '/services' %}text-primary-700 border-b-2 border-primary-700{% else %}text-gray-900 hover:text-primary-700{% endif %}"
       >
         Services
       </a>
       <a
         href="/departments"
-        class="text-sm font-semibold leading-6 {% if page.url == '/departments.html' or page.url == '/departments' %}text-primary-700 border-b-2 border-primary-600{% else %}text-gray-900 hover:text-primary-700{% endif %}"
+        class="text-sm font-semibold leading-6 {% if page.url == '/departments.html' or page.url == '/departments' %}text-primary-700 border-b-2 border-primary-700{% else %}text-gray-900 hover:text-primary-700{% endif %}"
       >
         Departments
       </a>
       <a
         href="/government"
-        class="text-sm font-semibold leading-6 {% if page.url == '/government.html' or page.url == '/government' %}text-primary-700 border-b-2 border-primary-600{% else %}text-gray-900 hover:text-primary-700{% endif %}"
+        class="text-sm font-semibold leading-6 {% if page.url == '/government.html' or page.url == '/government' %}text-primary-700 border-b-2 border-primary-700{% else %}text-gray-900 hover:text-primary-700{% endif %}"
       >
         Government
       </a>
       <a
         href="/calendar"
-        class="text-sm font-semibold leading-6 {% if page.url == '/calendar.html' or page.url == '/calendar' %}text-primary-700 border-b-2 border-primary-600{% else %}text-gray-900 hover:text-primary-700{% endif %}"
+        class="text-sm font-semibold leading-6 {% if page.url == '/calendar.html' or page.url == '/calendar' %}text-primary-700 border-b-2 border-primary-700{% else %}text-gray-900 hover:text-primary-700{% endif %}"
       >
         Calendar
       </a>
       <a
         href="{{ '/blog' | relative_url }}"
-        class="text-sm font-semibold leading-6 {% if page.url contains '/blog' %}text-primary-700 border-b-2 border-primary-600{% else %}text-gray-900 hover:text-primary-700{% endif %}"
+        class="text-sm font-semibold leading-6 {% if page.url contains '/blog' %}text-primary-700 border-b-2 border-primary-700{% else %}text-gray-900 hover:text-primary-700{% endif %}"
       >
         News
       </a>
@@ -131,3 +149,22 @@
     </div>
   </div>
 </header>
+
+<script>
+(function() {
+  var button = document.getElementById('mobile-menu-button');
+  var menu = document.getElementById('mobile-menu');
+  var iconOpen = document.getElementById('menu-icon-open');
+  var iconClose = document.getElementById('menu-icon-close');
+
+  if (button && menu) {
+    button.addEventListener('click', function() {
+      var isOpen = menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  }
+})();
+</script>
