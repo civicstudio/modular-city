@@ -17,7 +17,8 @@ title: "Calendar"
       </div>
       <div class="mt-4 flex md:ml-4 md:mt-0">
         <a
-          href="/civic-data.json"
+          href="/calendar.ics"
+          download="modular-city-calendar.ics"
           class="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
         >
           <svg
@@ -33,7 +34,7 @@ title: "Calendar"
               d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
             />
           </svg>
-          Export Calendar
+          Export Calendar (.ics)
         </a>
       </div>
     </div>
@@ -245,10 +246,12 @@ title: "Calendar"
       <p class="text-sm text-gray-700">
         Data source:
         <a
-          href="/civic-data.json"
+          href="https://github.com/civicstudio/modular-city/blob/main/_data/calendar.json"
           class="text-primary-800 hover:text-primary-500"
+          target="_blank"
+          rel="noopener"
         >
-          civic-data.json
+          _data/calendar.json
         </a>
       </p>
     </div>

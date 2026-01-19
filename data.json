@@ -1,0 +1,114 @@
+---
+layout: null
+---
+{
+  "@context": "https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld",
+  "@type": "dcat:Catalog",
+  "conformsTo": "https://project-open-data.cio.gov/v1.1/schema",
+  "describedBy": "https://project-open-data.cio.gov/v1.1/schema/catalog.json",
+  "dataset": [
+    {
+      "@type": "dcat:Dataset",
+      "title": "Civic Data",
+      "description": "Comprehensive open data about {{ site.data.civic.jurisdiction.name }} including jurisdiction information, government agencies, elected officials, services, and contact information. This dataset follows the civic.bot civic-data.json schema for interoperability with civic technology applications.",
+      "identifier": "{{ site.url }}/civic-data.json",
+      "keyword": [
+        "government",
+        "civic",
+        "agencies",
+        "officials",
+        "services",
+        "open data",
+        "transparency"
+      ],
+      "modified": "{{ site.time | date: '%Y-%m-%d' }}",
+      "accessLevel": "public",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rights": "This dataset is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication.",
+      "spatial": "{{ site.data.civic.jurisdiction.name }}, {{ site.data.civic.jurisdiction.state }}",
+      "temporal": "{{ site.time | date: '%Y' }}",
+      "accrualPeriodicity": "irregular",
+      "language": ["en-US"],
+      "contactPoint": {
+        "@type": "vcard:Contact",
+        "fn": "{{ site.data.civic.jurisdiction.name }} Open Data",
+        "hasEmail": "mailto:info@modularcity.org"
+      },
+      "publisher": {
+        "@type": "org:Organization",
+        "name": "{{ site.data.civic.jurisdiction.name }}",
+        "subOrganizationOf": {
+          "@type": "org:Organization",
+          "name": "{{ site.data.civic.jurisdiction.state }}"
+        }
+      },
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "title": "Civic Data (JSON)",
+          "description": "Machine-readable civic data in JSON format following the civic-data.json schema.",
+          "downloadURL": "{{ site.url }}/civic-data.json",
+          "mediaType": "application/json",
+          "format": "JSON",
+          "conformsTo": "https://civic.bot/schema/civic-data.schema.json"
+        }
+      ],
+      "theme": ["Government Operations"]
+    },
+    {
+      "@type": "dcat:Dataset",
+      "title": "Public Calendar",
+      "description": "Schedule of public meetings, community events, and important deadlines for {{ site.data.civic.jurisdiction.name }}. Includes City Council meetings, Planning Commission meetings, Parks and Recreation events, and civic participation deadlines.",
+      "identifier": "{{ site.url }}/calendar.ics",
+      "keyword": [
+        "calendar",
+        "meetings",
+        "events",
+        "public meetings",
+        "city council",
+        "community events",
+        "civic engagement"
+      ],
+      "modified": "{{ site.time | date: '%Y-%m-%d' }}",
+      "accessLevel": "public",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rights": "This dataset is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication.",
+      "spatial": "{{ site.data.civic.jurisdiction.name }}, {{ site.data.civic.jurisdiction.state }}",
+      "temporal": "{{ site.time | date: '%Y' }}/{{ site.time | date: '%Y' | plus: 1 }}",
+      "accrualPeriodicity": "R/P1M",
+      "language": ["en-US"],
+      "contactPoint": {
+        "@type": "vcard:Contact",
+        "fn": "{{ site.data.civic.jurisdiction.name }} City Clerk",
+        "hasEmail": "mailto:clerk@modularcity.org"
+      },
+      "publisher": {
+        "@type": "org:Organization",
+        "name": "{{ site.data.civic.jurisdiction.name }}",
+        "subOrganizationOf": {
+          "@type": "org:Organization",
+          "name": "{{ site.data.civic.jurisdiction.state }}"
+        }
+      },
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "title": "Public Calendar (iCalendar)",
+          "description": "Calendar feed in iCalendar format for subscription in calendar applications.",
+          "downloadURL": "{{ site.url }}/calendar.ics",
+          "mediaType": "text/calendar",
+          "format": "ICS"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "title": "Calendar Data (JSON)",
+          "description": "Structured calendar data in JSON format.",
+          "accessURL": "https://github.com/civicstudio/modular-city/blob/main/_data/calendar.json",
+          "mediaType": "application/json",
+          "format": "JSON"
+        }
+      ],
+      "theme": ["Government Operations", "Public Meetings"]
+    }
+  ]
+}

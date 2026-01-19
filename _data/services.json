@@ -1,0 +1,290 @@
+[
+  {
+    "id": "business-license",
+    "civic_data_id": "modular-city-business-license",
+    "slug": "business-license",
+    "name": "Apply for a Business License",
+    "user_need": {
+      "as_a": "business owner",
+      "i_need_to": "apply for or renew my business license",
+      "so_that": "I can legally operate my business in Modular City"
+    },
+    "need_is_met_when": [
+      "understands the requirements for a business license",
+      "knows what documents are needed",
+      "can submit an application online or in person",
+      "receives their license within the stated timeframe"
+    ],
+    "why_this_service_exists": [
+      "It's something only the government does",
+      "There is clear demand from business owners",
+      "It helps ensure businesses meet local regulations"
+    ],
+    "steps": [
+      "Gather required documents (State tax ID, proof of insurance)",
+      "Complete the application form",
+      "Pay the $75 annual fee",
+      "Receive your license within 3-5 business days"
+    ],
+    "related_services": ["building-permit"]
+  },
+  {
+    "id": "public-records",
+    "civic_data_id": "modular-city-public-records",
+    "slug": "public-records",
+    "name": "Request Public Records",
+    "user_need": {
+      "as_a": "resident or journalist",
+      "i_need_to": "request copies of public records",
+      "so_that": "I can access information about government activities"
+    },
+    "need_is_met_when": [
+      "understands what records are available",
+      "knows how to submit a request",
+      "receives records within the legal timeframe",
+      "understands any fees involved"
+    ],
+    "why_this_service_exists": [
+      "Government transparency is required by law",
+      "Citizens have a right to access public information",
+      "It promotes accountability and trust"
+    ],
+    "steps": [
+      "Identify the records you need",
+      "Submit a request online or in person",
+      "Pay copying fees if applicable ($0.25 per page)",
+      "Receive records within 5-10 business days"
+    ],
+    "related_services": []
+  },
+  {
+    "id": "voter-registration",
+    "civic_data_id": "modular-city-voter-registration",
+    "slug": "voter-registration",
+    "name": "Register to Vote",
+    "user_need": {
+      "as_a": "citizen",
+      "i_need_to": "register to vote",
+      "so_that": "I can participate in local elections"
+    },
+    "need_is_met_when": [
+      "understands eligibility requirements",
+      "can complete registration online or in person",
+      "receives confirmation of registration",
+      "knows where and when to vote"
+    ],
+    "why_this_service_exists": [
+      "Voting is a fundamental right",
+      "The government is obligated to provide access to elections",
+      "Democracy depends on citizen participation"
+    ],
+    "steps": [
+      "Confirm you are a U.S. citizen, 18+ years old, and reside in Modular City",
+      "Gather proof of identity and residence",
+      "Complete the registration form",
+      "Registration is immediate"
+    ],
+    "related_services": []
+  },
+  {
+    "id": "pothole-report",
+    "civic_data_id": "modular-city-pothole-report",
+    "slug": "pothole-report",
+    "name": "Report a Pothole",
+    "user_need": {
+      "as_a": "driver or cyclist",
+      "i_need_to": "report a pothole on a city street",
+      "so_that": "it can be repaired and roads are safe to travel"
+    },
+    "need_is_met_when": [
+      "can easily submit a report with location details",
+      "receives confirmation the report was received",
+      "can track the status of the repair",
+      "sees the pothole repaired"
+    ],
+    "why_this_service_exists": [
+      "Road maintenance is a core city responsibility",
+      "Safe roads protect all travelers",
+      "Citizen reports help prioritize repairs"
+    ],
+    "steps": [
+      "Note the location of the pothole",
+      "Submit a report online with address or intersection",
+      "Optionally include a photo",
+      "Repair typically completed within 7-14 days"
+    ],
+    "related_services": ["streetlight-outage"]
+  },
+  {
+    "id": "water-service",
+    "civic_data_id": "modular-city-water-service",
+    "slug": "water-service",
+    "name": "Start or Stop Water Service",
+    "user_need": {
+      "as_a": "homeowner or tenant",
+      "i_need_to": "start or stop water service at my address",
+      "so_that": "I have water when I move in and don't pay for it when I move out"
+    },
+    "need_is_met_when": [
+      "understands the process for starting or stopping service",
+      "knows what documents are needed",
+      "can schedule service changes in advance",
+      "service is activated or stopped on the requested date"
+    ],
+    "why_this_service_exists": [
+      "Water is an essential utility",
+      "The city operates the municipal water system",
+      "Residents need control over their utility accounts"
+    ],
+    "steps": [
+      "Gather proof of identity and lease/deed",
+      "Submit request at least 2-3 business days in advance",
+      "Pay $25 service connection fee for new service",
+      "Service will be activated/stopped on your requested date"
+    ],
+    "related_services": ["streetlight-outage", "pothole-report"]
+  },
+  {
+    "id": "streetlight-outage",
+    "civic_data_id": "modular-city-streetlight-outage",
+    "slug": "streetlight-outage",
+    "name": "Report a Street Light Outage",
+    "user_need": {
+      "as_a": "resident",
+      "i_need_to": "report a broken or flickering street light",
+      "so_that": "my neighborhood is safely lit at night"
+    },
+    "need_is_met_when": [
+      "can easily identify and report the light location",
+      "receives confirmation the report was received",
+      "sees the light repaired"
+    ],
+    "why_this_service_exists": [
+      "Public lighting is a city responsibility",
+      "Well-lit streets improve safety",
+      "Citizen reports help identify problems quickly"
+    ],
+    "steps": [
+      "Note the pole number or nearest address",
+      "Submit a report online",
+      "Repair typically completed within 5-7 business days"
+    ],
+    "related_services": ["pothole-report"]
+  },
+  {
+    "id": "facility-rental",
+    "civic_data_id": "modular-city-facility-rental",
+    "slug": "facility-rental",
+    "name": "Rent a City Facility",
+    "user_need": {
+      "as_a": "resident or organization",
+      "i_need_to": "rent a park pavilion, community room, or athletic field",
+      "so_that": "I can host an event or gathering"
+    },
+    "need_is_met_when": [
+      "can see available facilities and dates",
+      "understands rental fees and rules",
+      "can reserve a facility online",
+      "receives confirmation of the booking"
+    ],
+    "why_this_service_exists": [
+      "Public facilities should be accessible to the community",
+      "Events build community connections",
+      "Rental fees help maintain facilities"
+    ],
+    "steps": [
+      "Browse available facilities",
+      "Check availability for your preferred date",
+      "Submit a rental application",
+      "Pay rental fee ($50-$200 depending on facility)"
+    ],
+    "related_services": ["program-registration"]
+  },
+  {
+    "id": "program-registration",
+    "civic_data_id": "modular-city-program-registration",
+    "slug": "program-registration",
+    "name": "Register for Recreation Programs",
+    "user_need": {
+      "as_a": "parent or resident",
+      "i_need_to": "register for sports leagues, classes, and activities",
+      "so_that": "I or my family can participate in city programs"
+    },
+    "need_is_met_when": [
+      "can browse available programs",
+      "understands program details, schedules, and fees",
+      "can register and pay online",
+      "receives confirmation and program information"
+    ],
+    "why_this_service_exists": [
+      "Recreation improves quality of life",
+      "City programs are accessible to all residents",
+      "Organized activities build community"
+    ],
+    "steps": [
+      "Browse the program catalog",
+      "Select a program and register participants",
+      "Pay program fees (varies by program)",
+      "Receive confirmation and start date information"
+    ],
+    "related_services": ["facility-rental"]
+  },
+  {
+    "id": "building-permit",
+    "civic_data_id": "modular-city-building-permit",
+    "slug": "building-permit",
+    "name": "Apply for a Building Permit",
+    "user_need": {
+      "as_a": "property owner or contractor",
+      "i_need_to": "apply for permits for construction, renovation, or demolition",
+      "so_that": "my project meets safety codes and is legally approved"
+    },
+    "need_is_met_when": [
+      "understands what permits are required for their project",
+      "knows what documents and plans to submit",
+      "can track permit application status",
+      "receives permit approval and can begin work"
+    ],
+    "why_this_service_exists": [
+      "Building codes protect public safety",
+      "Permits ensure construction meets standards",
+      "Inspections verify work is done correctly"
+    ],
+    "steps": [
+      "Determine what permits your project requires",
+      "Prepare site plans and construction drawings",
+      "Submit application with contractor license information",
+      "Permit review takes 10-15 business days"
+    ],
+    "related_services": ["business-license"]
+  },
+  {
+    "id": "tax-payment",
+    "civic_data_id": "modular-city-tax-payment",
+    "slug": "tax-payment",
+    "name": "Pay Property Taxes",
+    "user_need": {
+      "as_a": "property owner",
+      "i_need_to": "pay my property taxes",
+      "so_that": "I fulfill my tax obligation and avoid penalties"
+    },
+    "need_is_met_when": [
+      "can view their tax bill and amount due",
+      "understands payment deadlines",
+      "can pay online without fees",
+      "receives confirmation of payment"
+    ],
+    "why_this_service_exists": [
+      "Property taxes fund city services",
+      "Easy payment options improve compliance",
+      "Online payment reduces administrative costs"
+    ],
+    "steps": [
+      "Look up your property tax bill",
+      "Review amount due and deadline",
+      "Pay online (no fee) or in person",
+      "Receive payment confirmation"
+    ],
+    "related_services": []
+  }
+]

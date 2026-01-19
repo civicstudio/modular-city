@@ -4,6 +4,7 @@ ruby '3.4.7'
 
 gem 'jekyll'
 gem 'jekyll-sitemap'
+gem 'jekyll-datapage-generator'
 
 group :test do
   gem 'rspec'

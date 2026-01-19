@@ -6,6 +6,19 @@ description: "A model municipal website demonstrating best practices for civic w
 
 plugins:
   - jekyll-sitemap
+  - jekyll-datapage-generator
+
+page_gen:
+  - data: 'departments'
+    template: 'department'
+    name: 'slug'
+    dir: 'departments'
+    title: 'name'
+  - data: 'services'
+    template: 'service'
+    name: 'slug'
+    dir: 'services'
+    title: 'name'
 
 exclude:
   - package.json

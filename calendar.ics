@@ -1,0 +1,42 @@
+---
+layout: null
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//{{ site.title }}//{{ site.url }}//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:{{ site.title }} - Meetings & Events
+X-WR-TIMEZONE:America/Los_Angeles
+BEGIN:VTIMEZONE
+TZID:America/Los_Angeles
+X-LIC-LOCATION:America/Los_Angeles
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0800
+TZOFFSETTO:-0700
+TZNAME:PDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0800
+TZNAME:PST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+{% assign sorted_events = site.data.calendar.events | sort: "date" %}{% for event in sorted_events %}
+BEGIN:VEVENT
+UID:{{ event.id }}@modularcity.org
+DTSTAMP:{{ site.time | date: "%Y%m%dT%H%M%SZ" }}
+DTSTART;TZID=America/Los_Angeles:{{ event.date | date: "%Y%m%d" }}T{% assign t = event.time | split: ":" %}{% assign h = t[0] | plus: 0 %}{% assign rest = t[1] | split: " " %}{% assign m = rest[0] %}{% assign ap = rest[1] %}{% if ap == "PM" and h != 12 %}{% assign h = h | plus: 12 %}{% endif %}{% if ap == "AM" and h == 12 %}{% assign h = 0 %}{% endif %}{% if h < 10 %}0{% endif %}{{ h }}{{ m }}00{% if event.end_time %}
+DTEND;TZID=America/Los_Angeles:{{ event.date | date: "%Y%m%d" }}T{% assign et = event.end_time | split: ":" %}{% assign eh = et[0] | plus: 0 %}{% assign erest = et[1] | split: " " %}{% assign em = erest[0] %}{% assign eap = erest[1] %}{% if eap == "PM" and eh != 12 %}{% assign eh = eh | plus: 12 %}{% endif %}{% if eap == "AM" and eh == 12 %}{% assign eh = 0 %}{% endif %}{% if eh < 10 %}0{% endif %}{{ eh }}{{ em }}00{% endif %}
+SUMMARY:{{ event.title }}
+DESCRIPTION:{{ event.description | strip_newlines }}{% if event.public_comment %} Public comment welcome.{% endif %}
+LOCATION:{{ event.location }}{% if event.address %}, {{ event.address }}{% endif %}
+CATEGORIES:{{ event.category | upcase }}
+STATUS:CONFIRMED
+END:VEVENT
+{% endfor %}
+END:VCALENDAR

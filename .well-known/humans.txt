@@ -19,6 +19,7 @@ Software: Jekyll, Ruby
 Language: English
 
 /* DATA */
-Open Data: /civic-data.json
-Calendar: /_data/calendar.json
+Data Catalog: /data.json (DCAT-US 1.1)
+Civic Data: /civic-data.json
+Calendar: /calendar.ics
 Schema: https://civic.bot/schema/civic-data.schema.json

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "modular-city-city-clerk",
+    "slug": "city-clerk",
+    "name": "City Clerk",
+    "type": "department",
+    "description": "Official records, elections, and licensing",
+    "phone": "(555) 555-1001",
+    "email": "clerk@modularcity.org",
+    "address": {
+      "street": "100 Main Street",
+      "city": "Modular City",
+      "state": "EX",
+      "zip": "00001"
+    },
+    "hours": {
+      "weekday": "8:00 AM - 5:00 PM",
+      "saturday": null,
+      "sunday": null
+    }
+  },
+  {
+    "id": "modular-city-public-works",
+    "slug": "public-works",
+    "name": "Public Works",
+    "type": "department",
+    "description": "Roads, water, and utilities",
+    "phone": "(555) 555-1002",
+    "email": "publicworks@modularcity.org",
+    "address": {
+      "street": "200 Infrastructure Way",
+      "city": "Modular City",
+      "state": "EX",
+      "zip": "00001"
+    },
+    "hours": {
+      "weekday": "7:00 AM - 4:00 PM",
+      "saturday": null,
+      "sunday": null
+    }
+  },
+  {
+    "id": "modular-city-parks-recreation",
+    "slug": "parks-recreation",
+    "name": "Parks & Recreation",
+    "type": "department",
+    "description": "Parks, programs, and facilities",
+    "phone": "(555) 555-1003",
+    "email": "parks@modularcity.org",
+    "address": {
+      "street": "50 Recreation Lane",
+      "city": "Modular City",
+      "state": "EX",
+      "zip": "00001"
+    },
+    "hours": {
+      "weekday": "8:00 AM - 6:00 PM",
+      "saturday": "9:00 AM - 3:00 PM",
+      "sunday": null
+    }
+  },
+  {
+    "id": "modular-city-police",
+    "slug": "police",
+    "name": "Police Department",
+    "type": "department",
+    "description": "Public safety and law enforcement",
+    "phone": "(555) 555-1004",
+    "email": "police@modularcity.org",
+    "address": {
+      "street": "300 Safety Boulevard",
+      "city": "Modular City",
+      "state": "EX",
+      "zip": "00001"
+    },
+    "hours": {
+      "weekday": "24 hours",
+      "saturday": "24 hours",
+      "sunday": "24 hours"
+    }
+  },
+  {
+    "id": "modular-city-fire",
+    "slug": "fire",
+    "name": "Fire Department",
+    "type": "department",
+    "description": "Fire, EMS, and prevention services",
+    "phone": "(555) 555-1005",
+    "email": "fire@modularcity.org",
+    "address": {
+      "street": "400 Emergency Drive",
+      "city": "Modular City",
+      "state": "EX",
+      "zip": "00001"
+    },
+    "hours": {
+      "weekday": "24 hours",
+      "saturday": "24 hours",
+      "sunday": "24 hours"
+    }
+  },
+  {
+    "id": "modular-city-planning",
+    "slug": "planning",
+    "name": "Planning & Zoning",
+    "type": "department",
+    "description": "Permits, land use, and inspections",
+    "phone": "(555) 555-1006",
+    "email": "planning@modularcity.org",
+    "address": {
+      "street": "100 Main Street",
+      "city": "Modular City",
+      "state": "EX",
+      "zip": "00001"
+    },
+    "hours": {
+      "weekday": "8:00 AM - 5:00 PM",
+      "saturday": null,
+      "sunday": null
+    }
+  },
+  {
+    "id": "modular-city-finance",
+    "slug": "finance",
+    "name": "Finance Department",
+    "type": "department",
+    "description": "Budget, taxes, and procurement",
+    "phone": "(555) 555-1007",
+    "email": "finance@modularcity.org",
+    "address": {
+      "street": "100 Main Street",
+      "city": "Modular City",
+      "state": "EX",
+      "zip": "00001"
+    },
+    "hours": {
+      "weekday": "8:00 AM - 5:00 PM",
+      "saturday": null,
+      "sunday": null
+    }
+  }
+]

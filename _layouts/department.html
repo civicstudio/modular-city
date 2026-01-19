@@ -1,0 +1,250 @@
+---
+layout: default
+---
+
+{% assign dept_services = site.data.civic.services | where: "agency_id", page.id %}
+{% assign dept_officials = site.data.civic.officials | where: "agency_id", page.id %}
+{% assign director = dept_officials | where: "type", "appointed" | first %}
+
+<main class="bg-white">
+  <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <!-- Breadcrumb -->
+    <nav
+      class="mb-8"
+      aria-label="Breadcrumb"
+    >
+      <ol class="flex items-center gap-2 text-sm text-gray-700">
+        <li>
+          <a
+            href="/departments"
+            class="hover:text-primary-700"
+          >
+            Departments
+          </a>
+        </li>
+        <li aria-hidden="true">/</li>
+        <li
+          class="text-gray-900 font-medium"
+          aria-current="page"
+        >
+          {{ page.name }}
+        </li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <header class="border-b border-gray-200 pb-8">
+      <div class="flex items-center gap-4">
+        <div class="flex size-16 items-center justify-center rounded-lg bg-primary-600">
+          <svg
+            class="size-8 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
+            />
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            {{ page.name }}
+          </h1>
+          <p class="mt-1 text-lg text-gray-700">
+            {{ page.description }}
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <div class="mt-10 grid gap-10 lg:grid-cols-3">
+      <!-- Main content -->
+      <div class="lg:col-span-2 space-y-10">
+        <!-- Services section -->
+        {% if dept_services.size > 0 %}
+        <section aria-labelledby="services-heading">
+          <h2
+            id="services-heading"
+            class="text-xl font-semibold text-gray-900"
+          >
+            Services we provide
+          </h2>
+          <p class="mt-2 text-gray-700">
+            {{ page.name }} provides {{ dept_services.size }} service{% if dept_services.size > 1 %}s{% endif %} to residents and businesses.
+          </p>
+          <ul class="mt-6 space-y-4">
+            {% for service in dept_services %}
+            {% assign service_detail = site.data.services | where: "civic_data_id", service.id | first %}
+            <li class="rounded-lg border border-gray-200 p-4 hover:shadow-sm transition-shadow">
+              <a
+                href="/services/{{ service_detail.slug | default: '#' }}"
+                class="block"
+              >
+                <h3 class="font-semibold text-gray-900 hover:text-primary-700">
+                  {{ service.name }}
+                </h3>
+                <p class="mt-1 text-sm text-gray-700">
+                  {{ service.description }}
+                </p>
+                <div class="mt-2 flex flex-wrap gap-3 text-xs text-gray-700">
+                  {% if service.fees %}
+                  <span>{{ service.fees }}</span>
+                  {% endif %}
+                  {% if service.online_available %}
+                  <span class="text-success-700 font-medium">Available online</span>
+                  {% endif %}
+                </div>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        <!-- About section -->
+        <section aria-labelledby="about-heading">
+          <h2
+            id="about-heading"
+            class="text-xl font-semibold text-gray-900"
+          >
+            About this department
+          </h2>
+          <div class="mt-4 prose prose-gray max-w-none">
+            <p>
+              {{ page.name }} is responsible for {{ page.description | downcase }} in {{ site.data.civic.jurisdiction.name }}.
+            </p>
+            {% if director %}
+            <p>
+              The department is led by {{ director.name }}, {{ director.title }}.
+            </p>
+            {% endif %}
+          </div>
+        </section>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-8">
+        <!-- Contact card -->
+        <div class="rounded-lg border border-gray-200 p-6">
+          <h3 class="font-semibold text-gray-900">
+            Contact
+          </h3>
+          <dl class="mt-4 space-y-4 text-sm">
+            {% if page.phone %}
+            <div>
+              <dt class="text-gray-700">Phone</dt>
+              <dd class="mt-1 font-medium text-gray-900">
+                <a
+                  href="tel:{{ page.phone | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}"
+                  class="hover:text-primary-700"
+                >
+                  {{ page.phone }}
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+            {% if page.email %}
+            <div>
+              <dt class="text-gray-700">Email</dt>
+              <dd class="mt-1">
+                <a
+                  href="mailto:{{ page.email }}"
+                  class="font-medium text-primary-800 hover:text-primary-500"
+                >
+                  {{ page.email }}
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+            {% if page.address %}
+            <div>
+              <dt class="text-gray-700">Address</dt>
+              <dd class="mt-1 text-gray-900">
+                {{ page.address.street }}<br>
+                {{ page.address.city }}, {{ page.address.state }} {{ page.address.zip }}
+              </dd>
+            </div>
+            {% endif %}
+          </dl>
+        </div>
+
+        <!-- Hours card -->
+        {% if page.hours %}
+        <div class="rounded-lg border border-gray-200 p-6">
+          <h3 class="font-semibold text-gray-900">
+            Hours
+          </h3>
+          <dl class="mt-4 space-y-2 text-sm">
+            {% if page.hours.weekday == "24 hours" %}
+            <div class="flex justify-between">
+              <dt class="text-gray-700">Every day</dt>
+              <dd class="text-gray-900">24 hours</dd>
+            </div>
+            {% else %}
+            <div class="flex justify-between">
+              <dt class="text-gray-700">Mon - Fri</dt>
+              <dd class="text-gray-900">{{ page.hours.weekday }}</dd>
+            </div>
+            {% if page.hours.saturday %}
+            <div class="flex justify-between">
+              <dt class="text-gray-700">Saturday</dt>
+              <dd class="text-gray-900">{{ page.hours.saturday }}</dd>
+            </div>
+            {% endif %}
+            {% if page.hours.sunday %}
+            <div class="flex justify-between">
+              <dt class="text-gray-700">Sunday</dt>
+              <dd class="text-gray-900">{{ page.hours.sunday }}</dd>
+            </div>
+            {% else %}
+            <div class="flex justify-between">
+              <dt class="text-gray-700">Sat - Sun</dt>
+              <dd class="text-gray-700">Closed</dd>
+            </div>
+            {% endif %}
+            {% endif %}
+          </dl>
+        </div>
+        {% endif %}
+
+        <!-- Leadership card -->
+        {% if director %}
+        <div class="rounded-lg border border-gray-200 p-6">
+          <h3 class="font-semibold text-gray-900">
+            Leadership
+          </h3>
+          <div class="mt-4">
+            <p class="font-medium text-gray-900">{{ director.name }}</p>
+            <p class="text-sm text-gray-700">{{ director.title }}</p>
+            {% if director.email %}
+            <a
+              href="mailto:{{ director.email }}"
+              class="mt-2 inline-block text-sm text-primary-800 hover:text-primary-500"
+            >
+              {{ director.email }}
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+      </aside>
+    </div>
+
+    <!-- Data source -->
+    <footer class="mt-12 pt-6 border-t border-gray-200 text-center">
+      <p class="text-sm text-gray-700">
+        Data source:
+        <a
+          href="/civic-data.json"
+          class="text-primary-800 hover:text-primary-500"
+        >
+          civic-data.json
+        </a>
+      </p>
+    </footer>
+  </div>
+</main>

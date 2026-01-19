@@ -15,8 +15,8 @@ title: "Departments"
     </div>
 
     <div class="mx-auto mt-12 grid max-w-2xl grid-cols-1 gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-      {% for agency in site.data.civic.agencies %}
-      {% if agency.type == "department" %}
+      {% for dept in site.data.departments %}
+      {% assign dept_services = site.data.civic.services | where: "agency_id", dept.id %}
       <article class="flex flex-col rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden">
         <div class="flex-1 p-6">
           <div class="flex items-center gap-x-4">
@@ -36,14 +36,39 @@ title: "Departments"
               </svg>
             </div>
             <h2 class="text-xl font-semibold text-gray-900">
-              {{ agency.name }}
+              <a
+                href="/departments/{{ dept.slug }}"
+                class="hover:text-primary-700"
+              >
+                {{ dept.name }}
+              </a>
             </h2>
           </div>
           <p class="mt-4 text-base text-gray-700">
-            {{ agency.description }}
+            {{ dept.description }}
           </p>
+          {% if dept_services.size > 0 %}
+          <div class="mt-4">
+            <h3 class="text-sm font-medium text-gray-900">
+              Services ({{ dept_services.size }})
+            </h3>
+            <ul class="mt-2 flex flex-wrap gap-2">
+              {% for service in dept_services %}
+              {% assign service_detail = site.data.services | where: "civic_data_id", service.id | first %}
+              <li>
+                <a
+                  href="/services/{{ service_detail.slug | default: '#' }}"
+                  class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 hover:bg-primary-100 hover:text-primary-800"
+                >
+                  {{ service.name }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
           <dl class="mt-6 space-y-3 text-sm">
-            {% if agency.phone %}
+            {% if dept.phone %}
             <div class="flex gap-x-3">
               <dt class="text-gray-400">
                 <svg
@@ -61,11 +86,11 @@ title: "Departments"
                 </svg>
               </dt>
               <dd class="text-gray-700">
-                {{ agency.phone }}
+                {{ dept.phone }}
               </dd>
             </div>
             {% endif %}
-            {% if agency.email %}
+            {% if dept.email %}
             <div class="flex gap-x-3">
               <dt class="text-gray-400">
                 <svg
@@ -84,15 +109,15 @@ title: "Departments"
               </dt>
               <dd class="text-gray-700">
                 <a
-                  href="mailto:{{ agency.email }}"
+                  href="mailto:{{ dept.email }}"
                   class="text-primary-800 hover:text-primary-500"
                 >
-                  {{ agency.email }}
+                  {{ dept.email }}
                 </a>
               </dd>
             </div>
             {% endif %}
-            {% if agency.address %}
+            {% if dept.address %}
             <div class="flex gap-x-3">
               <dt class="text-gray-400">
                 <svg
@@ -115,12 +140,12 @@ title: "Departments"
                 </svg>
               </dt>
               <dd class="text-gray-700">
-                {{ agency.address.street }}<br>
-                {{ agency.address.city }}, {{ agency.address.state }} {{ agency.address.zip }}
+                {{ dept.address.street }}<br>
+                {{ dept.address.city }}, {{ dept.address.state }} {{ dept.address.zip }}
               </dd>
             </div>
             {% endif %}
-            {% if agency.hours %}
+            {% if dept.hours %}
             <div class="flex gap-x-3">
               <dt class="text-gray-400">
                 <svg
@@ -138,12 +163,12 @@ title: "Departments"
                 </svg>
               </dt>
               <dd class="text-gray-700">
-                {% if agency.hours.monday == "24 hours" %}
+                {% if dept.hours.weekday == "24 hours" %}
                 Open 24 hours
                 {% else %}
-                Mon-Fri: {{ agency.hours.monday }}
-                {% if agency.hours.saturday %}
-                <br>Sat: {{ agency.hours.saturday }}
+                Mon-Fri: {{ dept.hours.weekday }}
+                {% if dept.hours.saturday %}
+                <br>Sat: {{ dept.hours.saturday }}
                 {% endif %}
                 {% endif %}
               </dd>
@@ -152,7 +177,6 @@ title: "Departments"
           </dl>
         </div>
       </article>
-      {% endif %}
       {% endfor %}
     </div>
 

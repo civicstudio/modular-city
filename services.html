@@ -27,9 +27,19 @@ title: "Services"
       <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {% for service in site.data.civic.services %}
         {% if service.category == category %}
+        {% assign service_detail = site.data.services | where: "civic_data_id", service.id | first %}
         <article class="relative flex flex-col rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
           <h3 class="text-lg font-semibold text-gray-900">
+            {% if service_detail %}
+            <a
+              href="/services/{{ service_detail.slug }}"
+              class="hover:text-primary-700"
+            >
+              {{ service.name }}
+            </a>
+            {% else %}
             {{ service.name }}
+            {% endif %}
           </h3>
           <p class="mt-2 text-sm text-gray-700 flex-1">
             {{ service.description }}
@@ -66,23 +76,38 @@ title: "Services"
             </div>
             {% endif %}
           </dl>
-          {% if service.documents_required %}
-          <details class="mt-4">
-            <summary class="text-sm text-primary-800 cursor-pointer hover:text-primary-500">
-              Required documents
-            </summary>
-            <ul class="mt-2 text-sm text-gray-700 list-disc list-inside">
-              {% for doc in service.documents_required %}
-              <li>{{ doc }}</li>
-              {% endfor %}
-            </ul>
-          </details>
-          {% endif %}
           {% assign agency = site.data.civic.agencies | where: "id", service.agency_id | first %}
           {% if agency %}
           <p class="mt-4 text-xs text-gray-700">
-            Provided by: {{ agency.name }}
+            Provided by:
+            <a
+              href="/departments/{{ agency.id | remove: 'modular-city-' }}"
+              class="text-primary-800 hover:text-primary-500"
+            >
+              {{ agency.name }}
+            </a>
           </p>
+          {% endif %}
+          {% if service_detail %}
+          <a
+            href="/services/{{ service_detail.slug }}"
+            class="mt-4 inline-flex items-center text-sm font-medium text-primary-800 hover:text-primary-500"
+          >
+            Learn more
+            <svg
+              class="ml-1 size-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </a>
           {% endif %}
         </article>
         {% endif %}
