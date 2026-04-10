@@ -8,6 +8,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-datapage-generator
 
+include:
+  - .well-known
+
 page_gen:
   - data: 'departments'
     template: 'department'

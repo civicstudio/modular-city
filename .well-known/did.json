@@ -1,0 +1,28 @@
+{
+  "assertionMethod": [
+    "did:web:modularcity.org#key-1"
+  ],
+  "authentication": [
+    "did:web:modularcity.org#key-1"
+  ],
+  "id": "did:web:modularcity.org",
+  "service": [
+    {
+      "id": "did:web:modularcity.org#status",
+      "serviceEndpoint": "https://modularcity.org/credentials/status/2021",
+      "type": "StatusList2021Service"
+    }
+  ],
+  "verificationMethod": [
+    {
+      "controller": "did:web:modularcity.org",
+      "id": "did:web:modularcity.org#key-1",
+      "publicKeyJwk": {
+        "crv": "Ed25519",
+        "kty": "OKP",
+        "x": "6ASY3uLDQebQtcCWFsw2EaAl8Jq9BZA8y00ftvmwA7I"
+      },
+      "type": "JsonWebKey2020"
+    }
+  ]
+}
