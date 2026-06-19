@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "inventory_id": "modular-city-public-institution-domains",
+  "jurisdiction_id": "modular-city",
+  "fictional": true,
+  "bounded_contexts": [
+    {
+      "id": "land_records",
+      "name": "Land and property records",
+      "owner": "Assessor / Recorder",
+      "aggregates": ["property", "property_title"],
+      "entities": ["property_assessment", "deed", "recorded_document"],
+      "invariants": [
+        "A parcel number is unique within the jurisdiction.",
+        "A title has a stable title number and at least one property reference.",
+        "Assessments, deeds, and recordings retain their effective or recorded dates."
+      ]
+    },
+    {
+      "id": "civil_status",
+      "name": "Civil status and vital records",
+      "owner": "City Clerk / Registrar",
+      "aggregates": ["marriage_license", "civil_union", "certificate"],
+      "entities": ["applicant", "officiant", "witness"],
+      "invariants": [
+        "A license or application number is unique within its issuing jurisdiction.",
+        "Civil-union applications use license_type=civil_union in Civil Registry.",
+        "Birth and death certificates keep type-specific claims separate."
+      ]
+    },
+    {
+      "id": "credentials",
+      "name": "Credentials and authorizations",
+      "owner": "Authorized issuing agency",
+      "aggregates": ["credential_type", "credential"],
+      "entities": ["claim", "evidence"],
+      "invariants": [
+        "Credential numbers are unique.",
+        "Every credential names an issuer, subject, type, status, and validity period.",
+        "Revocation changes status without deleting issuance history."
+      ]
+    },
+    {
+      "id": "public_meetings",
+      "name": "Public meetings and agendas",
+      "owner": "Governing body / Clerk",
+      "aggregates": ["meeting", "agenda"],
+      "entities": ["agenda_item"],
+      "invariants": [
+        "A meeting belongs to a public body and has a start time.",
+        "An agenda belongs to exactly one meeting.",
+        "Agenda item ordering is stable within an agenda."
+      ]
+    }
+  ],
+  "context_relationships": [
+    {"upstream": "land_records", "downstream": "credentials", "contract": "property and owner references"},
+    {"upstream": "civil_status", "downstream": "credentials", "contract": "registrar-issued attestations"},
+    {"upstream": "public_meetings", "downstream": "land_records", "contract": "policy and hearing decisions"},
+    {"upstream": "jurisdiction_identity", "downstream": "all", "contract": "stable jurisdiction and agency identifiers"}
+  ]
+}

@@ -1,0 +1,144 @@
+---
+layout: default
+title: "Modular City Beta"
+description: "Preview the next generation of the Modular City municipal website and browse its service catalog inventory."
+permalink: /beta/
+---
+
+<main class="bg-white">
+  <section class="relative isolate overflow-hidden border-b border-slate-200 bg-slate-950 text-white">
+    <div class="absolute inset-0 -z-10 opacity-30" aria-hidden="true">
+      <div class="absolute -right-32 -top-40 size-[36rem] rounded-full bg-primary-500 blur-3xl"></div>
+      <div class="absolute -bottom-52 left-1/4 size-[30rem] rounded-full bg-blue-500 blur-3xl"></div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
+      <div class="max-w-3xl">
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-bold text-slate-950">Beta</span>
+          <span class="text-sm font-semibold text-slate-200">A preview of the next city website</span>
+        </div>
+        <h1 class="mt-7 text-balance text-4xl font-bold tracking-tight sm:text-6xl">What do you need to do?</h1>
+        <p class="mt-5 max-w-2xl text-pretty text-lg text-slate-200 sm:text-xl/8">
+          Start with the outcome you need. We will connect you to the right service, responsible department, and available channel.
+        </p>
+        <a href="#service-catalog" class="mt-9 inline-flex items-center rounded-md bg-white px-5 py-3 text-base font-bold text-slate-950 shadow-sm hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+          Find a city service <span class="ml-2" aria-hidden="true">&darr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {% assign online_services = site.data.service_catalog | where: "provided_online", true %}
+  {% assign in_person_services = site.data.service_catalog | where: "provided_in_person", true %}
+  {% assign categories = site.data.service_catalog | map: "category" | uniq | sort %}
+
+  <section id="service-catalog" class="scroll-mt-6 py-14 sm:py-20" data-service-catalog>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid gap-8 border-b border-slate-200 pb-10 lg:grid-cols-[1fr_auto] lg:items-end">
+        <div class="max-w-3xl">
+          <p class="text-sm font-bold uppercase tracking-widest text-primary-800">Service catalog inventory</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl">One catalog. Every way to get help.</h2>
+          <p class="mt-4 text-lg text-slate-700">
+            Each listing has a named owner, audience, service area, publishing status, and delivery channel. This preview is aligned with the Touchpoints service model.
+          </p>
+        </div>
+        <dl class="grid grid-cols-3 gap-3 text-center">
+          <div class="rounded-lg bg-slate-100 px-4 py-3">
+            <dt class="text-xs font-bold uppercase tracking-wide text-slate-600">Published</dt>
+            <dd class="mt-1 text-2xl font-bold text-slate-950">{{ site.data.service_catalog | size }}</dd>
+          </div>
+          <div class="rounded-lg bg-slate-100 px-4 py-3">
+            <dt class="text-xs font-bold uppercase tracking-wide text-slate-600">Online</dt>
+            <dd class="mt-1 text-2xl font-bold text-slate-950">{{ online_services | size }}</dd>
+          </div>
+          <div class="rounded-lg bg-slate-100 px-4 py-3">
+            <dt class="text-xs font-bold uppercase tracking-wide text-slate-600">In person</dt>
+            <dd class="mt-1 text-2xl font-bold text-slate-950">{{ in_person_services | size }}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
+        <div class="grid gap-4 lg:grid-cols-[minmax(0,1fr)_15rem_12rem_auto] lg:items-end">
+          <div>
+            <label for="service-search" class="block text-sm font-bold text-slate-900">Search services</label>
+            <input id="service-search" type="search" class="mt-2 block w-full rounded-md border border-slate-400 bg-white px-4 py-3 text-base text-slate-950 shadow-sm focus:border-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-700" placeholder="Try “water,” “permit,” or “pothole”" autocomplete="off">
+          </div>
+          <div>
+            <label for="service-category" class="block text-sm font-bold text-slate-900">Topic</label>
+            <select id="service-category" class="mt-2 block w-full rounded-md border border-slate-400 bg-white px-3 py-3 text-base text-slate-950 shadow-sm focus:border-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-700">
+              <option value="">All topics</option>
+              {% for category in categories %}
+              <option value="{{ category }}">{{ category | replace: "_", " " | replace: "permits licenses", "Permits & licenses" | replace: "records documents", "Records & documents" | replace: "payments taxes", "Payments & taxes" | replace: "elections voting", "Elections & voting" | capitalize }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <label for="service-channel" class="block text-sm font-bold text-slate-900">Available by</label>
+            <select id="service-channel" class="mt-2 block w-full rounded-md border border-slate-400 bg-white px-3 py-3 text-base text-slate-950 shadow-sm focus:border-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-700">
+              <option value="">Any channel</option>
+              <option value="online">Online</option>
+              <option value="in-person">In person</option>
+            </select>
+          </div>
+          <button id="service-filter-reset" type="button" class="rounded-md border border-slate-400 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700">Reset</button>
+        </div>
+      </div>
+
+      <div class="mt-7 flex items-center justify-between gap-4">
+        <p id="service-result-count" class="text-sm font-bold text-slate-800" aria-live="polite">{{ site.data.service_catalog | size }} services</p>
+        <a href="/service-catalog.json" class="text-sm font-bold text-primary-800 hover:text-primary-600">View catalog JSON <span aria-hidden="true">&rarr;</span></a>
+      </div>
+
+      <div class="mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {% for service in site.data.service_catalog %}
+        <article
+          data-service-card
+          data-category="{{ service.category }}"
+          data-channels="{% if service.provided_online %}online {% endif %}{% if service.provided_in_person %}in-person{% endif %}"
+          data-search="{{ service.name | escape }} {{ service.description | escape }} {{ service.target_audience | escape }} {{ service.organization_name | escape }} {{ service.service_type | escape }}"
+          class="flex flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-md"
+        >
+          <div class="flex flex-wrap gap-2">
+            {% if service.provided_online %}<span class="rounded-full bg-blue-50 px-2.5 py-1 text-xs font-bold text-blue-800">Online</span>{% endif %}
+            {% if service.provided_in_person %}<span class="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-bold text-amber-900">In person</span>{% endif %}
+          </div>
+          <h3 class="mt-5 text-xl font-bold text-slate-950">
+            <a href="{{ service.website_url }}" class="hover:text-primary-700">{{ service.name }}</a>
+          </h3>
+          <p class="mt-3 flex-1 text-sm/6 text-slate-700">{{ service.description }}</p>
+          <dl class="mt-6 space-y-3 border-t border-slate-100 pt-4 text-sm">
+            <div class="flex justify-between gap-4">
+              <dt class="text-slate-600">For</dt>
+              <dd class="text-right font-semibold text-slate-900">{{ service.target_audience }}</dd>
+            </div>
+            <div class="flex justify-between gap-4">
+              <dt class="text-slate-600">Owner</dt>
+              <dd class="text-right font-semibold text-slate-900">{{ service.organization_name }}</dd>
+            </div>
+          </dl>
+          <a href="{{ service.website_url }}" class="mt-5 inline-flex items-center text-sm font-bold text-primary-800 hover:text-primary-600">View service <span class="ml-1" aria-hidden="true">&rarr;</span></a>
+        </article>
+        {% endfor %}
+      </div>
+
+      <div id="service-empty-state" class="mt-8 rounded-xl border border-dashed border-slate-400 bg-slate-50 p-10 text-center" hidden>
+        <h3 class="text-lg font-bold text-slate-950">No services match those filters</h3>
+        <p class="mt-2 text-slate-700">Try a broader search or reset the catalog.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary-800 text-white">
+    <div class="mx-auto grid max-w-7xl gap-8 px-6 py-14 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-widest text-primary-100">Built as public infrastructure</p>
+        <h2 class="mt-3 text-3xl font-bold">The page and the inventory stay connected.</h2>
+        <p class="mt-3 max-w-3xl text-primary-100">The same catalog can power this website, Touchpoints service models, civic assistants, and open-data exports without maintaining separate lists.</p>
+      </div>
+      <a href="/seed/domain-inventory.json" class="inline-flex rounded-md bg-white px-5 py-3 text-sm font-bold text-primary-800 hover:bg-primary-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Explore the domain inventory</a>
+    </div>
+  </section>
+</main>
+
+<script src="{{ '/assets/js/beta-service-catalog.js' | relative_url }}" defer></script>

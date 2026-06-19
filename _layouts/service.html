@@ -304,6 +304,53 @@ layout: default
     </section>
     {% endif %}
 
+    <!-- Feedback (Touchpoints) -->
+    <section
+      class="mt-10 pt-10 border-t border-gray-200"
+      aria-labelledby="feedback-heading"
+    >
+      <h2
+        id="feedback-heading"
+        class="text-lg font-semibold text-gray-900 mb-2"
+      >
+        Was this page helpful?
+      </h2>
+      <p class="text-sm text-gray-700 mb-4">
+        Share feedback about this service.
+        Responses are collected via
+        <a
+          href="https://touchpoints.app"
+          class="text-primary-800 hover:text-primary-500"
+          target="_blank"
+          rel="noopener"
+        >
+          Touchpoints
+        </a>,
+        an open user-feedback platform for public service teams.
+      </p>
+      <div
+        id="touchpoints-form-container"
+        data-touchpoints-form-id="REPLACE_WITH_FORM_UUID"
+      >
+        <noscript>
+          <p class="text-sm text-gray-700">
+            JavaScript is required to load the feedback form.
+            You can also email feedback to
+            <a
+              href="mailto:{{ site.data.civic.jurisdiction.contact_email | default: 'feedback@modularcity.org' }}"
+              class="text-primary-800 hover:text-primary-500"
+            >
+              {{ site.data.civic.jurisdiction.contact_email | default: 'feedback@modularcity.org' }}
+            </a>.
+          </p>
+        </noscript>
+      </div>
+      <script
+        src="https://touchpoints.app/assets/touchpoints.js"
+        async
+      ></script>
+    </section>
+
     <!-- Data source -->
     <footer class="mt-12 pt-6 border-t border-gray-200 text-center">
       <p class="text-sm text-gray-700">

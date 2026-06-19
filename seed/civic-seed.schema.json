@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://modularcity.org/schema/civic-seed.schema.json",
+  "title": "Modular City civic domain seed",
+  "type": "object",
+  "required": [
+    "schema_version", "seed_id", "fictional", "jurisdiction", "properties",
+    "property_titles", "property_assessments", "deeds", "recorded_documents",
+    "marriage_licenses", "civil_unions", "credentials", "certificates",
+    "meetings", "agendas", "agenda_items"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "seed_id": {"type": "string"},
+    "fictional": {"const": true},
+    "jurisdiction": {"$ref": "#/$defs/identified"},
+    "agencies": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
+    "properties": {"$ref": "#/$defs/seedCollection"},
+    "property_titles": {"$ref": "#/$defs/seedCollection"},
+    "property_assessments": {"$ref": "#/$defs/seedCollection"},
+    "deeds": {"$ref": "#/$defs/seedCollection"},
+    "recorded_documents": {"$ref": "#/$defs/seedCollection"},
+    "marriage_licenses": {"$ref": "#/$defs/seedCollection"},
+    "civil_unions": {"$ref": "#/$defs/seedCollection"},
+    "credential_types": {"$ref": "#/$defs/seedCollection"},
+    "credentials": {"$ref": "#/$defs/seedCollection"},
+    "certificates": {"$ref": "#/$defs/seedCollection"},
+    "meetings": {"$ref": "#/$defs/seedCollection"},
+    "agendas": {"$ref": "#/$defs/seedCollection"},
+    "agenda_items": {"$ref": "#/$defs/seedCollection"}
+  },
+  "$defs": {
+    "identified": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {"id": {"type": "string", "minLength": 1}},
+      "additionalProperties": true
+    },
+    "seedCollection": {
+      "type": "array",
+      "minItems": 10,
+      "items": {"$ref": "#/$defs/identified"}
+    }
+  }
+}
