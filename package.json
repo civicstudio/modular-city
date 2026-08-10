@@ -1,23 +1,26 @@
 {
-  "name": "s3-jekyll",
+  "name": "modular-city",
   "version": "1.0.0",
-  "description": "jekyll with tailwind to s3 via github actions",
+  "description": "A data-driven example website for public agencies and nonprofits",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.0"
   },
   "scripts": {
     "build:css": "npx @tailwindcss/cli -i ./assets/css/tailwind.css -o ./assets/css/main.css --minify",
     "build": "npm run build:css",
-    "test": "bundle exec rake a11y"
+    "dev": "bin/dev",
+    "setup:data": "bin/setup --data-only",
+    "test:data": "node scripts/validate_city_data.mjs",
+    "test": "npm run setup:data && npm run test:data && bundle exec rake a11y"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/afomi/jekyll-with-tailwind.git"
+    "url": "git+https://github.com/civicstudio/modular-city.git"
   },
   "author": "ryanwold.net",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/afomi/jekyll-with-tailwind/issues"
+    "url": "https://github.com/civicstudio/modular-city/issues"
   },
-  "homepage": "https://github.com/afomi/jekyll-with-tailwind#readme"
+  "homepage": "https://modularcity.org"
 }
