@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+modular_city_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "${modular_city_root}"
+
+if [[ ! -f "_data/city/services.json" ]]; then
+  bin/setup --data-only
+fi
+
+node scripts/validate_city_data.mjs
+npm run build:css
+
+echo "Watching the site and city JSON. Jekyll will print the local address below."
+echo "Try changing a service name in _data/city/services.json."
+exec bundle exec jekyll serve --livereload "$@"

@@ -44,15 +44,15 @@ permalink: /beta/
         </div>
         <dl class="grid grid-cols-3 gap-3 text-center">
           <div class="rounded-lg bg-slate-100 px-4 py-3">
-            <dt class="text-xs font-bold uppercase tracking-wide text-slate-600">Published</dt>
+            <dt class="text-xs font-bold uppercase tracking-wide text-slate-700">Published</dt>
             <dd class="mt-1 text-2xl font-bold text-slate-950">{{ site.data.service_catalog | size }}</dd>
           </div>
           <div class="rounded-lg bg-slate-100 px-4 py-3">
-            <dt class="text-xs font-bold uppercase tracking-wide text-slate-600">Online</dt>
+            <dt class="text-xs font-bold uppercase tracking-wide text-slate-700">Online</dt>
             <dd class="mt-1 text-2xl font-bold text-slate-950">{{ online_services | size }}</dd>
           </div>
           <div class="rounded-lg bg-slate-100 px-4 py-3">
-            <dt class="text-xs font-bold uppercase tracking-wide text-slate-600">In person</dt>
+            <dt class="text-xs font-bold uppercase tracking-wide text-slate-700">In person</dt>
             <dd class="mt-1 text-2xl font-bold text-slate-950">{{ in_person_services | size }}</dd>
           </div>
         </dl>
@@ -117,7 +117,7 @@ permalink: /beta/
               <dd class="text-right font-semibold text-slate-900">{{ service.organization_name }}</dd>
             </div>
           </dl>
-          <a href="{{ service.website_url }}" class="mt-5 inline-flex items-center text-sm font-bold text-primary-800 hover:text-primary-600">View service <span class="ml-1" aria-hidden="true">&rarr;</span></a>
+          <a href="{{ service.website_url }}" class="mt-5 inline-flex items-center text-sm font-bold text-primary-800 hover:text-primary-600">View {{ service.name }} <span class="ml-1" aria-hidden="true">&rarr;</span></a>
         </article>
         {% endfor %}
       </div>
@@ -136,7 +136,10 @@ permalink: /beta/
         <h2 class="mt-3 text-3xl font-bold">The page and the inventory stay connected.</h2>
         <p class="mt-3 max-w-3xl text-primary-100">The same catalog can power this website, Touchpoints service models, civic assistants, and open-data exports without maintaining separate lists.</p>
       </div>
-      <a href="/seed/domain-inventory.json" class="inline-flex rounded-md bg-white px-5 py-3 text-sm font-bold text-primary-800 hover:bg-primary-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Explore the domain inventory</a>
+      <div class="flex flex-wrap gap-3">
+        <a href="/seed/domain-inventory.json" class="inline-flex rounded-md bg-white px-5 py-3 text-sm font-bold text-primary-800 hover:bg-primary-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Explore the domain inventory</a>
+        <a href="/stack-comparison/" class="inline-flex rounded-md border border-white px-5 py-3 text-sm font-bold text-white hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Compare stack costs</a>
+      </div>
     </div>
   </section>
 </main>

@@ -1,1 +1,487 @@
-../civic-data.json
+{
+  "$schema": "https://civic.bot/schema/civic-data.schema.json",
+  "version": "1.0",
+  "generated_at": "2026-01-18T12:00:00Z",
+  "jurisdiction": {
+    "id": "modular-city",
+    "name": "Modular City",
+    "short_name": "Modular City",
+    "type": "municipal",
+    "parent_id": "example-state",
+    "population": 45000,
+    "website": "https://modularcity.org",
+    "timezone": "America/Los_Angeles"
+  },
+  "agencies": [
+    {
+      "id": "modular-city-city-council",
+      "name": "City Council",
+      "jurisdiction_id": "modular-city",
+      "type": "legislative",
+      "description": "Elected governing body of the City of Modular City",
+      "website": "https://modularcity.org/council/",
+      "phone": "(555) 555-1000",
+      "email": "council@modularcity.org",
+      "address": {
+        "street": "100 Main Street",
+        "city": "Modular City",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "8:00 AM - 5:00 PM",
+        "tuesday": "8:00 AM - 5:00 PM",
+        "wednesday": "8:00 AM - 5:00 PM",
+        "thursday": "8:00 AM - 5:00 PM",
+        "friday": "8:00 AM - 5:00 PM",
+        "saturday": null,
+        "sunday": null
+      }
+    },
+    {
+      "id": "modular-city-city-clerk",
+      "name": "City Clerk",
+      "jurisdiction_id": "modular-city",
+      "type": "department",
+      "description": "Official records, elections, and licensing",
+      "website": "https://modularcity.org/departments/clerk/",
+      "phone": "(555) 555-1001",
+      "email": "clerk@modularcity.org",
+      "address": {
+        "street": "100 Main Street",
+        "city": "Modular City",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "8:00 AM - 5:00 PM",
+        "tuesday": "8:00 AM - 5:00 PM",
+        "wednesday": "8:00 AM - 5:00 PM",
+        "thursday": "8:00 AM - 5:00 PM",
+        "friday": "8:00 AM - 5:00 PM",
+        "saturday": null,
+        "sunday": null
+      }
+    },
+    {
+      "id": "modular-city-public-works",
+      "name": "Public Works",
+      "jurisdiction_id": "modular-city",
+      "type": "department",
+      "description": "Roads, water, and utilities",
+      "website": "https://modularcity.org/departments/public-works/",
+      "phone": "(555) 555-1002",
+      "email": "publicworks@modularcity.org",
+      "address": {
+        "street": "200 Infrastructure Way",
+        "city": "Modular City",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "7:00 AM - 4:00 PM",
+        "tuesday": "7:00 AM - 4:00 PM",
+        "wednesday": "7:00 AM - 4:00 PM",
+        "thursday": "7:00 AM - 4:00 PM",
+        "friday": "7:00 AM - 4:00 PM",
+        "saturday": null,
+        "sunday": null
+      }
+    },
+    {
+      "id": "modular-city-parks-recreation",
+      "name": "Parks & Recreation",
+      "jurisdiction_id": "modular-city",
+      "type": "department",
+      "description": "Parks, programs, and facilities",
+      "website": "https://modularcity.org/departments/parks/",
+      "phone": "(555) 555-1003",
+      "email": "parks@modularcity.org",
+      "address": {
+        "street": "50 Recreation Lane",
+        "city": "Modular City",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "8:00 AM - 6:00 PM",
+        "tuesday": "8:00 AM - 6:00 PM",
+        "wednesday": "8:00 AM - 6:00 PM",
+        "thursday": "8:00 AM - 6:00 PM",
+        "friday": "8:00 AM - 6:00 PM",
+        "saturday": "9:00 AM - 3:00 PM",
+        "sunday": null
+      }
+    },
+    {
+      "id": "modular-city-police",
+      "name": "Police Department",
+      "jurisdiction_id": "modular-city",
+      "type": "department",
+      "description": "Public safety and law enforcement",
+      "website": "https://modularcity.org/departments/police/",
+      "phone": "(555) 555-1004",
+      "email": "police@modularcity.org",
+      "address": {
+        "street": "300 Safety Boulevard",
+        "city": "Modular City",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "24 hours",
+        "tuesday": "24 hours",
+        "wednesday": "24 hours",
+        "thursday": "24 hours",
+        "friday": "24 hours",
+        "saturday": "24 hours",
+        "sunday": "24 hours"
+      }
+    },
+    {
+      "id": "modular-city-fire",
+      "name": "Fire Department",
+      "jurisdiction_id": "modular-city",
+      "type": "department",
+      "description": "Fire, EMS, and prevention services",
+      "website": "https://modularcity.org/departments/fire/",
+      "phone": "(555) 555-1005",
+      "email": "fire@modularcity.org",
+      "address": {
+        "street": "400 Emergency Drive",
+        "city": "Modular City",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "24 hours",
+        "tuesday": "24 hours",
+        "wednesday": "24 hours",
+        "thursday": "24 hours",
+        "friday": "24 hours",
+        "saturday": "24 hours",
+        "sunday": "24 hours"
+      }
+    },
+    {
+      "id": "modular-city-planning",
+      "name": "Planning & Zoning",
+      "jurisdiction_id": "modular-city",
+      "type": "department",
+      "description": "Permits, land use, and inspections",
+      "website": "https://modularcity.org/departments/planning/",
+      "phone": "(555) 555-1006",
+      "email": "planning@modularcity.org",
+      "address": {
+        "street": "100 Main Street",
+        "city": "Modular City",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "8:00 AM - 5:00 PM",
+        "tuesday": "8:00 AM - 5:00 PM",
+        "wednesday": "8:00 AM - 5:00 PM",
+        "thursday": "8:00 AM - 5:00 PM",
+        "friday": "8:00 AM - 5:00 PM",
+        "saturday": null,
+        "sunday": null
+      }
+    },
+    {
+      "id": "modular-city-finance",
+      "name": "Finance Department",
+      "jurisdiction_id": "modular-city",
+      "type": "department",
+      "description": "Budget, taxes, and procurement",
+      "website": "https://modularcity.org/departments/finance/",
+      "phone": "(555) 555-1007",
+      "email": "finance@modularcity.org",
+      "address": {
+        "street": "100 Main Street",
+        "city": "Modular City",
+        "state": "EX",
+        "zip": "00001"
+      },
+      "hours": {
+        "monday": "8:00 AM - 5:00 PM",
+        "tuesday": "8:00 AM - 5:00 PM",
+        "wednesday": "8:00 AM - 5:00 PM",
+        "thursday": "8:00 AM - 5:00 PM",
+        "friday": "8:00 AM - 5:00 PM",
+        "saturday": null,
+        "sunday": null
+      }
+    }
+  ],
+  "services": [
+    {
+      "id": "modular-city-business-license",
+      "name": "Business License Application",
+      "agency_id": "modular-city-city-clerk",
+      "category": "permits_licenses",
+      "description": "Apply for or renew a business license to operate in Modular City",
+      "url": "https://modularcity.org/services/business-license/",
+      "fees": "$75 annual fee",
+      "eligibility": "Any business operating within Modular City city limits",
+      "documents_required": [
+        "Completed application form",
+        "State tax ID",
+        "Proof of insurance"
+      ],
+      "processing_time": "3-5 business days",
+      "online_available": true
+    },
+    {
+      "id": "modular-city-public-records",
+      "name": "Public Records Request",
+      "agency_id": "modular-city-city-clerk",
+      "category": "records_documents",
+      "description": "Request copies of public records",
+      "url": "https://modularcity.org/services/records-request/",
+      "fees": "$0.25 per page for copies",
+      "eligibility": "Any person",
+      "processing_time": "5-10 business days",
+      "online_available": true
+    },
+    {
+      "id": "modular-city-voter-registration",
+      "name": "Voter Registration",
+      "agency_id": "modular-city-city-clerk",
+      "category": "elections_voting",
+      "description": "Register to vote in local elections",
+      "url": "https://modularcity.org/services/voter-registration/",
+      "fees": "Free",
+      "eligibility": "U.S. citizens 18 years or older residing in Modular City",
+      "documents_required": [
+        "Proof of identity",
+        "Proof of residence"
+      ],
+      "processing_time": "Immediate",
+      "online_available": true
+    },
+    {
+      "id": "modular-city-pothole-report",
+      "name": "Report a Pothole",
+      "agency_id": "modular-city-public-works",
+      "category": "transportation",
+      "description": "Report a pothole on a city street for repair",
+      "url": "https://modularcity.org/services/pothole-report/",
+      "fees": "Free",
+      "eligibility": "Anyone",
+      "processing_time": "7-14 days for repair",
+      "online_available": true
+    },
+    {
+      "id": "modular-city-water-service",
+      "name": "Water Service Start/Stop",
+      "agency_id": "modular-city-public-works",
+      "category": "utilities",
+      "description": "Start or stop water service at your address",
+      "url": "https://modularcity.org/services/water-service/",
+      "fees": "$25 service connection fee",
+      "eligibility": "Property owners and tenants within city water service area",
+      "documents_required": [
+        "Proof of identity",
+        "Lease agreement or deed"
+      ],
+      "processing_time": "2-3 business days",
+      "online_available": true
+    },
+    {
+      "id": "modular-city-streetlight-outage",
+      "name": "Street Light Outage",
+      "agency_id": "modular-city-public-works",
+      "category": "utilities",
+      "description": "Report a broken or flickering street light",
+      "url": "https://modularcity.org/services/streetlight-outage/",
+      "fees": "Free",
+      "processing_time": "5-7 business days",
+      "online_available": true
+    },
+    {
+      "id": "modular-city-facility-rental",
+      "name": "Facility Rental",
+      "agency_id": "modular-city-parks-recreation",
+      "category": "recreation",
+      "description": "Rent park pavilions, community rooms, and athletic fields",
+      "url": "https://modularcity.org/services/facility-rental/",
+      "fees": "$50-$200 depending on facility",
+      "eligibility": "Residents and non-residents",
+      "processing_time": "Subject to availability",
+      "online_available": true
+    },
+    {
+      "id": "modular-city-program-registration",
+      "name": "Recreation Program Registration",
+      "agency_id": "modular-city-parks-recreation",
+      "category": "recreation",
+      "description": "Register for sports leagues, classes, and activities",
+      "url": "https://modularcity.org/services/program-registration/",
+      "fees": "Varies by program",
+      "eligibility": "All ages",
+      "online_available": true
+    },
+    {
+      "id": "modular-city-building-permit",
+      "name": "Building Permit",
+      "agency_id": "modular-city-planning",
+      "category": "permits_licenses",
+      "description": "Apply for permits for construction, renovation, or demolition",
+      "url": "https://modularcity.org/services/building-permit/",
+      "fees": "Based on project valuation",
+      "documents_required": [
+        "Site plan",
+        "Construction drawings",
+        "Contractor license"
+      ],
+      "processing_time": "10-15 business days",
+      "online_available": true
+    },
+    {
+      "id": "modular-city-tax-payment",
+      "name": "Property Tax Payment",
+      "agency_id": "modular-city-finance",
+      "category": "payments_taxes",
+      "description": "Pay property taxes online or in person",
+      "url": "https://modularcity.org/services/tax-payment/",
+      "fees": "No fee for online payment",
+      "eligibility": "Property owners",
+      "online_available": true
+    }
+  ],
+  "officials": [
+    {
+      "id": "modular-city-mayor-rodriguez",
+      "name": "Eleanor Rodriguez",
+      "title": "Mayor",
+      "agency_id": "modular-city-city-council",
+      "type": "elected",
+      "email": "mayor@modularcity.org",
+      "phone": "(555) 555-1000",
+      "term_start": "2024-01-01",
+      "term_end": "2028-01-01"
+    },
+    {
+      "id": "modular-city-council-johnson",
+      "name": "Marcus Johnson",
+      "title": "Council Member - District 1",
+      "agency_id": "modular-city-city-council",
+      "type": "elected",
+      "email": "mjohnson@modularcity.org",
+      "term_start": "2024-01-01",
+      "term_end": "2028-01-01"
+    },
+    {
+      "id": "modular-city-council-park",
+      "name": "Lisa Park",
+      "title": "Council Member - District 2",
+      "agency_id": "modular-city-city-council",
+      "type": "elected",
+      "email": "lpark@modularcity.org",
+      "term_start": "2024-01-01",
+      "term_end": "2028-01-01"
+    },
+    {
+      "id": "modular-city-council-williams",
+      "name": "Thomas Williams",
+      "title": "Council Member - District 3",
+      "agency_id": "modular-city-city-council",
+      "type": "elected",
+      "email": "twilliams@modularcity.org",
+      "term_start": "2024-01-01",
+      "term_end": "2028-01-01"
+    },
+    {
+      "id": "modular-city-council-chen",
+      "name": "Amanda Chen",
+      "title": "Council Member - At Large",
+      "agency_id": "modular-city-city-council",
+      "type": "elected",
+      "email": "achen@modularcity.org",
+      "term_start": "2024-01-01",
+      "term_end": "2028-01-01"
+    },
+    {
+      "id": "modular-city-manager-foster",
+      "name": "Dr. William Foster",
+      "title": "City Manager",
+      "agency_id": "modular-city-city-council",
+      "type": "appointed",
+      "email": "manager@modularcity.org",
+      "phone": "(555) 555-1000"
+    },
+    {
+      "id": "modular-city-attorney-walsh",
+      "name": "Jennifer Walsh",
+      "title": "City Attorney",
+      "agency_id": "modular-city-city-council",
+      "type": "appointed",
+      "email": "attorney@modularcity.org",
+      "phone": "(555) 555-1010"
+    },
+    {
+      "id": "modular-city-clerk-santos",
+      "name": "Maria Santos",
+      "title": "City Clerk",
+      "agency_id": "modular-city-city-clerk",
+      "type": "appointed",
+      "email": "clerk@modularcity.org",
+      "phone": "(555) 555-1001"
+    },
+    {
+      "id": "modular-city-pw-chen",
+      "name": "James Chen",
+      "title": "Director of Public Works",
+      "agency_id": "modular-city-public-works",
+      "type": "appointed",
+      "email": "jchen@modularcity.org",
+      "phone": "(555) 555-1002"
+    },
+    {
+      "id": "modular-city-parks-williams",
+      "name": "Angela Williams",
+      "title": "Director of Parks & Recreation",
+      "agency_id": "modular-city-parks-recreation",
+      "type": "appointed",
+      "email": "awilliams@modularcity.org",
+      "phone": "(555) 555-1003"
+    },
+    {
+      "id": "modular-city-police-kim",
+      "name": "Robert Kim",
+      "title": "Chief of Police",
+      "agency_id": "modular-city-police",
+      "type": "appointed",
+      "email": "rkim@modularcity.org",
+      "phone": "(555) 555-1004"
+    },
+    {
+      "id": "modular-city-fire-okonkwo",
+      "name": "Patricia Okonkwo",
+      "title": "Fire Chief",
+      "agency_id": "modular-city-fire",
+      "type": "appointed",
+      "email": "pokonkwo@modularcity.org",
+      "phone": "(555) 555-1005"
+    },
+    {
+      "id": "modular-city-planning-martinez",
+      "name": "David Martinez",
+      "title": "Director of Planning & Zoning",
+      "agency_id": "modular-city-planning",
+      "type": "appointed",
+      "email": "dmartinez@modularcity.org",
+      "phone": "(555) 555-1006"
+    },
+    {
+      "id": "modular-city-finance-thompson",
+      "name": "Sarah Thompson",
+      "title": "Finance Director",
+      "agency_id": "modular-city-finance",
+      "type": "appointed",
+      "email": "sthompson@modularcity.org",
+      "phone": "(555) 555-1007"
+    }
+  ]
+}

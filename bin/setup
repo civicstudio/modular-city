@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+modular_city_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+example_data_dir="${modular_city_root}/_data"
+city_data_dir="${example_data_dir}/city"
+data_only=false
+
+if [[ "${1:-}" == "--data-only" ]]; then
+  data_only=true
+elif [[ $# -gt 0 ]]; then
+  echo "Usage: bin/setup [--data-only]" >&2
+  exit 2
+fi
+
+mkdir -p "${city_data_dir}"
+
+command -v node >/dev/null 2>&1 || {
+  echo "Node.js 22 is required. Install Node.js, then run bin/setup again." >&2
+  exit 1
+}
+
+copied_count=0
+kept_count=0
+for example_file in "${example_data_dir}"/*.json; do
+  city_file="${city_data_dir}/$(basename "${example_file}")"
+  if [[ -e "${city_file}" ]]; then
+    kept_count=$((kept_count + 1))
+  else
+    cp -L "${example_file}" "${city_file}"
+    copied_count=$((copied_count + 1))
+  fi
+done
+
+echo "City data ready: copied ${copied_count}, preserved ${kept_count}."
+node "${modular_city_root}/scripts/validate_city_data.mjs"
+
+if [[ "${data_only}" == true ]]; then
+  exit 0
+fi
+
+command -v bundle >/dev/null 2>&1 || {
+  echo "Bundler is required. Install Ruby 3.4.8 and Bundler, then run bin/setup again." >&2
+  exit 1
+}
+command -v npm >/dev/null 2>&1 || {
+  echo "npm is required. Install Node.js 22, then run bin/setup again." >&2
+  exit 1
+}
+
+if ! bundle check >/dev/null 2>&1; then
+  bundle install
+fi
+npm install
+npm run build:css
+
+echo "Setup complete. Run bin/dev, then visit http://127.0.0.1:4000/."
+echo "Edit _data/city/services.json to try the live data workflow."

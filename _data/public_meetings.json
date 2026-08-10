@@ -1,0 +1,3388 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-18T00:00:00Z",
+  "jurisdiction": {
+    "id": "modular-city",
+    "name": "Modular City",
+    "timezone": "America/Los_Angeles"
+  },
+  "bodies": [
+    {
+      "id": "modular-city-zoning-appeals-board",
+      "name": "Board of Zoning Appeals",
+      "slug": "zoning-appeals-board",
+      "legislative_type": "board",
+      "size": 5,
+      "description": "Hears appeals and variance requests involving the city zoning code.",
+      "charter": "Modular City Charter, Article VIII",
+      "term_length": "3 years",
+      "term_limits": "Two consecutive terms",
+      "meeting_schedule": "First Wednesday of each month at 6:00 PM",
+      "url": "https://modularcity.org/government/zoning-appeals-board",
+      "meeting_url": "https://modularcity.org/calendar#zoning-appeals-board",
+      "source": "modular-city-demo",
+      "aasm_state": "active",
+      "agency_external_id": "modular-city-planning",
+      "jurisdiction_id": "modular-city",
+      "positions": [
+        {
+          "id": "zab-chair",
+          "title": "Chair",
+          "seat": 1
+        },
+        {
+          "id": "zab-vice-chair",
+          "title": "Vice Chair",
+          "seat": 2
+        },
+        {
+          "id": "zab-member-3",
+          "title": "Member",
+          "seat": 3
+        },
+        {
+          "id": "zab-member-4",
+          "title": "Member",
+          "seat": 4
+        },
+        {
+          "id": "zab-member-5",
+          "title": "Member",
+          "seat": 5
+        }
+      ]
+    },
+    {
+      "id": "modular-city-planning-commission",
+      "name": "Planning Commission",
+      "slug": "planning-commission",
+      "legislative_type": "commission",
+      "size": 7,
+      "description": "Reviews land-use plans, subdivisions, and recommendations for zoning policy.",
+      "charter": "Modular City Code, Chapter 18",
+      "term_length": "4 years",
+      "term_limits": "Two consecutive terms",
+      "meeting_schedule": "Second and fourth Tuesday of each month at 6:30 PM",
+      "url": "https://modularcity.org/government/planning-commission",
+      "meeting_url": "https://modularcity.org/calendar#planning-commission",
+      "source": "modular-city-demo",
+      "aasm_state": "active",
+      "agency_external_id": "modular-city-planning",
+      "jurisdiction_id": "modular-city",
+      "positions": [
+        {
+          "id": "planning-chair",
+          "title": "Chair",
+          "seat": 1
+        },
+        {
+          "id": "planning-vice-chair",
+          "title": "Vice Chair",
+          "seat": 2
+        },
+        {
+          "id": "planning-member-3",
+          "title": "Commissioner",
+          "seat": 3
+        },
+        {
+          "id": "planning-member-4",
+          "title": "Commissioner",
+          "seat": 4
+        },
+        {
+          "id": "planning-member-5",
+          "title": "Commissioner",
+          "seat": 5
+        },
+        {
+          "id": "planning-member-6",
+          "title": "Commissioner",
+          "seat": 6
+        },
+        {
+          "id": "planning-member-7",
+          "title": "Commissioner",
+          "seat": 7
+        }
+      ]
+    },
+    {
+      "id": "modular-city-historic-preservation-commission",
+      "name": "Historic Preservation Commission",
+      "slug": "historic-preservation-commission",
+      "legislative_type": "commission",
+      "size": 5,
+      "description": "Protects historic resources and reviews work proposed in designated historic districts.",
+      "charter": "Modular City Code, Chapter 22",
+      "term_length": "3 years",
+      "term_limits": "None",
+      "meeting_schedule": "Third Thursday of each month at 5:30 PM",
+      "url": "https://modularcity.org/government/historic-preservation-commission",
+      "meeting_url": "https://modularcity.org/calendar#historic-preservation-commission",
+      "source": "modular-city-demo",
+      "aasm_state": "active",
+      "agency_external_id": "modular-city-planning",
+      "jurisdiction_id": "modular-city",
+      "positions": [
+        {
+          "id": "historic-chair",
+          "title": "Chair",
+          "seat": 1
+        },
+        {
+          "id": "historic-vice-chair",
+          "title": "Vice Chair",
+          "seat": 2
+        },
+        {
+          "id": "historic-member-3",
+          "title": "Commissioner",
+          "seat": 3
+        },
+        {
+          "id": "historic-member-4",
+          "title": "Commissioner",
+          "seat": 4
+        },
+        {
+          "id": "historic-member-5",
+          "title": "Commissioner",
+          "seat": 5
+        }
+      ]
+    },
+    {
+      "id": "modular-city-parks-recreation-commission",
+      "name": "Parks and Recreation Commission",
+      "slug": "parks-recreation-commission",
+      "legislative_type": "commission",
+      "size": 7,
+      "description": "Advises on parks, recreation programs, facilities, trails, and capital priorities.",
+      "charter": "Modular City Code, Chapter 12",
+      "term_length": "3 years",
+      "term_limits": "Two consecutive terms",
+      "meeting_schedule": "Second Monday of each month at 6:00 PM",
+      "url": "https://modularcity.org/government/parks-recreation-commission",
+      "meeting_url": "https://modularcity.org/calendar#parks-recreation-commission",
+      "source": "modular-city-demo",
+      "aasm_state": "active",
+      "agency_external_id": "modular-city-parks-recreation",
+      "jurisdiction_id": "modular-city",
+      "positions": [
+        {
+          "id": "parks-chair",
+          "title": "Chair",
+          "seat": 1
+        },
+        {
+          "id": "parks-vice-chair",
+          "title": "Vice Chair",
+          "seat": 2
+        },
+        {
+          "id": "parks-member-3",
+          "title": "Commissioner",
+          "seat": 3
+        },
+        {
+          "id": "parks-member-4",
+          "title": "Commissioner",
+          "seat": 4
+        },
+        {
+          "id": "parks-member-5",
+          "title": "Commissioner",
+          "seat": 5
+        },
+        {
+          "id": "parks-member-6",
+          "title": "Commissioner",
+          "seat": 6
+        },
+        {
+          "id": "parks-member-7",
+          "title": "Commissioner",
+          "seat": 7
+        }
+      ]
+    }
+  ],
+  "meetings": [
+    {
+      "id": "meeting-001",
+      "jurisdiction_id": "modular-city",
+      "body_external_id": "modular-city-zoning-appeals-board",
+      "title": "Zoning appeals meeting 1",
+      "meeting_type": "regular",
+      "description": "Public meeting concerning zoning appeals",
+      "start_time": "2025-01-15T02:00:00Z",
+      "end_time": "2025-01-15T04:00:00Z",
+      "timezone": "America/Los_Angeles",
+      "location_name": "Modular City Hall",
+      "location_address": "100 Main Street, Modular City, EX 00001",
+      "location_room": "Council Chamber",
+      "virtual_url": "https://meet.modularcity.org/meeting-001",
+      "is_hybrid": true,
+      "agenda_url": "https://modularcity.org/meetings/meeting-001/agenda",
+      "minutes_url": "https://modularcity.org/meetings/meeting-001/minutes.pdf",
+      "video_url": "https://video.modularcity.org/meetings/meeting-001",
+      "public_comment_enabled": true,
+      "public_comment_email": "publiccomment@modularcity.org",
+      "status": "completed",
+      "external_id": "MC-MTG-2025-0001",
+      "source_url": "https://modularcity.org/meetings/meeting-001",
+      "agenda_id": "agenda-001",
+      "body": {
+        "id": "modular-city-zoning-appeals-board",
+        "name": "Board of Zoning Appeals",
+        "slug": "zoning-appeals-board",
+        "legislative_type": "board",
+        "size": 5,
+        "description": "Hears appeals and variance requests involving the city zoning code.",
+        "charter": "Modular City Charter, Article VIII",
+        "term_length": "3 years",
+        "term_limits": "Two consecutive terms",
+        "meeting_schedule": "First Wednesday of each month at 6:00 PM",
+        "url": "https://modularcity.org/government/zoning-appeals-board",
+        "meeting_url": "https://modularcity.org/calendar#zoning-appeals-board",
+        "source": "modular-city-demo",
+        "aasm_state": "active",
+        "agency_external_id": "modular-city-planning",
+        "jurisdiction_id": "modular-city",
+        "positions": [
+          {
+            "id": "zab-chair",
+            "title": "Chair",
+            "seat": 1
+          },
+          {
+            "id": "zab-vice-chair",
+            "title": "Vice Chair",
+            "seat": 2
+          },
+          {
+            "id": "zab-member-3",
+            "title": "Member",
+            "seat": 3
+          },
+          {
+            "id": "zab-member-4",
+            "title": "Member",
+            "seat": 4
+          },
+          {
+            "id": "zab-member-5",
+            "title": "Member",
+            "seat": 5
+          }
+        ]
+      },
+      "local_date": "2025-01-14",
+      "local_start_time": "6:00 PM",
+      "local_end_time": "8:00 PM",
+      "agenda": {
+        "id": "agenda-001",
+        "meeting_id": "meeting-001",
+        "title": "Agenda — Zoning appeals meeting 1",
+        "status": "published",
+        "published_at": "2025-01-10T17:00:00Z",
+        "source_url": "https://modularcity.org/meetings/meeting-001/agenda",
+        "agenda_item_ids": [
+          "agenda-item-001-001",
+          "agenda-item-001-002",
+          "agenda-item-001-003",
+          "agenda-item-001-004",
+          "agenda-item-001-005",
+          "agenda-item-001-006",
+          "agenda-item-001-007"
+        ],
+        "items": [
+          {
+            "id": "agenda-item-001-001",
+            "agenda_id": "agenda-001",
+            "meeting_id": "meeting-001",
+            "item_number": "1.0",
+            "title": "Call to order and pledge",
+            "description": "Call to order and pledge concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "ceremonial",
+            "display_order": 1,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-001/1.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-001/1/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-001/1/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-001/1/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-001-001"
+          },
+          {
+            "id": "agenda-item-001-002",
+            "agenda_id": "agenda-001",
+            "meeting_id": "meeting-001",
+            "item_number": "2.0",
+            "title": "Roll call and disclosure of conflicts",
+            "description": "Roll call and disclosure of conflicts concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 2,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-001/2.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-001/2/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-001/2/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-001/2/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-001-002"
+          },
+          {
+            "id": "agenda-item-001-003",
+            "agenda_id": "agenda-001",
+            "meeting_id": "meeting-001",
+            "item_number": "3.0",
+            "title": "Approval of prior meeting minutes",
+            "description": "Approval of prior meeting minutes concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 3,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-001/3.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-001/3/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-001/3/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-001/3/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-001-003"
+          },
+          {
+            "id": "agenda-item-001-004",
+            "agenda_id": "agenda-001",
+            "meeting_id": "meeting-001",
+            "item_number": "4.0",
+            "title": "General public comment",
+            "description": "General public comment concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "discussion",
+            "display_order": 4,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-001/4.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-001/4/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-001/4/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-001/4/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-001-004"
+          },
+          {
+            "id": "agenda-item-001-005",
+            "agenda_id": "agenda-001",
+            "meeting_id": "meeting-001",
+            "item_number": "5.0",
+            "title": "Consent calendar",
+            "description": "Consent calendar concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 5,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-001/5.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-001/5/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-001/5/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-001/5/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-001-005"
+          },
+          {
+            "id": "agenda-item-001-006",
+            "agenda_id": "agenda-001",
+            "meeting_id": "meeting-001",
+            "item_number": "6.0",
+            "title": "Department performance and staffing report",
+            "description": "Department performance and staffing report concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 6,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-001/6.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-001-6.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-001/6/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-001/6/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-001/6/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-001-006"
+          },
+          {
+            "id": "agenda-item-001-007",
+            "agenda_id": "agenda-001",
+            "meeting_id": "meeting-001",
+            "item_number": "7.0",
+            "title": "Public hearing on the annual policy update",
+            "description": "Public hearing on the annual policy update concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "public_hearing",
+            "display_order": 7,
+            "public_comment_period": true,
+            "public_hearing": true,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-001/7.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-001-7.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-001/7/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-001/7/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-001/7/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-001-007"
+          }
+        ]
+      }
+    },
+    {
+      "id": "meeting-002",
+      "jurisdiction_id": "modular-city",
+      "body_external_id": "modular-city-planning-commission",
+      "title": "Housing and land use meeting 2",
+      "meeting_type": "public_hearing",
+      "description": "Public meeting concerning housing and land use",
+      "start_time": "2025-01-22T02:00:00Z",
+      "end_time": "2025-01-22T04:00:00Z",
+      "timezone": "America/Los_Angeles",
+      "location_name": "Modular City Hall",
+      "location_address": "100 Main Street, Modular City, EX 00001",
+      "location_room": "Room 204",
+      "virtual_url": "https://meet.modularcity.org/meeting-002",
+      "is_hybrid": true,
+      "agenda_url": "https://modularcity.org/meetings/meeting-002/agenda",
+      "minutes_url": "https://modularcity.org/meetings/meeting-002/minutes.pdf",
+      "video_url": "https://video.modularcity.org/meetings/meeting-002",
+      "public_comment_enabled": true,
+      "public_comment_email": "publiccomment@modularcity.org",
+      "status": "completed",
+      "external_id": "MC-MTG-2025-0002",
+      "source_url": "https://modularcity.org/meetings/meeting-002",
+      "agenda_id": "agenda-002",
+      "body": {
+        "id": "modular-city-planning-commission",
+        "name": "Planning Commission",
+        "slug": "planning-commission",
+        "legislative_type": "commission",
+        "size": 7,
+        "description": "Reviews land-use plans, subdivisions, and recommendations for zoning policy.",
+        "charter": "Modular City Code, Chapter 18",
+        "term_length": "4 years",
+        "term_limits": "Two consecutive terms",
+        "meeting_schedule": "Second and fourth Tuesday of each month at 6:30 PM",
+        "url": "https://modularcity.org/government/planning-commission",
+        "meeting_url": "https://modularcity.org/calendar#planning-commission",
+        "source": "modular-city-demo",
+        "aasm_state": "active",
+        "agency_external_id": "modular-city-planning",
+        "jurisdiction_id": "modular-city",
+        "positions": [
+          {
+            "id": "planning-chair",
+            "title": "Chair",
+            "seat": 1
+          },
+          {
+            "id": "planning-vice-chair",
+            "title": "Vice Chair",
+            "seat": 2
+          },
+          {
+            "id": "planning-member-3",
+            "title": "Commissioner",
+            "seat": 3
+          },
+          {
+            "id": "planning-member-4",
+            "title": "Commissioner",
+            "seat": 4
+          },
+          {
+            "id": "planning-member-5",
+            "title": "Commissioner",
+            "seat": 5
+          },
+          {
+            "id": "planning-member-6",
+            "title": "Commissioner",
+            "seat": 6
+          },
+          {
+            "id": "planning-member-7",
+            "title": "Commissioner",
+            "seat": 7
+          }
+        ]
+      },
+      "local_date": "2025-01-21",
+      "local_start_time": "6:00 PM",
+      "local_end_time": "8:00 PM",
+      "agenda": {
+        "id": "agenda-002",
+        "meeting_id": "meeting-002",
+        "title": "Agenda — Housing and land use meeting 2",
+        "status": "published",
+        "published_at": "2025-01-17T17:00:00Z",
+        "source_url": "https://modularcity.org/meetings/meeting-002/agenda",
+        "agenda_item_ids": [
+          "agenda-item-002-001",
+          "agenda-item-002-002",
+          "agenda-item-002-003",
+          "agenda-item-002-004",
+          "agenda-item-002-005",
+          "agenda-item-002-006",
+          "agenda-item-002-007",
+          "agenda-item-002-008"
+        ],
+        "items": [
+          {
+            "id": "agenda-item-002-001",
+            "agenda_id": "agenda-002",
+            "meeting_id": "meeting-002",
+            "item_number": "1.0",
+            "title": "Call to order and pledge",
+            "description": "Call to order and pledge concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "ceremonial",
+            "display_order": 1,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-002/1.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-002/1/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-002/1/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-002/1/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-002-001"
+          },
+          {
+            "id": "agenda-item-002-002",
+            "agenda_id": "agenda-002",
+            "meeting_id": "meeting-002",
+            "item_number": "2.0",
+            "title": "Roll call and disclosure of conflicts",
+            "description": "Roll call and disclosure of conflicts concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 2,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-002/2.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-002/2/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-002/2/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-002/2/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-002-002"
+          },
+          {
+            "id": "agenda-item-002-003",
+            "agenda_id": "agenda-002",
+            "meeting_id": "meeting-002",
+            "item_number": "3.0",
+            "title": "Approval of prior meeting minutes",
+            "description": "Approval of prior meeting minutes concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 3,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-002/3.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-002/3/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-002/3/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-002/3/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-002-003"
+          },
+          {
+            "id": "agenda-item-002-004",
+            "agenda_id": "agenda-002",
+            "meeting_id": "meeting-002",
+            "item_number": "4.0",
+            "title": "General public comment",
+            "description": "General public comment concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "discussion",
+            "display_order": 4,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-002/4.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-002/4/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-002/4/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-002/4/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-002-004"
+          },
+          {
+            "id": "agenda-item-002-005",
+            "agenda_id": "agenda-002",
+            "meeting_id": "meeting-002",
+            "item_number": "5.0",
+            "title": "Consent calendar",
+            "description": "Consent calendar concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 5,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-002/5.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-002/5/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-002/5/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-002/5/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-002-005"
+          },
+          {
+            "id": "agenda-item-002-006",
+            "agenda_id": "agenda-002",
+            "meeting_id": "meeting-002",
+            "item_number": "6.0",
+            "title": "Department performance and staffing report",
+            "description": "Department performance and staffing report concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 6,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-002/6.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-002-6.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-002/6/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-002/6/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-002/6/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-002-006"
+          },
+          {
+            "id": "agenda-item-002-007",
+            "agenda_id": "agenda-002",
+            "meeting_id": "meeting-002",
+            "item_number": "7.0",
+            "title": "Public hearing on the annual policy update",
+            "description": "Public hearing on the annual policy update concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "public_hearing",
+            "display_order": 7,
+            "public_comment_period": true,
+            "public_hearing": true,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-002/7.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-002-7.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-002/7/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-002/7/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-002/7/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-002-007"
+          },
+          {
+            "id": "agenda-item-002-008",
+            "agenda_id": "agenda-002",
+            "meeting_id": "meeting-002",
+            "item_number": "8.0",
+            "title": "Capital improvement project authorization",
+            "description": "Capital improvement project authorization concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 8,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-002/8.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-002-8.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-002/8/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-002/8/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-002/8/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-002-008"
+          }
+        ]
+      }
+    },
+    {
+      "id": "meeting-003",
+      "jurisdiction_id": "modular-city",
+      "body_external_id": "modular-city-historic-preservation-commission",
+      "title": "Historic landmarks meeting 3",
+      "meeting_type": "regular",
+      "description": "Public meeting concerning historic landmarks",
+      "start_time": "2025-01-29T02:00:00Z",
+      "end_time": "2025-01-29T04:00:00Z",
+      "timezone": "America/Los_Angeles",
+      "location_name": "Modular City Hall",
+      "location_address": "100 Main Street, Modular City, EX 00001",
+      "location_room": "Council Chamber",
+      "virtual_url": "https://meet.modularcity.org/meeting-003",
+      "is_hybrid": true,
+      "agenda_url": "https://modularcity.org/meetings/meeting-003/agenda",
+      "minutes_url": "https://modularcity.org/meetings/meeting-003/minutes.pdf",
+      "video_url": "https://video.modularcity.org/meetings/meeting-003",
+      "public_comment_enabled": true,
+      "public_comment_email": "publiccomment@modularcity.org",
+      "status": "completed",
+      "external_id": "MC-MTG-2025-0003",
+      "source_url": "https://modularcity.org/meetings/meeting-003",
+      "agenda_id": "agenda-003",
+      "body": {
+        "id": "modular-city-historic-preservation-commission",
+        "name": "Historic Preservation Commission",
+        "slug": "historic-preservation-commission",
+        "legislative_type": "commission",
+        "size": 5,
+        "description": "Protects historic resources and reviews work proposed in designated historic districts.",
+        "charter": "Modular City Code, Chapter 22",
+        "term_length": "3 years",
+        "term_limits": "None",
+        "meeting_schedule": "Third Thursday of each month at 5:30 PM",
+        "url": "https://modularcity.org/government/historic-preservation-commission",
+        "meeting_url": "https://modularcity.org/calendar#historic-preservation-commission",
+        "source": "modular-city-demo",
+        "aasm_state": "active",
+        "agency_external_id": "modular-city-planning",
+        "jurisdiction_id": "modular-city",
+        "positions": [
+          {
+            "id": "historic-chair",
+            "title": "Chair",
+            "seat": 1
+          },
+          {
+            "id": "historic-vice-chair",
+            "title": "Vice Chair",
+            "seat": 2
+          },
+          {
+            "id": "historic-member-3",
+            "title": "Commissioner",
+            "seat": 3
+          },
+          {
+            "id": "historic-member-4",
+            "title": "Commissioner",
+            "seat": 4
+          },
+          {
+            "id": "historic-member-5",
+            "title": "Commissioner",
+            "seat": 5
+          }
+        ]
+      },
+      "local_date": "2025-01-28",
+      "local_start_time": "6:00 PM",
+      "local_end_time": "8:00 PM",
+      "agenda": {
+        "id": "agenda-003",
+        "meeting_id": "meeting-003",
+        "title": "Agenda — Historic landmarks meeting 3",
+        "status": "published",
+        "published_at": "2025-01-24T17:00:00Z",
+        "source_url": "https://modularcity.org/meetings/meeting-003/agenda",
+        "agenda_item_ids": [
+          "agenda-item-003-001",
+          "agenda-item-003-002",
+          "agenda-item-003-003",
+          "agenda-item-003-004",
+          "agenda-item-003-005",
+          "agenda-item-003-006",
+          "agenda-item-003-007",
+          "agenda-item-003-008",
+          "agenda-item-003-009"
+        ],
+        "items": [
+          {
+            "id": "agenda-item-003-001",
+            "agenda_id": "agenda-003",
+            "meeting_id": "meeting-003",
+            "item_number": "1.0",
+            "title": "Call to order and pledge",
+            "description": "Call to order and pledge concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "ceremonial",
+            "display_order": 1,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-003/1.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-003/1/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-003/1/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-003/1/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-003-001"
+          },
+          {
+            "id": "agenda-item-003-002",
+            "agenda_id": "agenda-003",
+            "meeting_id": "meeting-003",
+            "item_number": "2.0",
+            "title": "Roll call and disclosure of conflicts",
+            "description": "Roll call and disclosure of conflicts concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 2,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-003/2.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-003/2/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-003/2/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-003/2/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-003-002"
+          },
+          {
+            "id": "agenda-item-003-003",
+            "agenda_id": "agenda-003",
+            "meeting_id": "meeting-003",
+            "item_number": "3.0",
+            "title": "Approval of prior meeting minutes",
+            "description": "Approval of prior meeting minutes concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 3,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-003/3.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-003/3/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-003/3/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-003/3/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-003-003"
+          },
+          {
+            "id": "agenda-item-003-004",
+            "agenda_id": "agenda-003",
+            "meeting_id": "meeting-003",
+            "item_number": "4.0",
+            "title": "General public comment",
+            "description": "General public comment concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "discussion",
+            "display_order": 4,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-003/4.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-003/4/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-003/4/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-003/4/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-003-004"
+          },
+          {
+            "id": "agenda-item-003-005",
+            "agenda_id": "agenda-003",
+            "meeting_id": "meeting-003",
+            "item_number": "5.0",
+            "title": "Consent calendar",
+            "description": "Consent calendar concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 5,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-003/5.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-003/5/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-003/5/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-003/5/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-003-005"
+          },
+          {
+            "id": "agenda-item-003-006",
+            "agenda_id": "agenda-003",
+            "meeting_id": "meeting-003",
+            "item_number": "6.0",
+            "title": "Department performance and staffing report",
+            "description": "Department performance and staffing report concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 6,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-003/6.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-003-6.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-003/6/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-003/6/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-003/6/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-003-006"
+          },
+          {
+            "id": "agenda-item-003-007",
+            "agenda_id": "agenda-003",
+            "meeting_id": "meeting-003",
+            "item_number": "7.0",
+            "title": "Public hearing on the annual policy update",
+            "description": "Public hearing on the annual policy update concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "public_hearing",
+            "display_order": 7,
+            "public_comment_period": true,
+            "public_hearing": true,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-003/7.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-003-7.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-003/7/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-003/7/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-003/7/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-003-007"
+          },
+          {
+            "id": "agenda-item-003-008",
+            "agenda_id": "agenda-003",
+            "meeting_id": "meeting-003",
+            "item_number": "8.0",
+            "title": "Capital improvement project authorization",
+            "description": "Capital improvement project authorization concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 8,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-003/8.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-003-8.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-003/8/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-003/8/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-003/8/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-003-008"
+          },
+          {
+            "id": "agenda-item-003-009",
+            "agenda_id": "agenda-003",
+            "meeting_id": "meeting-003",
+            "item_number": "9.0",
+            "title": "Award of professional services contract",
+            "description": "Award of professional services contract concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 9,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-003/9.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-003-9.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-003/9/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-003/9/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-003/9/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-003-009"
+          }
+        ]
+      }
+    },
+    {
+      "id": "meeting-004",
+      "jurisdiction_id": "modular-city",
+      "body_external_id": "modular-city-parks-recreation-commission",
+      "title": "Parks and recreation meeting 4",
+      "meeting_type": "regular",
+      "description": "Public meeting concerning parks and recreation",
+      "start_time": "2025-02-05T02:00:00Z",
+      "end_time": "2025-02-05T04:00:00Z",
+      "timezone": "America/Los_Angeles",
+      "location_name": "Modular City Hall",
+      "location_address": "100 Main Street, Modular City, EX 00001",
+      "location_room": "Room 204",
+      "virtual_url": "https://meet.modularcity.org/meeting-004",
+      "is_hybrid": true,
+      "agenda_url": "https://modularcity.org/meetings/meeting-004/agenda",
+      "minutes_url": "https://modularcity.org/meetings/meeting-004/minutes.pdf",
+      "video_url": "https://video.modularcity.org/meetings/meeting-004",
+      "public_comment_enabled": true,
+      "public_comment_email": "publiccomment@modularcity.org",
+      "status": "completed",
+      "external_id": "MC-MTG-2025-0004",
+      "source_url": "https://modularcity.org/meetings/meeting-004",
+      "agenda_id": "agenda-004",
+      "body": {
+        "id": "modular-city-parks-recreation-commission",
+        "name": "Parks and Recreation Commission",
+        "slug": "parks-recreation-commission",
+        "legislative_type": "commission",
+        "size": 7,
+        "description": "Advises on parks, recreation programs, facilities, trails, and capital priorities.",
+        "charter": "Modular City Code, Chapter 12",
+        "term_length": "3 years",
+        "term_limits": "Two consecutive terms",
+        "meeting_schedule": "Second Monday of each month at 6:00 PM",
+        "url": "https://modularcity.org/government/parks-recreation-commission",
+        "meeting_url": "https://modularcity.org/calendar#parks-recreation-commission",
+        "source": "modular-city-demo",
+        "aasm_state": "active",
+        "agency_external_id": "modular-city-parks-recreation",
+        "jurisdiction_id": "modular-city",
+        "positions": [
+          {
+            "id": "parks-chair",
+            "title": "Chair",
+            "seat": 1
+          },
+          {
+            "id": "parks-vice-chair",
+            "title": "Vice Chair",
+            "seat": 2
+          },
+          {
+            "id": "parks-member-3",
+            "title": "Commissioner",
+            "seat": 3
+          },
+          {
+            "id": "parks-member-4",
+            "title": "Commissioner",
+            "seat": 4
+          },
+          {
+            "id": "parks-member-5",
+            "title": "Commissioner",
+            "seat": 5
+          },
+          {
+            "id": "parks-member-6",
+            "title": "Commissioner",
+            "seat": 6
+          },
+          {
+            "id": "parks-member-7",
+            "title": "Commissioner",
+            "seat": 7
+          }
+        ]
+      },
+      "local_date": "2025-02-04",
+      "local_start_time": "6:00 PM",
+      "local_end_time": "8:00 PM",
+      "agenda": {
+        "id": "agenda-004",
+        "meeting_id": "meeting-004",
+        "title": "Agenda — Parks and recreation meeting 4",
+        "status": "published",
+        "published_at": "2025-01-31T17:00:00Z",
+        "source_url": "https://modularcity.org/meetings/meeting-004/agenda",
+        "agenda_item_ids": [
+          "agenda-item-004-001",
+          "agenda-item-004-002",
+          "agenda-item-004-003",
+          "agenda-item-004-004",
+          "agenda-item-004-005",
+          "agenda-item-004-006",
+          "agenda-item-004-007",
+          "agenda-item-004-008",
+          "agenda-item-004-009",
+          "agenda-item-004-010"
+        ],
+        "items": [
+          {
+            "id": "agenda-item-004-001",
+            "agenda_id": "agenda-004",
+            "meeting_id": "meeting-004",
+            "item_number": "1.0",
+            "title": "Call to order and pledge",
+            "description": "Call to order and pledge concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "ceremonial",
+            "display_order": 1,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-004/1.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-004/1/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-004/1/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-004/1/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-004-001"
+          },
+          {
+            "id": "agenda-item-004-002",
+            "agenda_id": "agenda-004",
+            "meeting_id": "meeting-004",
+            "item_number": "2.0",
+            "title": "Roll call and disclosure of conflicts",
+            "description": "Roll call and disclosure of conflicts concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 2,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-004/2.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-004/2/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-004/2/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-004/2/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-004-002"
+          },
+          {
+            "id": "agenda-item-004-003",
+            "agenda_id": "agenda-004",
+            "meeting_id": "meeting-004",
+            "item_number": "3.0",
+            "title": "Approval of prior meeting minutes",
+            "description": "Approval of prior meeting minutes concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 3,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-004/3.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-004/3/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-004/3/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-004/3/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-004-003"
+          },
+          {
+            "id": "agenda-item-004-004",
+            "agenda_id": "agenda-004",
+            "meeting_id": "meeting-004",
+            "item_number": "4.0",
+            "title": "General public comment",
+            "description": "General public comment concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "discussion",
+            "display_order": 4,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-004/4.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-004/4/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-004/4/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-004/4/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-004-004"
+          },
+          {
+            "id": "agenda-item-004-005",
+            "agenda_id": "agenda-004",
+            "meeting_id": "meeting-004",
+            "item_number": "5.0",
+            "title": "Consent calendar",
+            "description": "Consent calendar concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 5,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-004/5.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-004/5/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-004/5/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-004/5/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-004-005"
+          },
+          {
+            "id": "agenda-item-004-006",
+            "agenda_id": "agenda-004",
+            "meeting_id": "meeting-004",
+            "item_number": "6.0",
+            "title": "Department performance and staffing report",
+            "description": "Department performance and staffing report concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 6,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-004/6.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-004-6.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-004/6/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-004/6/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-004/6/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-004-006"
+          },
+          {
+            "id": "agenda-item-004-007",
+            "agenda_id": "agenda-004",
+            "meeting_id": "meeting-004",
+            "item_number": "7.0",
+            "title": "Public hearing on the annual policy update",
+            "description": "Public hearing on the annual policy update concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "public_hearing",
+            "display_order": 7,
+            "public_comment_period": true,
+            "public_hearing": true,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-004/7.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-004-7.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-004/7/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-004/7/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-004/7/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-004-007"
+          },
+          {
+            "id": "agenda-item-004-008",
+            "agenda_id": "agenda-004",
+            "meeting_id": "meeting-004",
+            "item_number": "8.0",
+            "title": "Capital improvement project authorization",
+            "description": "Capital improvement project authorization concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 8,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-004/8.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-004-8.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-004/8/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-004/8/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-004/8/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-004-008"
+          },
+          {
+            "id": "agenda-item-004-009",
+            "agenda_id": "agenda-004",
+            "meeting_id": "meeting-004",
+            "item_number": "9.0",
+            "title": "Award of professional services contract",
+            "description": "Award of professional services contract concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 9,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-004/9.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-004-9.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-004/9/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-004/9/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-004/9/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-004-009"
+          },
+          {
+            "id": "agenda-item-004-010",
+            "agenda_id": "agenda-004",
+            "meeting_id": "meeting-004",
+            "item_number": "10.0",
+            "title": "Appointments to boards and commissions",
+            "description": "Appointments to boards and commissions concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 10,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-004/10.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-004-10.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-004/10/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-004/10/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-004/10/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-004-010"
+          }
+        ]
+      }
+    },
+    {
+      "id": "meeting-005",
+      "jurisdiction_id": "modular-city",
+      "body_external_id": "modular-city-zoning-appeals-board",
+      "title": "Zoning appeals meeting 5",
+      "meeting_type": "regular",
+      "description": "Public meeting concerning zoning appeals",
+      "start_time": "2025-02-12T02:00:00Z",
+      "end_time": "2025-02-12T04:00:00Z",
+      "timezone": "America/Los_Angeles",
+      "location_name": "Modular City Hall",
+      "location_address": "100 Main Street, Modular City, EX 00001",
+      "location_room": "Council Chamber",
+      "virtual_url": "https://meet.modularcity.org/meeting-005",
+      "is_hybrid": true,
+      "agenda_url": "https://modularcity.org/meetings/meeting-005/agenda",
+      "minutes_url": "https://modularcity.org/meetings/meeting-005/minutes.pdf",
+      "video_url": "https://video.modularcity.org/meetings/meeting-005",
+      "public_comment_enabled": true,
+      "public_comment_email": "publiccomment@modularcity.org",
+      "status": "completed",
+      "external_id": "MC-MTG-2025-0005",
+      "source_url": "https://modularcity.org/meetings/meeting-005",
+      "agenda_id": "agenda-005",
+      "body": {
+        "id": "modular-city-zoning-appeals-board",
+        "name": "Board of Zoning Appeals",
+        "slug": "zoning-appeals-board",
+        "legislative_type": "board",
+        "size": 5,
+        "description": "Hears appeals and variance requests involving the city zoning code.",
+        "charter": "Modular City Charter, Article VIII",
+        "term_length": "3 years",
+        "term_limits": "Two consecutive terms",
+        "meeting_schedule": "First Wednesday of each month at 6:00 PM",
+        "url": "https://modularcity.org/government/zoning-appeals-board",
+        "meeting_url": "https://modularcity.org/calendar#zoning-appeals-board",
+        "source": "modular-city-demo",
+        "aasm_state": "active",
+        "agency_external_id": "modular-city-planning",
+        "jurisdiction_id": "modular-city",
+        "positions": [
+          {
+            "id": "zab-chair",
+            "title": "Chair",
+            "seat": 1
+          },
+          {
+            "id": "zab-vice-chair",
+            "title": "Vice Chair",
+            "seat": 2
+          },
+          {
+            "id": "zab-member-3",
+            "title": "Member",
+            "seat": 3
+          },
+          {
+            "id": "zab-member-4",
+            "title": "Member",
+            "seat": 4
+          },
+          {
+            "id": "zab-member-5",
+            "title": "Member",
+            "seat": 5
+          }
+        ]
+      },
+      "local_date": "2025-02-11",
+      "local_start_time": "6:00 PM",
+      "local_end_time": "8:00 PM",
+      "agenda": {
+        "id": "agenda-005",
+        "meeting_id": "meeting-005",
+        "title": "Agenda — Zoning appeals meeting 5",
+        "status": "published",
+        "published_at": "2025-02-07T17:00:00Z",
+        "source_url": "https://modularcity.org/meetings/meeting-005/agenda",
+        "agenda_item_ids": [
+          "agenda-item-005-001",
+          "agenda-item-005-002",
+          "agenda-item-005-003",
+          "agenda-item-005-004",
+          "agenda-item-005-005",
+          "agenda-item-005-006",
+          "agenda-item-005-007",
+          "agenda-item-005-008",
+          "agenda-item-005-009",
+          "agenda-item-005-010",
+          "agenda-item-005-011"
+        ],
+        "items": [
+          {
+            "id": "agenda-item-005-001",
+            "agenda_id": "agenda-005",
+            "meeting_id": "meeting-005",
+            "item_number": "1.0",
+            "title": "Call to order and pledge",
+            "description": "Call to order and pledge concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "ceremonial",
+            "display_order": 1,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-005/1.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-005/1/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-005/1/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-005/1/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-005-001"
+          },
+          {
+            "id": "agenda-item-005-002",
+            "agenda_id": "agenda-005",
+            "meeting_id": "meeting-005",
+            "item_number": "2.0",
+            "title": "Roll call and disclosure of conflicts",
+            "description": "Roll call and disclosure of conflicts concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 2,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-005/2.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-005/2/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-005/2/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-005/2/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-005-002"
+          },
+          {
+            "id": "agenda-item-005-003",
+            "agenda_id": "agenda-005",
+            "meeting_id": "meeting-005",
+            "item_number": "3.0",
+            "title": "Approval of prior meeting minutes",
+            "description": "Approval of prior meeting minutes concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 3,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-005/3.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-005/3/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-005/3/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-005/3/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-005-003"
+          },
+          {
+            "id": "agenda-item-005-004",
+            "agenda_id": "agenda-005",
+            "meeting_id": "meeting-005",
+            "item_number": "4.0",
+            "title": "General public comment",
+            "description": "General public comment concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "discussion",
+            "display_order": 4,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-005/4.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-005/4/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-005/4/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-005/4/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-005-004"
+          },
+          {
+            "id": "agenda-item-005-005",
+            "agenda_id": "agenda-005",
+            "meeting_id": "meeting-005",
+            "item_number": "5.0",
+            "title": "Consent calendar",
+            "description": "Consent calendar concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 5,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-005/5.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-005/5/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-005/5/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-005/5/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-005-005"
+          },
+          {
+            "id": "agenda-item-005-006",
+            "agenda_id": "agenda-005",
+            "meeting_id": "meeting-005",
+            "item_number": "6.0",
+            "title": "Department performance and staffing report",
+            "description": "Department performance and staffing report concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 6,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-005/6.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-005-6.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-005/6/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-005/6/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-005/6/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-005-006"
+          },
+          {
+            "id": "agenda-item-005-007",
+            "agenda_id": "agenda-005",
+            "meeting_id": "meeting-005",
+            "item_number": "7.0",
+            "title": "Public hearing on the annual policy update",
+            "description": "Public hearing on the annual policy update concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "public_hearing",
+            "display_order": 7,
+            "public_comment_period": true,
+            "public_hearing": true,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-005/7.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-005-7.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-005/7/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-005/7/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-005/7/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-005-007"
+          },
+          {
+            "id": "agenda-item-005-008",
+            "agenda_id": "agenda-005",
+            "meeting_id": "meeting-005",
+            "item_number": "8.0",
+            "title": "Capital improvement project authorization",
+            "description": "Capital improvement project authorization concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 8,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-005/8.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-005-8.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-005/8/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-005/8/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-005/8/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-005-008"
+          },
+          {
+            "id": "agenda-item-005-009",
+            "agenda_id": "agenda-005",
+            "meeting_id": "meeting-005",
+            "item_number": "9.0",
+            "title": "Award of professional services contract",
+            "description": "Award of professional services contract concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 9,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-005/9.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-005-9.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-005/9/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-005/9/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-005/9/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-005-009"
+          },
+          {
+            "id": "agenda-item-005-010",
+            "agenda_id": "agenda-005",
+            "meeting_id": "meeting-005",
+            "item_number": "10.0",
+            "title": "Appointments to boards and commissions",
+            "description": "Appointments to boards and commissions concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 10,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-005/10.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-005-10.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-005/10/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-005/10/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-005/10/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-005-010"
+          },
+          {
+            "id": "agenda-item-005-011",
+            "agenda_id": "agenda-005",
+            "meeting_id": "meeting-005",
+            "item_number": "11.0",
+            "title": "Member comments and future agenda requests",
+            "description": "Member comments and future agenda requests concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "discussion",
+            "display_order": 11,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-005/11.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-005/11/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-005/11/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-005/11/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-005-011"
+          }
+        ]
+      }
+    },
+    {
+      "id": "meeting-006",
+      "jurisdiction_id": "modular-city",
+      "body_external_id": "modular-city-planning-commission",
+      "title": "Housing and land use meeting 6",
+      "meeting_type": "public_hearing",
+      "description": "Public meeting concerning housing and land use",
+      "start_time": "2025-02-19T02:00:00Z",
+      "end_time": "2025-02-19T04:00:00Z",
+      "timezone": "America/Los_Angeles",
+      "location_name": "Modular City Hall",
+      "location_address": "100 Main Street, Modular City, EX 00001",
+      "location_room": "Room 204",
+      "virtual_url": "https://meet.modularcity.org/meeting-006",
+      "is_hybrid": true,
+      "agenda_url": "https://modularcity.org/meetings/meeting-006/agenda",
+      "minutes_url": "https://modularcity.org/meetings/meeting-006/minutes.pdf",
+      "video_url": "https://video.modularcity.org/meetings/meeting-006",
+      "public_comment_enabled": true,
+      "public_comment_email": "publiccomment@modularcity.org",
+      "status": "completed",
+      "external_id": "MC-MTG-2025-0006",
+      "source_url": "https://modularcity.org/meetings/meeting-006",
+      "agenda_id": "agenda-006",
+      "body": {
+        "id": "modular-city-planning-commission",
+        "name": "Planning Commission",
+        "slug": "planning-commission",
+        "legislative_type": "commission",
+        "size": 7,
+        "description": "Reviews land-use plans, subdivisions, and recommendations for zoning policy.",
+        "charter": "Modular City Code, Chapter 18",
+        "term_length": "4 years",
+        "term_limits": "Two consecutive terms",
+        "meeting_schedule": "Second and fourth Tuesday of each month at 6:30 PM",
+        "url": "https://modularcity.org/government/planning-commission",
+        "meeting_url": "https://modularcity.org/calendar#planning-commission",
+        "source": "modular-city-demo",
+        "aasm_state": "active",
+        "agency_external_id": "modular-city-planning",
+        "jurisdiction_id": "modular-city",
+        "positions": [
+          {
+            "id": "planning-chair",
+            "title": "Chair",
+            "seat": 1
+          },
+          {
+            "id": "planning-vice-chair",
+            "title": "Vice Chair",
+            "seat": 2
+          },
+          {
+            "id": "planning-member-3",
+            "title": "Commissioner",
+            "seat": 3
+          },
+          {
+            "id": "planning-member-4",
+            "title": "Commissioner",
+            "seat": 4
+          },
+          {
+            "id": "planning-member-5",
+            "title": "Commissioner",
+            "seat": 5
+          },
+          {
+            "id": "planning-member-6",
+            "title": "Commissioner",
+            "seat": 6
+          },
+          {
+            "id": "planning-member-7",
+            "title": "Commissioner",
+            "seat": 7
+          }
+        ]
+      },
+      "local_date": "2025-02-18",
+      "local_start_time": "6:00 PM",
+      "local_end_time": "8:00 PM",
+      "agenda": {
+        "id": "agenda-006",
+        "meeting_id": "meeting-006",
+        "title": "Agenda — Housing and land use meeting 6",
+        "status": "published",
+        "published_at": "2025-02-14T17:00:00Z",
+        "source_url": "https://modularcity.org/meetings/meeting-006/agenda",
+        "agenda_item_ids": [
+          "agenda-item-006-001",
+          "agenda-item-006-002",
+          "agenda-item-006-003",
+          "agenda-item-006-004",
+          "agenda-item-006-005",
+          "agenda-item-006-006",
+          "agenda-item-006-007",
+          "agenda-item-006-008",
+          "agenda-item-006-009",
+          "agenda-item-006-010",
+          "agenda-item-006-011",
+          "agenda-item-006-012"
+        ],
+        "items": [
+          {
+            "id": "agenda-item-006-001",
+            "agenda_id": "agenda-006",
+            "meeting_id": "meeting-006",
+            "item_number": "1.0",
+            "title": "Call to order and pledge",
+            "description": "Call to order and pledge concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "ceremonial",
+            "display_order": 1,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-006/1.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-006/1/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-006/1/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-006/1/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-006-001"
+          },
+          {
+            "id": "agenda-item-006-002",
+            "agenda_id": "agenda-006",
+            "meeting_id": "meeting-006",
+            "item_number": "2.0",
+            "title": "Roll call and disclosure of conflicts",
+            "description": "Roll call and disclosure of conflicts concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 2,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-006/2.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-006/2/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-006/2/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-006/2/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-006-002"
+          },
+          {
+            "id": "agenda-item-006-003",
+            "agenda_id": "agenda-006",
+            "meeting_id": "meeting-006",
+            "item_number": "3.0",
+            "title": "Approval of prior meeting minutes",
+            "description": "Approval of prior meeting minutes concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 3,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-006/3.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-006/3/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-006/3/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-006/3/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-006-003"
+          },
+          {
+            "id": "agenda-item-006-004",
+            "agenda_id": "agenda-006",
+            "meeting_id": "meeting-006",
+            "item_number": "4.0",
+            "title": "General public comment",
+            "description": "General public comment concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "discussion",
+            "display_order": 4,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-006/4.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-006/4/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-006/4/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-006/4/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-006-004"
+          },
+          {
+            "id": "agenda-item-006-005",
+            "agenda_id": "agenda-006",
+            "meeting_id": "meeting-006",
+            "item_number": "5.0",
+            "title": "Consent calendar",
+            "description": "Consent calendar concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 5,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-006/5.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-006/5/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-006/5/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-006/5/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-006-005"
+          },
+          {
+            "id": "agenda-item-006-006",
+            "agenda_id": "agenda-006",
+            "meeting_id": "meeting-006",
+            "item_number": "6.0",
+            "title": "Department performance and staffing report",
+            "description": "Department performance and staffing report concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 6,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-006/6.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-006-6.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-006/6/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-006/6/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-006/6/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-006-006"
+          },
+          {
+            "id": "agenda-item-006-007",
+            "agenda_id": "agenda-006",
+            "meeting_id": "meeting-006",
+            "item_number": "7.0",
+            "title": "Public hearing on the annual policy update",
+            "description": "Public hearing on the annual policy update concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "public_hearing",
+            "display_order": 7,
+            "public_comment_period": true,
+            "public_hearing": true,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-006/7.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-006-7.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-006/7/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-006/7/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-006/7/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-006-007"
+          },
+          {
+            "id": "agenda-item-006-008",
+            "agenda_id": "agenda-006",
+            "meeting_id": "meeting-006",
+            "item_number": "8.0",
+            "title": "Capital improvement project authorization",
+            "description": "Capital improvement project authorization concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 8,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-006/8.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-006-8.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-006/8/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-006/8/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-006/8/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-006-008"
+          },
+          {
+            "id": "agenda-item-006-009",
+            "agenda_id": "agenda-006",
+            "meeting_id": "meeting-006",
+            "item_number": "9.0",
+            "title": "Award of professional services contract",
+            "description": "Award of professional services contract concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 9,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-006/9.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-006-9.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-006/9/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-006/9/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-006/9/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-006-009"
+          },
+          {
+            "id": "agenda-item-006-010",
+            "agenda_id": "agenda-006",
+            "meeting_id": "meeting-006",
+            "item_number": "10.0",
+            "title": "Appointments to boards and commissions",
+            "description": "Appointments to boards and commissions concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 10,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-006/10.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-006-10.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-006/10/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-006/10/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-006/10/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-006-010"
+          },
+          {
+            "id": "agenda-item-006-011",
+            "agenda_id": "agenda-006",
+            "meeting_id": "meeting-006",
+            "item_number": "11.0",
+            "title": "Member comments and future agenda requests",
+            "description": "Member comments and future agenda requests concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "discussion",
+            "display_order": 11,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-006/11.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-006/11/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-006/11/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-006/11/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-006-011"
+          },
+          {
+            "id": "agenda-item-006-012",
+            "agenda_id": "agenda-006",
+            "meeting_id": "meeting-006",
+            "item_number": "12.0",
+            "title": "Adjournment",
+            "description": "Adjournment concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "other",
+            "display_order": 12,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-006/12.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-006/12/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-006/12/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-006/12/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-006-012"
+          }
+        ]
+      }
+    },
+    {
+      "id": "meeting-007",
+      "jurisdiction_id": "modular-city",
+      "body_external_id": "modular-city-historic-preservation-commission",
+      "title": "Historic landmarks meeting 7",
+      "meeting_type": "regular",
+      "description": "Public meeting concerning historic landmarks",
+      "start_time": "2025-02-26T02:00:00Z",
+      "end_time": "2025-02-26T04:00:00Z",
+      "timezone": "America/Los_Angeles",
+      "location_name": "Modular City Hall",
+      "location_address": "100 Main Street, Modular City, EX 00001",
+      "location_room": "Council Chamber",
+      "virtual_url": "https://meet.modularcity.org/meeting-007",
+      "is_hybrid": true,
+      "agenda_url": "https://modularcity.org/meetings/meeting-007/agenda",
+      "minutes_url": "https://modularcity.org/meetings/meeting-007/minutes.pdf",
+      "video_url": "https://video.modularcity.org/meetings/meeting-007",
+      "public_comment_enabled": true,
+      "public_comment_email": "publiccomment@modularcity.org",
+      "status": "completed",
+      "external_id": "MC-MTG-2025-0007",
+      "source_url": "https://modularcity.org/meetings/meeting-007",
+      "agenda_id": "agenda-007",
+      "body": {
+        "id": "modular-city-historic-preservation-commission",
+        "name": "Historic Preservation Commission",
+        "slug": "historic-preservation-commission",
+        "legislative_type": "commission",
+        "size": 5,
+        "description": "Protects historic resources and reviews work proposed in designated historic districts.",
+        "charter": "Modular City Code, Chapter 22",
+        "term_length": "3 years",
+        "term_limits": "None",
+        "meeting_schedule": "Third Thursday of each month at 5:30 PM",
+        "url": "https://modularcity.org/government/historic-preservation-commission",
+        "meeting_url": "https://modularcity.org/calendar#historic-preservation-commission",
+        "source": "modular-city-demo",
+        "aasm_state": "active",
+        "agency_external_id": "modular-city-planning",
+        "jurisdiction_id": "modular-city",
+        "positions": [
+          {
+            "id": "historic-chair",
+            "title": "Chair",
+            "seat": 1
+          },
+          {
+            "id": "historic-vice-chair",
+            "title": "Vice Chair",
+            "seat": 2
+          },
+          {
+            "id": "historic-member-3",
+            "title": "Commissioner",
+            "seat": 3
+          },
+          {
+            "id": "historic-member-4",
+            "title": "Commissioner",
+            "seat": 4
+          },
+          {
+            "id": "historic-member-5",
+            "title": "Commissioner",
+            "seat": 5
+          }
+        ]
+      },
+      "local_date": "2025-02-25",
+      "local_start_time": "6:00 PM",
+      "local_end_time": "8:00 PM",
+      "agenda": {
+        "id": "agenda-007",
+        "meeting_id": "meeting-007",
+        "title": "Agenda — Historic landmarks meeting 7",
+        "status": "published",
+        "published_at": "2025-02-21T17:00:00Z",
+        "source_url": "https://modularcity.org/meetings/meeting-007/agenda",
+        "agenda_item_ids": [
+          "agenda-item-007-001",
+          "agenda-item-007-002",
+          "agenda-item-007-003",
+          "agenda-item-007-004",
+          "agenda-item-007-005",
+          "agenda-item-007-006",
+          "agenda-item-007-007"
+        ],
+        "items": [
+          {
+            "id": "agenda-item-007-001",
+            "agenda_id": "agenda-007",
+            "meeting_id": "meeting-007",
+            "item_number": "1.0",
+            "title": "Call to order and pledge",
+            "description": "Call to order and pledge concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "ceremonial",
+            "display_order": 1,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-007/1.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-007/1/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-007/1/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-007/1/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-007-001"
+          },
+          {
+            "id": "agenda-item-007-002",
+            "agenda_id": "agenda-007",
+            "meeting_id": "meeting-007",
+            "item_number": "2.0",
+            "title": "Roll call and disclosure of conflicts",
+            "description": "Roll call and disclosure of conflicts concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 2,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-007/2.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-007/2/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-007/2/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-007/2/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-007-002"
+          },
+          {
+            "id": "agenda-item-007-003",
+            "agenda_id": "agenda-007",
+            "meeting_id": "meeting-007",
+            "item_number": "3.0",
+            "title": "Approval of prior meeting minutes",
+            "description": "Approval of prior meeting minutes concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 3,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-007/3.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-007/3/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-007/3/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-007/3/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-007-003"
+          },
+          {
+            "id": "agenda-item-007-004",
+            "agenda_id": "agenda-007",
+            "meeting_id": "meeting-007",
+            "item_number": "4.0",
+            "title": "General public comment",
+            "description": "General public comment concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "discussion",
+            "display_order": 4,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-007/4.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-007/4/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-007/4/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-007/4/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-007-004"
+          },
+          {
+            "id": "agenda-item-007-005",
+            "agenda_id": "agenda-007",
+            "meeting_id": "meeting-007",
+            "item_number": "5.0",
+            "title": "Consent calendar",
+            "description": "Consent calendar concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 5,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-007/5.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-007/5/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-007/5/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-007/5/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-007-005"
+          },
+          {
+            "id": "agenda-item-007-006",
+            "agenda_id": "agenda-007",
+            "meeting_id": "meeting-007",
+            "item_number": "6.0",
+            "title": "Department performance and staffing report",
+            "description": "Department performance and staffing report concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 6,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-007/6.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-007-6.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-007/6/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-007/6/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-007/6/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-007-006"
+          },
+          {
+            "id": "agenda-item-007-007",
+            "agenda_id": "agenda-007",
+            "meeting_id": "meeting-007",
+            "item_number": "7.0",
+            "title": "Public hearing on the annual policy update",
+            "description": "Public hearing on the annual policy update concerning historic landmarks. Fictional item for interoperability testing.",
+            "item_type": "public_hearing",
+            "display_order": 7,
+            "public_comment_period": true,
+            "public_hearing": true,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-007/7.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-007-7.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-007/7/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-007/7/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-007/7/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-007-007"
+          }
+        ]
+      }
+    },
+    {
+      "id": "meeting-008",
+      "jurisdiction_id": "modular-city",
+      "body_external_id": "modular-city-parks-recreation-commission",
+      "title": "Parks and recreation meeting 8",
+      "meeting_type": "regular",
+      "description": "Public meeting concerning parks and recreation",
+      "start_time": "2025-03-05T02:00:00Z",
+      "end_time": "2025-03-05T04:00:00Z",
+      "timezone": "America/Los_Angeles",
+      "location_name": "Modular City Hall",
+      "location_address": "100 Main Street, Modular City, EX 00001",
+      "location_room": "Room 204",
+      "virtual_url": "https://meet.modularcity.org/meeting-008",
+      "is_hybrid": true,
+      "agenda_url": "https://modularcity.org/meetings/meeting-008/agenda",
+      "minutes_url": "https://modularcity.org/meetings/meeting-008/minutes.pdf",
+      "video_url": "https://video.modularcity.org/meetings/meeting-008",
+      "public_comment_enabled": true,
+      "public_comment_email": "publiccomment@modularcity.org",
+      "status": "completed",
+      "external_id": "MC-MTG-2025-0008",
+      "source_url": "https://modularcity.org/meetings/meeting-008",
+      "agenda_id": "agenda-008",
+      "body": {
+        "id": "modular-city-parks-recreation-commission",
+        "name": "Parks and Recreation Commission",
+        "slug": "parks-recreation-commission",
+        "legislative_type": "commission",
+        "size": 7,
+        "description": "Advises on parks, recreation programs, facilities, trails, and capital priorities.",
+        "charter": "Modular City Code, Chapter 12",
+        "term_length": "3 years",
+        "term_limits": "Two consecutive terms",
+        "meeting_schedule": "Second Monday of each month at 6:00 PM",
+        "url": "https://modularcity.org/government/parks-recreation-commission",
+        "meeting_url": "https://modularcity.org/calendar#parks-recreation-commission",
+        "source": "modular-city-demo",
+        "aasm_state": "active",
+        "agency_external_id": "modular-city-parks-recreation",
+        "jurisdiction_id": "modular-city",
+        "positions": [
+          {
+            "id": "parks-chair",
+            "title": "Chair",
+            "seat": 1
+          },
+          {
+            "id": "parks-vice-chair",
+            "title": "Vice Chair",
+            "seat": 2
+          },
+          {
+            "id": "parks-member-3",
+            "title": "Commissioner",
+            "seat": 3
+          },
+          {
+            "id": "parks-member-4",
+            "title": "Commissioner",
+            "seat": 4
+          },
+          {
+            "id": "parks-member-5",
+            "title": "Commissioner",
+            "seat": 5
+          },
+          {
+            "id": "parks-member-6",
+            "title": "Commissioner",
+            "seat": 6
+          },
+          {
+            "id": "parks-member-7",
+            "title": "Commissioner",
+            "seat": 7
+          }
+        ]
+      },
+      "local_date": "2025-03-04",
+      "local_start_time": "6:00 PM",
+      "local_end_time": "8:00 PM",
+      "agenda": {
+        "id": "agenda-008",
+        "meeting_id": "meeting-008",
+        "title": "Agenda — Parks and recreation meeting 8",
+        "status": "published",
+        "published_at": "2025-02-28T17:00:00Z",
+        "source_url": "https://modularcity.org/meetings/meeting-008/agenda",
+        "agenda_item_ids": [
+          "agenda-item-008-001",
+          "agenda-item-008-002",
+          "agenda-item-008-003",
+          "agenda-item-008-004",
+          "agenda-item-008-005",
+          "agenda-item-008-006",
+          "agenda-item-008-007",
+          "agenda-item-008-008"
+        ],
+        "items": [
+          {
+            "id": "agenda-item-008-001",
+            "agenda_id": "agenda-008",
+            "meeting_id": "meeting-008",
+            "item_number": "1.0",
+            "title": "Call to order and pledge",
+            "description": "Call to order and pledge concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "ceremonial",
+            "display_order": 1,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-008/1.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-008/1/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-008/1/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-008/1/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-008-001"
+          },
+          {
+            "id": "agenda-item-008-002",
+            "agenda_id": "agenda-008",
+            "meeting_id": "meeting-008",
+            "item_number": "2.0",
+            "title": "Roll call and disclosure of conflicts",
+            "description": "Roll call and disclosure of conflicts concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 2,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-008/2.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-008/2/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-008/2/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-008/2/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-008-002"
+          },
+          {
+            "id": "agenda-item-008-003",
+            "agenda_id": "agenda-008",
+            "meeting_id": "meeting-008",
+            "item_number": "3.0",
+            "title": "Approval of prior meeting minutes",
+            "description": "Approval of prior meeting minutes concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 3,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-008/3.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-008/3/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-008/3/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-008/3/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-008-003"
+          },
+          {
+            "id": "agenda-item-008-004",
+            "agenda_id": "agenda-008",
+            "meeting_id": "meeting-008",
+            "item_number": "4.0",
+            "title": "General public comment",
+            "description": "General public comment concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "discussion",
+            "display_order": 4,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-008/4.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-008/4/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-008/4/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-008/4/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-008-004"
+          },
+          {
+            "id": "agenda-item-008-005",
+            "agenda_id": "agenda-008",
+            "meeting_id": "meeting-008",
+            "item_number": "5.0",
+            "title": "Consent calendar",
+            "description": "Consent calendar concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 5,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-008/5.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-008/5/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-008/5/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-008/5/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-008-005"
+          },
+          {
+            "id": "agenda-item-008-006",
+            "agenda_id": "agenda-008",
+            "meeting_id": "meeting-008",
+            "item_number": "6.0",
+            "title": "Department performance and staffing report",
+            "description": "Department performance and staffing report concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 6,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-008/6.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-008-6.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-008/6/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-008/6/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-008/6/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-008-006"
+          },
+          {
+            "id": "agenda-item-008-007",
+            "agenda_id": "agenda-008",
+            "meeting_id": "meeting-008",
+            "item_number": "7.0",
+            "title": "Public hearing on the annual policy update",
+            "description": "Public hearing on the annual policy update concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "public_hearing",
+            "display_order": 7,
+            "public_comment_period": true,
+            "public_hearing": true,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-008/7.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-008-7.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-008/7/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-008/7/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-008/7/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-008-007"
+          },
+          {
+            "id": "agenda-item-008-008",
+            "agenda_id": "agenda-008",
+            "meeting_id": "meeting-008",
+            "item_number": "8.0",
+            "title": "Capital improvement project authorization",
+            "description": "Capital improvement project authorization concerning parks and recreation. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 8,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-008/8.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-008-8.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-008/8/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-008/8/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-008/8/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-008-008"
+          }
+        ]
+      }
+    },
+    {
+      "id": "meeting-009",
+      "jurisdiction_id": "modular-city",
+      "body_external_id": "modular-city-zoning-appeals-board",
+      "title": "Zoning appeals meeting 9",
+      "meeting_type": "regular",
+      "description": "Public meeting concerning zoning appeals",
+      "start_time": "2025-03-12T02:00:00Z",
+      "end_time": "2025-03-12T04:00:00Z",
+      "timezone": "America/Los_Angeles",
+      "location_name": "Modular City Hall",
+      "location_address": "100 Main Street, Modular City, EX 00001",
+      "location_room": "Council Chamber",
+      "virtual_url": "https://meet.modularcity.org/meeting-009",
+      "is_hybrid": true,
+      "agenda_url": "https://modularcity.org/meetings/meeting-009/agenda",
+      "minutes_url": "https://modularcity.org/meetings/meeting-009/minutes.pdf",
+      "video_url": "https://video.modularcity.org/meetings/meeting-009",
+      "public_comment_enabled": true,
+      "public_comment_email": "publiccomment@modularcity.org",
+      "status": "completed",
+      "external_id": "MC-MTG-2025-0009",
+      "source_url": "https://modularcity.org/meetings/meeting-009",
+      "agenda_id": "agenda-009",
+      "body": {
+        "id": "modular-city-zoning-appeals-board",
+        "name": "Board of Zoning Appeals",
+        "slug": "zoning-appeals-board",
+        "legislative_type": "board",
+        "size": 5,
+        "description": "Hears appeals and variance requests involving the city zoning code.",
+        "charter": "Modular City Charter, Article VIII",
+        "term_length": "3 years",
+        "term_limits": "Two consecutive terms",
+        "meeting_schedule": "First Wednesday of each month at 6:00 PM",
+        "url": "https://modularcity.org/government/zoning-appeals-board",
+        "meeting_url": "https://modularcity.org/calendar#zoning-appeals-board",
+        "source": "modular-city-demo",
+        "aasm_state": "active",
+        "agency_external_id": "modular-city-planning",
+        "jurisdiction_id": "modular-city",
+        "positions": [
+          {
+            "id": "zab-chair",
+            "title": "Chair",
+            "seat": 1
+          },
+          {
+            "id": "zab-vice-chair",
+            "title": "Vice Chair",
+            "seat": 2
+          },
+          {
+            "id": "zab-member-3",
+            "title": "Member",
+            "seat": 3
+          },
+          {
+            "id": "zab-member-4",
+            "title": "Member",
+            "seat": 4
+          },
+          {
+            "id": "zab-member-5",
+            "title": "Member",
+            "seat": 5
+          }
+        ]
+      },
+      "local_date": "2025-03-11",
+      "local_start_time": "6:00 PM",
+      "local_end_time": "8:00 PM",
+      "agenda": {
+        "id": "agenda-009",
+        "meeting_id": "meeting-009",
+        "title": "Agenda — Zoning appeals meeting 9",
+        "status": "published",
+        "published_at": "2025-03-07T17:00:00Z",
+        "source_url": "https://modularcity.org/meetings/meeting-009/agenda",
+        "agenda_item_ids": [
+          "agenda-item-009-001",
+          "agenda-item-009-002",
+          "agenda-item-009-003",
+          "agenda-item-009-004",
+          "agenda-item-009-005",
+          "agenda-item-009-006",
+          "agenda-item-009-007",
+          "agenda-item-009-008",
+          "agenda-item-009-009"
+        ],
+        "items": [
+          {
+            "id": "agenda-item-009-001",
+            "agenda_id": "agenda-009",
+            "meeting_id": "meeting-009",
+            "item_number": "1.0",
+            "title": "Call to order and pledge",
+            "description": "Call to order and pledge concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "ceremonial",
+            "display_order": 1,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-009/1.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-009/1/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-009/1/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-009/1/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-009-001"
+          },
+          {
+            "id": "agenda-item-009-002",
+            "agenda_id": "agenda-009",
+            "meeting_id": "meeting-009",
+            "item_number": "2.0",
+            "title": "Roll call and disclosure of conflicts",
+            "description": "Roll call and disclosure of conflicts concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 2,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-009/2.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-009/2/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-009/2/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-009/2/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-009-002"
+          },
+          {
+            "id": "agenda-item-009-003",
+            "agenda_id": "agenda-009",
+            "meeting_id": "meeting-009",
+            "item_number": "3.0",
+            "title": "Approval of prior meeting minutes",
+            "description": "Approval of prior meeting minutes concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 3,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-009/3.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-009/3/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-009/3/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-009/3/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-009-003"
+          },
+          {
+            "id": "agenda-item-009-004",
+            "agenda_id": "agenda-009",
+            "meeting_id": "meeting-009",
+            "item_number": "4.0",
+            "title": "General public comment",
+            "description": "General public comment concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "discussion",
+            "display_order": 4,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-009/4.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-009/4/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-009/4/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-009/4/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-009-004"
+          },
+          {
+            "id": "agenda-item-009-005",
+            "agenda_id": "agenda-009",
+            "meeting_id": "meeting-009",
+            "item_number": "5.0",
+            "title": "Consent calendar",
+            "description": "Consent calendar concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 5,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-009/5.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-009/5/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-009/5/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-009/5/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-009-005"
+          },
+          {
+            "id": "agenda-item-009-006",
+            "agenda_id": "agenda-009",
+            "meeting_id": "meeting-009",
+            "item_number": "6.0",
+            "title": "Department performance and staffing report",
+            "description": "Department performance and staffing report concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 6,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-009/6.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-009-6.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-009/6/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-009/6/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-009/6/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-009-006"
+          },
+          {
+            "id": "agenda-item-009-007",
+            "agenda_id": "agenda-009",
+            "meeting_id": "meeting-009",
+            "item_number": "7.0",
+            "title": "Public hearing on the annual policy update",
+            "description": "Public hearing on the annual policy update concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "public_hearing",
+            "display_order": 7,
+            "public_comment_period": true,
+            "public_hearing": true,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-009/7.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-009-7.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-009/7/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-009/7/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-009/7/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-009-007"
+          },
+          {
+            "id": "agenda-item-009-008",
+            "agenda_id": "agenda-009",
+            "meeting_id": "meeting-009",
+            "item_number": "8.0",
+            "title": "Capital improvement project authorization",
+            "description": "Capital improvement project authorization concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 8,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-009/8.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-009-8.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-009/8/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-009/8/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-009/8/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-009-008"
+          },
+          {
+            "id": "agenda-item-009-009",
+            "agenda_id": "agenda-009",
+            "meeting_id": "meeting-009",
+            "item_number": "9.0",
+            "title": "Award of professional services contract",
+            "description": "Award of professional services contract concerning zoning appeals. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 9,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-009/9.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-009-9.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-009/9/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-009/9/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-009/9/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-009-009"
+          }
+        ]
+      }
+    },
+    {
+      "id": "meeting-010",
+      "jurisdiction_id": "modular-city",
+      "body_external_id": "modular-city-planning-commission",
+      "title": "Housing and land use meeting 10",
+      "meeting_type": "public_hearing",
+      "description": "Public meeting concerning housing and land use",
+      "start_time": "2025-03-19T02:00:00Z",
+      "end_time": "2025-03-19T04:00:00Z",
+      "timezone": "America/Los_Angeles",
+      "location_name": "Modular City Hall",
+      "location_address": "100 Main Street, Modular City, EX 00001",
+      "location_room": "Room 204",
+      "virtual_url": "https://meet.modularcity.org/meeting-010",
+      "is_hybrid": true,
+      "agenda_url": "https://modularcity.org/meetings/meeting-010/agenda",
+      "minutes_url": "https://modularcity.org/meetings/meeting-010/minutes.pdf",
+      "video_url": "https://video.modularcity.org/meetings/meeting-010",
+      "public_comment_enabled": true,
+      "public_comment_email": "publiccomment@modularcity.org",
+      "status": "completed",
+      "external_id": "MC-MTG-2025-0010",
+      "source_url": "https://modularcity.org/meetings/meeting-010",
+      "agenda_id": "agenda-010",
+      "body": {
+        "id": "modular-city-planning-commission",
+        "name": "Planning Commission",
+        "slug": "planning-commission",
+        "legislative_type": "commission",
+        "size": 7,
+        "description": "Reviews land-use plans, subdivisions, and recommendations for zoning policy.",
+        "charter": "Modular City Code, Chapter 18",
+        "term_length": "4 years",
+        "term_limits": "Two consecutive terms",
+        "meeting_schedule": "Second and fourth Tuesday of each month at 6:30 PM",
+        "url": "https://modularcity.org/government/planning-commission",
+        "meeting_url": "https://modularcity.org/calendar#planning-commission",
+        "source": "modular-city-demo",
+        "aasm_state": "active",
+        "agency_external_id": "modular-city-planning",
+        "jurisdiction_id": "modular-city",
+        "positions": [
+          {
+            "id": "planning-chair",
+            "title": "Chair",
+            "seat": 1
+          },
+          {
+            "id": "planning-vice-chair",
+            "title": "Vice Chair",
+            "seat": 2
+          },
+          {
+            "id": "planning-member-3",
+            "title": "Commissioner",
+            "seat": 3
+          },
+          {
+            "id": "planning-member-4",
+            "title": "Commissioner",
+            "seat": 4
+          },
+          {
+            "id": "planning-member-5",
+            "title": "Commissioner",
+            "seat": 5
+          },
+          {
+            "id": "planning-member-6",
+            "title": "Commissioner",
+            "seat": 6
+          },
+          {
+            "id": "planning-member-7",
+            "title": "Commissioner",
+            "seat": 7
+          }
+        ]
+      },
+      "local_date": "2025-03-18",
+      "local_start_time": "6:00 PM",
+      "local_end_time": "8:00 PM",
+      "agenda": {
+        "id": "agenda-010",
+        "meeting_id": "meeting-010",
+        "title": "Agenda — Housing and land use meeting 10",
+        "status": "published",
+        "published_at": "2025-03-14T17:00:00Z",
+        "source_url": "https://modularcity.org/meetings/meeting-010/agenda",
+        "agenda_item_ids": [
+          "agenda-item-010-001",
+          "agenda-item-010-002",
+          "agenda-item-010-003",
+          "agenda-item-010-004",
+          "agenda-item-010-005",
+          "agenda-item-010-006",
+          "agenda-item-010-007",
+          "agenda-item-010-008",
+          "agenda-item-010-009",
+          "agenda-item-010-010"
+        ],
+        "items": [
+          {
+            "id": "agenda-item-010-001",
+            "agenda_id": "agenda-010",
+            "meeting_id": "meeting-010",
+            "item_number": "1.0",
+            "title": "Call to order and pledge",
+            "description": "Call to order and pledge concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "ceremonial",
+            "display_order": 1,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-010/1.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-010/1/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-010/1/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-010/1/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-010-001"
+          },
+          {
+            "id": "agenda-item-010-002",
+            "agenda_id": "agenda-010",
+            "meeting_id": "meeting-010",
+            "item_number": "2.0",
+            "title": "Roll call and disclosure of conflicts",
+            "description": "Roll call and disclosure of conflicts concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 2,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-010/2.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-010/2/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-010/2/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-010/2/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-010-002"
+          },
+          {
+            "id": "agenda-item-010-003",
+            "agenda_id": "agenda-010",
+            "meeting_id": "meeting-010",
+            "item_number": "3.0",
+            "title": "Approval of prior meeting minutes",
+            "description": "Approval of prior meeting minutes concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 3,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-010/3.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-010/3/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-010/3/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-010/3/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-010-003"
+          },
+          {
+            "id": "agenda-item-010-004",
+            "agenda_id": "agenda-010",
+            "meeting_id": "meeting-010",
+            "item_number": "4.0",
+            "title": "General public comment",
+            "description": "General public comment concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "discussion",
+            "display_order": 4,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-010/4.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-010/4/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-010/4/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-010/4/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-010-004"
+          },
+          {
+            "id": "agenda-item-010-005",
+            "agenda_id": "agenda-010",
+            "meeting_id": "meeting-010",
+            "item_number": "5.0",
+            "title": "Consent calendar",
+            "description": "Consent calendar concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "consent",
+            "display_order": 5,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-010/5.pdf",
+            "staff_report_url": null,
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-010/5/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-010/5/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-010/5/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-010-005"
+          },
+          {
+            "id": "agenda-item-010-006",
+            "agenda_id": "agenda-010",
+            "meeting_id": "meeting-010",
+            "item_number": "6.0",
+            "title": "Department performance and staffing report",
+            "description": "Department performance and staffing report concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "report",
+            "display_order": 6,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": false,
+            "vote_threshold": null,
+            "document_url": "https://modularcity.org/agendas/agenda-010/6.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-010-6.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-010/6/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-010/6/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-010/6/attachment-3.pdf"
+            ],
+            "outcome": "no_action",
+            "outcome_notes": "Received without formal action.",
+            "external_id": "MC-AGI-010-006"
+          },
+          {
+            "id": "agenda-item-010-007",
+            "agenda_id": "agenda-010",
+            "meeting_id": "meeting-010",
+            "item_number": "7.0",
+            "title": "Public hearing on the annual policy update",
+            "description": "Public hearing on the annual policy update concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "public_hearing",
+            "display_order": 7,
+            "public_comment_period": true,
+            "public_hearing": true,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-010/7.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-010-7.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-010/7/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-010/7/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-010/7/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-010-007"
+          },
+          {
+            "id": "agenda-item-010-008",
+            "agenda_id": "agenda-010",
+            "meeting_id": "meeting-010",
+            "item_number": "8.0",
+            "title": "Capital improvement project authorization",
+            "description": "Capital improvement project authorization concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 8,
+            "public_comment_period": true,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-010/8.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-010-8.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-010/8/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-010/8/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-010/8/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-010-008"
+          },
+          {
+            "id": "agenda-item-010-009",
+            "agenda_id": "agenda-010",
+            "meeting_id": "meeting-010",
+            "item_number": "9.0",
+            "title": "Award of professional services contract",
+            "description": "Award of professional services contract concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 9,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-010/9.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-010-9.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-010/9/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-010/9/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-010/9/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-010-009"
+          },
+          {
+            "id": "agenda-item-010-010",
+            "agenda_id": "agenda-010",
+            "meeting_id": "meeting-010",
+            "item_number": "10.0",
+            "title": "Appointments to boards and commissions",
+            "description": "Appointments to boards and commissions concerning housing and land use. Fictional item for interoperability testing.",
+            "item_type": "action",
+            "display_order": 10,
+            "public_comment_period": false,
+            "public_hearing": false,
+            "vote_required": true,
+            "vote_threshold": "simple_majority",
+            "document_url": "https://modularcity.org/agendas/agenda-010/10.pdf",
+            "staff_report_url": "https://modularcity.org/reports/agenda-010-10.pdf",
+            "attachment_urls": [
+              "https://modularcity.org/agendas/agenda-010/10/attachment-1.pdf",
+              "https://modularcity.org/agendas/agenda-010/10/attachment-2.pdf",
+              "https://modularcity.org/agendas/agenda-010/10/attachment-3.pdf"
+            ],
+            "outcome": "approved",
+            "outcome_notes": "Approved following discussion.",
+            "external_id": "MC-AGI-010-010"
+          }
+        ]
+      }
+    }
+  ]
+}
