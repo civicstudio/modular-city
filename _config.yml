@@ -5,6 +5,10 @@ data_dir: _data/city
 title: "Modular City"
 description: "A model municipal website demonstrating best practices for civic web presence, open data, and transparent government."
 
+# Hosted Touchpoints instance for feedback forms and request processes.
+# Pages link to it; the build never calls it.
+touchpoints_url: "https://touchpoints.app"
+
 plugins:
   - jekyll-sitemap
   - jekyll-datapage-generator

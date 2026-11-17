@@ -1,0 +1,77 @@
+{% comment %}
+  Touchpoints feedback, rendered as a plain link to the hosted form.
+  No iframe and no third-party script: the site's WCAG AAA tests stay deterministic,
+  the build makes no network calls, and the link works without JavaScript.
+
+  Parameters:
+    form           - touchpoints.feedback_form from _data (kind: "service" | "park", id: UUID or null)
+    facilities     - optional list of park/facility names (park forms)
+    contact_email  - email fallback
+    section_class  - optional classes for the section wrapper
+{% endcomment %}
+{% assign tp_form = include.form %}
+{% assign tp_park = false %}
+{% if tp_form.kind == "park" %}{% assign tp_park = true %}{% endif %}
+<section
+  class="{{ include.section_class | default: 'mt-10 pt-10 border-t border-gray-200' }}"
+  aria-labelledby="feedback-heading"
+>
+  <h2
+    id="feedback-heading"
+    class="text-lg font-semibold text-gray-900 mb-2"
+  >
+    {% if tp_park %}Tell us about your park visit{% else %}Was this page helpful?{% endif %}
+  </h2>
+  <p class="text-sm text-gray-700 mb-4">
+    {% if tp_park %}
+    Share feedback on a park, facility, or program.
+    We ask about cleanliness, safety, accessibility, amenities, and programs.
+    {% else %}
+    Share feedback about this service.
+    {% endif %}
+    Responses are collected through
+    <a
+      href="{{ site.touchpoints_url }}"
+      class="text-primary-800 underline hover:text-primary-500"
+    >
+      Touchpoints</a>,
+    an open user-feedback platform for public service teams.
+  </p>
+  {% if tp_park and include.facilities.size > 0 %}
+  <p
+    id="feedback-facilities-heading"
+    class="text-sm font-medium text-gray-900"
+  >
+    Places you can tell us about:
+  </p>
+  <ul
+    class="mt-2 mb-4 list-disc list-inside text-sm text-gray-700 space-y-1"
+    aria-labelledby="feedback-facilities-heading"
+  >
+    {% for facility in include.facilities %}
+    <li>{{ facility }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if tp_form.id %}
+  <a
+    href="{{ site.touchpoints_url }}/touchpoints/{{ tp_form.id }}"
+    class="inline-flex items-center rounded-md bg-primary-700 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-600"
+    data-touchpoints-form-id="{{ tp_form.id }}"
+  >
+    {% if tp_park %}Give park feedback{% else %}Give feedback on this page{% endif %}
+  </a>
+  {% else %}
+  <p class="text-sm text-gray-700">
+    Our online feedback form is being set up.
+  </p>
+  {% endif %}
+  <p class="mt-4 text-sm text-gray-700">
+    You can also email feedback to
+    <a
+      href="mailto:{{ include.contact_email }}"
+      class="text-primary-800 underline hover:text-primary-500"
+    >
+      {{ include.contact_email }}</a>.
+  </p>
+</section>
