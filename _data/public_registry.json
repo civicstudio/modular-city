@@ -1,0 +1,66 @@
+{
+  "name": "Public Registry",
+  "base_url": "https://registry.jurisdictional.org",
+  "source": "https://github.com/jurisdictional/registry",
+  "checked_on": "2026-11-16",
+  "checked_how": "Read-only GET of each URL. Edit this file by hand when a status changes; the site build makes no network calls.",
+  "modular_city_records": 0,
+  "checks": [
+    {
+      "id": "files-verify",
+      "title": "Check a file",
+      "path": "/files/verify",
+      "status": "live",
+      "status_label": "Live",
+      "what": "Choose a file and the page hashes it in your browser, then looks the fingerprint up in the registry's anchored files. Only the fingerprint is sent."
+    },
+    {
+      "id": "verify",
+      "title": "Look up a record by its fingerprint",
+      "path": "/verify",
+      "status": "live",
+      "status_label": "Live",
+      "what": "Enter an anchored record's fingerprint to see the record, its transaction and any corrections."
+    },
+    {
+      "id": "licensed-merchant",
+      "title": "Licensed-merchant certificates",
+      "path": "/certificates/licensed-merchant",
+      "status": "live",
+      "status_label": "Live, no Modular City certificates yet",
+      "what": "What a BRC-52 licensed-merchant certificate says, and how to check one. Modular City certificates wait for the registry's permanent signing keys."
+    },
+    {
+      "id": "events",
+      "title": "Event stream",
+      "path": "/api/events?after=0",
+      "status": "live",
+      "status_label": "Live",
+      "what": "Every registry action in order, with no gaps, as JSON."
+    },
+    {
+      "id": "treasury",
+      "title": "Anchoring fee treasury",
+      "path": "/api/treasury",
+      "status": "live",
+      "status_label": "Live",
+      "what": "Deposits and the fee spent on each anchor, as JSON."
+    },
+    {
+      "id": "periods",
+      "title": "A day's fingerprint",
+      "path": "/api/periods/YYYY-MM-DD",
+      "status": "built",
+      "status_label": "Built, not yet deployed",
+      "what": "One Merkle root over every record anchored that UTC day, with its leaves in order."
+    },
+    {
+      "id": "anchor-proof",
+      "title": "One record's place in its day",
+      "path": "/api/anchors/ID/proof",
+      "status": "built",
+      "status_label": "Built, not yet deployed",
+      "what": "The inclusion proof linking one anchor to its day's root, in the same shape as the example on this page."
+    }
+  ]
+}

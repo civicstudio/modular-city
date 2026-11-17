@@ -1,0 +1,321 @@
+---
+layout: default
+title: "Check a City Record"
+description: "Recompute the fingerprint of a published city record, see how one fingerprint covers a whole day of records, and find the public checks Modular City uses."
+permalink: /ledger/
+---
+
+{% assign ex = site.data.ledger %}
+{% assign reg = site.data.public_registry %}
+
+<main class="bg-white">
+  <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <p class="text-sm font-bold uppercase tracking-widest text-primary-800">
+      Open records
+    </p>
+    <h1 class="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+      Check a city record
+    </h1>
+    <p class="mt-4 text-lg text-gray-700">
+      You shouldn't have to take the city's word for what a record says.
+      Every record Modular City publishes this way has a fingerprint: a short code computed from the file's exact contents.
+      If one character of the file changes, the fingerprint changes completely.
+      You can recompute it yourself, on your own computer, and compare.
+    </p>
+
+    <div
+      class="mt-8 rounded-lg border-2 border-amber-800 bg-amber-50 p-5"
+      role="note"
+      aria-labelledby="fictional-heading"
+    >
+      <h2
+        id="fictional-heading"
+        class="text-base font-bold text-gray-900"
+      >
+        This is a worked example with fictional records
+      </h2>
+      <p class="mt-2 text-gray-900">
+        Modular City is a model city, and the minutes below describe no real meeting.
+        The example has not been anchored on a public blockchain yet, and the credential is unsigned.
+        Everything on this page is computed from files you can download here, so every check works today.
+      </p>
+    </div>
+
+    <section
+      class="mt-14"
+      aria-labelledby="check-file-heading"
+    >
+      <h2
+        id="check-file-heading"
+        class="text-2xl font-bold text-gray-900"
+      >
+        1. Check the minutes yourself
+      </h2>
+      <ol class="mt-6 list-decimal space-y-6 pl-6 text-gray-800">
+        <li>
+          <p>
+            Download
+            <a
+              href="{{ ex.artifact.url | relative_url }}"
+              class="font-semibold text-primary-800 underline hover:text-primary-950"
+            >{{ ex.artifact.title }} (plain text)</a>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Compute its SHA-256 fingerprint with the tool your computer already has.
+          </p>
+          <dl class="mt-3 space-y-3 text-sm">
+            <div>
+              <dt class="font-semibold text-gray-900">
+                Mac or Linux terminal
+              </dt>
+              <dd class="mt-1">
+                <code class="block overflow-x-auto rounded bg-slate-100 px-3 py-2 text-slate-900">shasum -a 256 2025-01-14-city-council-minutes.txt</code>
+              </dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-gray-900">
+                Windows PowerShell
+              </dt>
+              <dd class="mt-1">
+                <code class="block overflow-x-auto rounded bg-slate-100 px-3 py-2 text-slate-900">Get-FileHash 2025-01-14-city-council-minutes.txt -Algorithm SHA256</code>
+              </dd>
+            </div>
+          </dl>
+        </li>
+        <li>
+          <p>
+            Compare the result with the fingerprint the city published.
+            Windows prints it in capital letters, which is the same value.
+          </p>
+          <p class="mt-3 text-sm font-semibold text-gray-900">
+            Published fingerprint of the adopted minutes
+          </p>
+          <p
+            class="mt-1 break-all rounded bg-slate-100 px-3 py-2 font-mono text-sm text-slate-900"
+            data-artifact-sha256
+          >{{ ex.artifact.sha256 }}</p>
+        </li>
+      </ol>
+      <p class="mt-6 text-gray-700">
+        If the two match, you hold exactly the file the Council adopted.
+        If they differ, the file was changed after it was published.
+      </p>
+    </section>
+
+    <section
+      class="mt-14"
+      aria-labelledby="day-heading"
+    >
+      <h2
+        id="day-heading"
+        class="text-2xl font-bold text-gray-900"
+      >
+        2. How one fingerprint covers a whole day
+      </h2>
+      <p class="mt-4 text-gray-700">
+        Writing every record to a public blockchain one at a time would be slow and wasteful.
+        Instead, Public Registry gathers each day's records into one fingerprint, called the day's root.
+        Only the root goes on chain, in one small transaction a day.
+        No names, addresses or other personal details go on chain, only fingerprints.
+      </p>
+      <ol class="mt-6 list-decimal space-y-3 pl-6 text-gray-800">
+        <li>
+          The minutes' fingerprint is named in a short
+          <a
+            href="{{ ex.credential.url | relative_url }}"
+            class="font-semibold text-primary-800 underline hover:text-primary-950"
+          >anchor credential (JSON)</a>
+          that says who published the file and when.
+        </li>
+        <li>
+          The credential's own fingerprint becomes one leaf of that day's tree.
+        </li>
+        <li>
+          The leaves are combined in pairs, and pairs of pairs, until one root is left.
+          The registry uses the Certificate Transparency method (RFC 6962) with SHA-256.
+        </li>
+        <li>
+          An inclusion proof lists the few values you need to walk from one leaf up to the root, without seeing the other records.
+        </li>
+      </ol>
+
+      <div class="mt-8 overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-300 text-left text-sm">
+          <caption class="pb-3 text-left text-base font-semibold text-gray-900">
+            Leaves for the fictional day {{ ex.period.period }} ({{ ex.period.leaf_count }} records)
+          </caption>
+          <thead>
+            <tr>
+              <th
+                scope="col"
+                class="py-2 pr-4 font-semibold text-gray-900"
+              >
+                Leaf
+              </th>
+              <th
+                scope="col"
+                class="py-2 pr-4 font-semibold text-gray-900"
+              >
+                Record
+              </th>
+              <th
+                scope="col"
+                class="py-2 font-semibold text-gray-900"
+              >
+                Fingerprint
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            {% for leaf in ex.period.leaves %}
+            <tr>
+              <td class="py-2 pr-4 align-top text-gray-800">
+                {{ leaf.index }}
+              </td>
+              <td class="py-2 pr-4 align-top text-gray-800">
+                {{ leaf.label }}
+              </td>
+              <td class="break-all py-2 align-top font-mono text-xs text-gray-900">
+                {{ leaf.hash }}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <dl class="mt-8 space-y-4 text-sm">
+        <div>
+          <dt class="font-semibold text-gray-900">
+            Day root
+          </dt>
+          <dd
+            class="mt-1 break-all font-mono text-gray-900"
+            data-period-root
+          >
+            {{ ex.period.root }}
+          </dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-gray-900">
+            Inclusion proof for leaf {{ ex.inclusion_proof.leaf_index }}
+          </dt>
+          <dd class="mt-1">
+            <ol class="list-decimal space-y-1 pl-6 text-gray-800">
+              {% for step in ex.inclusion_proof.proof %}
+              <li>
+                <span class="font-mono break-all text-gray-900">{{ step.hash }}</span>
+                (sits on the {{ step.position }})
+              </li>
+              {% endfor %}
+            </ol>
+          </dd>
+        </div>
+      </dl>
+      <p class="mt-6 text-gray-700">
+        To check the proof, hash the leaf with a 0x00 prefix, then hash it with each listed value in turn, on the side shown, with a 0x01 prefix.
+        The last result equals the day root.
+        The
+        <a
+          href="{{ '/ledger/example-proof.json' | relative_url }}"
+          class="font-semibold text-primary-800 underline hover:text-primary-950"
+        >whole example as JSON</a>
+        has the same fields the registry publishes at
+        <code class="rounded bg-slate-100 px-1 text-slate-900">/api/anchors/ID/proof</code>,
+        so a script that checks this example checks real proofs too.
+      </p>
+    </section>
+
+    <section
+      class="mt-14"
+      aria-labelledby="registry-heading"
+    >
+      <h2
+        id="registry-heading"
+        class="text-2xl font-bold text-gray-900"
+      >
+        3. Public checks at {{ reg.name }}
+      </h2>
+      <p class="mt-4 text-gray-700">
+        {{ reg.name }} is the open-source record layer Modular City is adopting to anchor and sign its records.
+        These pages and data feeds are open to anyone, with no account.
+        Statuses were last checked on {{ reg.checked_on }}.
+      </p>
+      <ul
+        role="list"
+        class="mt-6 divide-y divide-gray-200 border-y border-gray-200"
+      >
+        {% for check in reg.checks %}
+        <li
+          class="py-4"
+          data-registry-check="{{ check.id }}"
+        >
+          <p class="font-semibold text-gray-900">
+            {% if check.status == "live" %}
+            <a
+              href="{{ reg.base_url }}{{ check.path }}"
+              class="text-primary-800 underline hover:text-primary-950"
+            >{{ check.title }}</a>
+            {% else %}
+            {{ check.title }}
+            {% endif %}
+            <span class="ml-2 inline-block rounded bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-900">{{ check.status_label }}</span>
+          </p>
+          <p class="mt-1 text-sm text-gray-700">
+            {{ check.what }}
+          </p>
+          <p class="mt-1 break-all font-mono text-xs text-gray-700">
+            {{ reg.base_url }}{{ check.path }}
+          </p>
+        </li>
+        {% endfor %}
+      </ul>
+      <p class="mt-6 text-gray-700">
+        You can try the file check with the example fingerprint now:
+        <a
+          href="{{ reg.base_url }}/files/verify?sha256={{ ex.artifact.sha256 }}"
+          class="font-semibold text-primary-800 underline hover:text-primary-950"
+        >look up the example minutes at {{ reg.name }}</a>.
+        Until the example is anchored, the registry will answer that it has no record of this file.
+        That answer is the check working: a record that was never anchored can't be passed off as one.
+      </p>
+    </section>
+
+    <section
+      class="mt-14"
+      aria-labelledby="limits-heading"
+    >
+      <h2
+        id="limits-heading"
+        class="text-2xl font-bold text-gray-900"
+      >
+        What a fingerprint proves, and what it doesn't
+      </h2>
+      <ul class="mt-6 list-disc space-y-3 pl-6 text-gray-800">
+        <li>
+          A matching fingerprint proves the file is unchanged since it was fingerprinted.
+        </li>
+        <li>
+          An anchored day root proves the fingerprint existed by the time that transaction was mined, and that nobody has quietly edited the day since.
+        </li>
+        <li>
+          A signature from the city's published key proves who issued the record.
+          Modular City will add signed records once the registry's permanent keys are in place.
+        </li>
+        <li>
+          None of this proves the minutes are accurate.
+          That still rests on the Council adopting them in public, which is why the record names the meeting.
+        </li>
+      </ul>
+      <p class="mt-6 text-gray-700">
+        Questions or ideas for what the city should publish this way are welcome at
+        <a
+          href="mailto:info@modularcity.org"
+          class="font-semibold text-primary-800 underline hover:text-primary-950"
+        >info@modularcity.org</a>.
+      </p>
+    </section>
+  </div>
+</main>
