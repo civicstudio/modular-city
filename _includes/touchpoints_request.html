@@ -3,7 +3,7 @@
   Plain links only; ids come from touchpoints.request in _data/services.json.
 
   Parameters:
-    request  - touchpoints.request (process, intake_form_id, process_model_id, process_url,
+    request  - touchpoints.request (process, intake_form_id, process_model_id, process_story_url,
                optional open311_service_code, optional response_deadline_business_days)
     agency   - the owning agency (from civic.json)
 {% endcomment %}
@@ -74,13 +74,13 @@
       </a>
     </li>
     {% endif %}
-    {% if tp_request.process_url %}
+    {% if tp_request.process_story_url %}
     <li>
       <a
-        href="{{ tp_request.process_url }}"
+        href="{{ tp_request.process_story_url }}"
         class="font-semibold text-primary-800 hover:text-primary-500"
       >
-        See every step of this request process
+        Follow one example request through the process
       </a>
     </li>
     {% endif %}

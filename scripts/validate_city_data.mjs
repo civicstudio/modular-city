@@ -113,12 +113,13 @@ function checkTouchpoints(touchpoints, location) {
     ) {
       errors.push(`${location}.request.response_deadline_business_days: expected a positive integer`);
     }
+    // A Touchpoints path-story share link: one annotated example path through the process.
     if (
-      request?.process_url !== null &&
-      request?.process_url !== undefined &&
-      !/^https:\/\//.test(request.process_url)
+      request?.process_story_url !== null &&
+      request?.process_story_url !== undefined &&
+      !/^https:\/\/[^/]+\/process-models\/[^/]+\/stories\/[^/?#]+$/.test(request.process_story_url)
     ) {
-      errors.push(`${location}.request.process_url: expected an https URL or null`);
+      errors.push(`${location}.request.process_story_url: expected https://<host>/process-models/<id>/stories/<token> or null`);
     }
   }
 }

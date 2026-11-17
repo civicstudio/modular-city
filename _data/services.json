@@ -36,7 +36,7 @@
         "process": "business-license",
         "intake_form_id": null,
         "process_model_id": null,
-        "process_url": null
+        "process_story_url": null
       }
     }
   },
@@ -78,7 +78,7 @@
         "response_deadline_business_days": 10,
         "intake_form_id": null,
         "process_model_id": null,
-        "process_url": null
+        "process_story_url": null
       }
     }
   },
@@ -155,7 +155,7 @@
         "open311_service_code": "MC311-POTHOLE",
         "intake_form_id": null,
         "process_model_id": null,
-        "process_url": null
+        "process_story_url": null
       }
     }
   },
@@ -264,7 +264,7 @@
         "process": "facility-rental",
         "intake_form_id": null,
         "process_model_id": null,
-        "process_url": null
+        "process_story_url": null
       }
     }
   },
