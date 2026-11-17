@@ -1,0 +1,117 @@
+{
+  "title": "Modular City stack vs. fragmented city stack",
+  "currency": "USD",
+  "period": "annual recurring cost",
+  "pricing_note": "Illustrative planning ranges for a demonstration scenario. Replace with actual invoices, staff costs, and procurement quotes before making budget decisions.",
+  "totals": {
+    "existing_stack": "$150k–$760k / year across software, hosting, support, and integrations",
+    "modular_city_stack": "$3k–$40k / year for hosting, monitoring, automation, and optional managed support"
+  },
+  "rows": [
+    {
+      "capability": "CMS / public website",
+      "existing_stack": {
+        "tools": "Commercial CMS, page-builder plugins, custom theme, vendor support",
+        "features": "Pages, departments, news, service pages, documents",
+        "price": "$30k–$150k / year",
+        "risk": "Content and data often drift apart"
+      },
+      "modular_city_stack": {
+        "tools": "Jekyll static site, structured data files, Git-based workflow",
+        "features": "Pages generated from data, civic-data.json, service catalog, reusable templates",
+        "price": "$500–$5k / year",
+        "risk": "Requires disciplined content workflow"
+      }
+    },
+    {
+      "capability": "Meetings and agendas",
+      "existing_stack": {
+        "tools": "Agenda management platform plus PDF packets",
+        "features": "Meeting notices, agenda packets, minutes, video links",
+        "price": "$20k–$120k / year",
+        "risk": "Agenda items become locked in PDFs"
+      },
+      "modular_city_stack": {
+        "tools": "Public bodies, meetings, agendas, and agenda-items JSON",
+        "features": "Filterable meeting archive, machine-readable agenda items, body links",
+        "price": "$0–$5k / year incremental",
+        "risk": "Needs import path from clerk workflow"
+      }
+    },
+    {
+      "capability": "Calendar",
+      "existing_stack": {
+        "tools": "CMS calendar module, embedded calendar, or third-party events tool",
+        "features": "Public events, subscriptions, location details",
+        "price": "$3k–$25k / year",
+        "risk": "Events can diverge from meeting notices"
+      },
+      "modular_city_stack": {
+        "tools": "JSON calendar data plus iCalendar feed",
+        "features": "Static pages, ICS subscription, reusable event records",
+        "price": "$0–$2k / year incremental",
+        "risk": "Needs one canonical editor"
+      }
+    },
+    {
+      "capability": "Reports and open data",
+      "existing_stack": {
+        "tools": "PDF reports, spreadsheet exports, open-data portal, analytics dashboards",
+        "features": "Budgets, performance reports, documents, data downloads",
+        "price": "$15k–$100k / year",
+        "risk": "Reports are hard to reuse across systems"
+      },
+      "modular_city_stack": {
+        "tools": "DCAT-US data.json, JSON exports, seed datasets, static report pages",
+        "features": "Machine-readable catalogs, reproducible demo data, linkable source files",
+        "price": "$0–$5k / year incremental",
+        "risk": "Needs validation and publication discipline"
+      }
+    },
+    {
+      "capability": "311 / service requests",
+      "existing_stack": {
+        "tools": "CRM, mobile reporting app, routing rules, email inboxes",
+        "features": "Issue intake, assignment, status updates, reporting",
+        "price": "$25k–$150k / year",
+        "risk": "Service catalog and request taxonomy may be separate"
+      },
+      "modular_city_stack": {
+        "tools": "Open311 service list, static 311 portal, future request API",
+        "features": "Request-type catalog, demo local persistence, status tracking prototype",
+        "price": "$0–$8k / year until backend is added",
+        "risk": "Needs backend for real submissions"
+      }
+    },
+    {
+      "capability": "Forms and feedback",
+      "existing_stack": {
+        "tools": "Form builder, survey tool, email notifications, spreadsheets",
+        "features": "Service feedback, contact forms, request triage",
+        "price": "$5k–$40k / year",
+        "risk": "Feedback often lacks service ownership context"
+      },
+      "modular_city_stack": {
+        "tools": "Touchpoints-compatible service catalog and handoff",
+        "features": "Service ownership, feedback attachment points, future form sync",
+        "price": "$0–$5k / year integration allowance",
+        "risk": "Requires Touchpoints service API/import"
+      }
+    },
+    {
+      "capability": "Other third-party tools",
+      "existing_stack": {
+        "tools": "Search, accessibility scanner, hosting, CDN, analytics, translation, document storage",
+        "features": "Cross-cutting website operations",
+        "price": "$50k–$175k / year",
+        "risk": "Many renewals and disconnected admin surfaces"
+      },
+      "modular_city_stack": {
+        "tools": "Static hosting, CI checks, open source dependencies, optional monitoring",
+        "features": "Lower operating surface, fewer runtime services, source-controlled changes",
+        "price": "$2.5k–$10k / year",
+        "risk": "Some enterprise workflows may still need external systems"
+      }
+    }
+  ]
+}

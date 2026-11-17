@@ -4,7 +4,7 @@
   "title": "Modular City civic domain seed",
   "type": "object",
   "required": [
-    "schema_version", "seed_id", "fictional", "jurisdiction", "properties",
+    "schema_version", "seed_id", "fictional", "jurisdiction", "public_bodies", "properties",
     "property_titles", "property_assessments", "deeds", "recorded_documents",
     "marriage_licenses", "civil_unions", "credentials", "certificates",
     "meetings", "agendas", "agenda_items"
@@ -15,6 +15,11 @@
     "fictional": {"const": true},
     "jurisdiction": {"$ref": "#/$defs/identified"},
     "agencies": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
+    "public_bodies": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"$ref": "#/$defs/identified"}
+    },
     "properties": {"$ref": "#/$defs/seedCollection"},
     "property_titles": {"$ref": "#/$defs/seedCollection"},
     "property_assessments": {"$ref": "#/$defs/seedCollection"},

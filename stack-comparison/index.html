@@ -1,0 +1,77 @@
+---
+layout: default
+title: "Feature and Price Matrix"
+description: "Compare a typical fragmented city website stack with the Modular City stack."
+permalink: /stack-comparison/
+---
+
+<main class="bg-white">
+  <section class="border-b border-slate-200 bg-slate-950 text-white">
+    <div class="mx-auto max-w-7xl px-6 py-14 lg:px-8 lg:py-20">
+      <p class="text-sm font-bold uppercase tracking-widest text-slate-200">Operating model</p>
+      <h1 class="mt-3 max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl">Feature and price matrix</h1>
+      <p class="mt-5 max-w-3xl text-lg text-slate-200">Compare the Modular City stack with the fragmented collection of CMS, meetings, calendar, reporting, 311, forms, and other third-party tools many cities operate today.</p>
+    </div>
+  </section>
+
+  <section class="py-14 sm:py-20">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-widest text-primary-800">Illustrative comparison</p>
+          <h2 id="matrix-heading" class="mt-3 text-3xl font-bold tracking-tight text-slate-950">{{ site.data.stack_comparison.title }}</h2>
+          <p class="mt-3 max-w-3xl text-slate-700">{{ site.data.stack_comparison.pricing_note }}</p>
+        </div>
+        <dl class="grid gap-3 sm:grid-cols-2 lg:w-[34rem]">
+          <div class="rounded-lg bg-slate-100 p-4">
+            <dt class="text-xs font-bold uppercase tracking-wide text-slate-700">Existing stack</dt>
+            <dd class="mt-1 text-sm font-bold text-slate-950">{{ site.data.stack_comparison.totals.existing_stack }}</dd>
+          </div>
+          <div class="rounded-lg bg-primary-50 p-4">
+            <dt class="text-xs font-bold uppercase tracking-wide text-primary-800">Modular City</dt>
+            <dd class="mt-1 text-sm font-bold text-slate-950">{{ site.data.stack_comparison.totals.modular_city_stack }}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="mt-10 overflow-x-auto rounded-xl border border-slate-200" tabindex="0" aria-labelledby="matrix-heading">
+        <table class="min-w-[72rem] divide-y divide-slate-200 bg-white text-left text-sm">
+          <caption class="sr-only">Feature and price comparison between a typical existing city stack and the Modular City stack.</caption>
+          <thead class="bg-slate-100 text-slate-950">
+            <tr>
+              <th scope="col" class="w-48 px-4 py-3 font-bold">Capability</th>
+              <th scope="col" class="px-4 py-3 font-bold">Typical existing city stack</th>
+              <th scope="col" class="px-4 py-3 font-bold">Existing estimated price</th>
+              <th scope="col" class="px-4 py-3 font-bold">Modular City stack</th>
+              <th scope="col" class="px-4 py-3 font-bold">Modular City estimated price</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            {% for row in site.data.stack_comparison.rows %}
+            <tr class="align-top">
+              <th scope="row" class="px-4 py-5 text-base font-bold text-slate-950">{{ row.capability }}</th>
+              <td class="px-4 py-5">
+                <p class="font-bold text-slate-900">{{ row.existing_stack.tools }}</p>
+                <p class="mt-2 text-slate-700">{{ row.existing_stack.features }}</p>
+                <p class="mt-2 text-xs font-bold uppercase tracking-wide text-slate-600">Risk: {{ row.existing_stack.risk }}</p>
+              </td>
+              <td class="px-4 py-5 font-bold text-slate-950">{{ row.existing_stack.price }}</td>
+              <td class="px-4 py-5">
+                <p class="font-bold text-slate-900">{{ row.modular_city_stack.tools }}</p>
+                <p class="mt-2 text-slate-700">{{ row.modular_city_stack.features }}</p>
+                <p class="mt-2 text-xs font-bold uppercase tracking-wide text-primary-800">Risk: {{ row.modular_city_stack.risk }}</p>
+              </td>
+              <td class="px-4 py-5 font-bold text-slate-950">{{ row.modular_city_stack.price }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-10 rounded-xl border border-blue-200 bg-blue-50 p-6 text-blue-950">
+        <h2 class="text-xl font-bold">How to use this matrix</h2>
+        <p class="mt-2 text-sm">Treat the numbers as a planning model, not procurement evidence. For a real city, replace each row with current contracts, staff support time, hosting costs, and required compliance services.</p>
+      </div>
+    </div>
+  </section>
+</main>

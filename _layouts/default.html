@@ -29,10 +29,25 @@
     {% include json-ld.html %}
   </head>
   <body class="bg-white">
+    <a
+      href="#main-content"
+      class="absolute -top-20 left-4 z-50 rounded-md bg-white px-4 py-3 text-sm font-bold text-gray-900 shadow-lg ring-2 ring-primary-700 focus:top-4"
+    >
+      Skip to main content
+    </a>
+
     {% include header.html %}
 
-    {{ content }}
+    <div
+      id="main-content"
+      class="flex flex-1 flex-col"
+      tabindex="-1"
+    >
+      {{ content }}
+    </div>
 
     {% include footer.html %}
+    {% include ui/cookie-consent.html %}
+    <script src="{{ '/assets/js/ui-components.js' | relative_url }}" defer></script>
   </body>
 </html>

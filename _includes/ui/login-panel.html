@@ -1,0 +1,48 @@
+<section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8" aria-labelledby="login-panel-heading">
+  <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start">
+    <div>
+      <p class="text-sm font-bold uppercase tracking-widest text-primary-800">Account preview</p>
+      <h2 id="login-panel-heading" class="mt-3 text-3xl font-bold tracking-tight text-slate-950">Sign in to Modular City</h2>
+      <p class="mt-3 text-slate-700">This is a static UI for a future resident or staff account. It does not authenticate, create sessions, or send credentials anywhere.</p>
+    </div>
+    <div class="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950">
+      <p class="font-bold">Demo only</p>
+      <p class="mt-1">Use placeholder text if testing. Do not enter a real password.</p>
+    </div>
+  </div>
+
+  <form class="mt-8 space-y-6" data-login-demo aria-describedby="login-demo-status">
+    <div>
+      <label for="login-email" class="block font-bold text-slate-900">Email address</label>
+      <input id="login-email" name="email" type="email" autocomplete="username" class="mt-2 block w-full rounded-md border border-slate-400 bg-white px-4 py-3 text-slate-950 focus:border-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-700" placeholder="name@example.gov">
+    </div>
+    <div>
+      <label for="login-password" class="block font-bold text-slate-900">Password</label>
+      <input id="login-password" name="password" type="password" autocomplete="current-password" class="mt-2 block w-full rounded-md border border-slate-400 bg-white px-4 py-3 text-slate-950 focus:border-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-700">
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-start gap-3">
+        <input id="login-remember" name="remember" type="checkbox" class="mt-1 size-5 rounded border-slate-400 text-primary-700 focus:ring-primary-700">
+        <label for="login-remember" class="font-bold text-slate-900">Remember this device</label>
+      </div>
+      <a href="#account-help" class="font-bold text-primary-800 underline underline-offset-4 hover:text-primary-600">Need help signing in?</a>
+    </div>
+    <button type="submit" class="rounded-md bg-primary-700 px-5 py-3 font-bold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700">Sign in</button>
+    <p id="login-demo-status" class="rounded-lg border border-blue-200 bg-blue-50 p-4 text-sm text-blue-950" role="status" aria-live="polite" tabindex="-1" hidden></p>
+  </form>
+
+  <div id="account-help" class="mt-8 grid gap-4 border-t border-slate-200 pt-6 sm:grid-cols-3">
+    <div>
+      <h3 class="font-bold text-slate-950">Residents</h3>
+      <p class="mt-1 text-sm text-slate-700">Future account access could show service requests, permits, and notification preferences.</p>
+    </div>
+    <div>
+      <h3 class="font-bold text-slate-950">Staff</h3>
+      <p class="mt-1 text-sm text-slate-700">Future staff access could route content requests, reviews, and publishing workflows.</p>
+    </div>
+    <div>
+      <h3 class="font-bold text-slate-950">No backend</h3>
+      <p class="mt-1 text-sm text-slate-700">This page intentionally stops at the interface boundary.</p>
+    </div>
+  </div>
+</section>

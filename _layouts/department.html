@@ -105,6 +105,17 @@ layout: default
         </section>
         {% endif %}
 
+        <!-- Feedback (Touchpoints) -->
+        {% if page.touchpoints.feedback_form %}
+        {% include touchpoints_feedback.html
+          form=page.touchpoints.feedback_form
+          facilities=page.facilities
+          page_url=page.url
+          contact_email=page.email
+          section_class="rounded-lg border border-gray-200 p-6"
+        %}
+        {% endif %}
+
         <!-- About section -->
         <section aria-labelledby="about-heading">
           <h2

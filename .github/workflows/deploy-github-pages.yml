@@ -45,6 +45,12 @@ jobs:
       - name: Build CSS
         run: npm run build:css
 
+      - name: Prepare example city data
+        run: bin/setup --data-only
+
+      - name: Validate city data
+        run: npm run test:data
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

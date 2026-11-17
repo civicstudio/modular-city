@@ -30,7 +30,7 @@ title: "Your Government"
         {% for official in elected %}
         <li class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
           <div class="flex items-center gap-x-4">
-            <div class="flex size-14 items-center justify-center rounded-full bg-primary-600 text-white text-xl font-semibold">
+            <div class="flex size-14 items-center justify-center rounded-full bg-primary-800 text-white text-xl font-semibold">
               {{ official.name | split: " " | first | slice: 0 }}{{ official.name | split: " " | last | slice: 0 }}
             </div>
             <div>
@@ -143,6 +143,42 @@ title: "Your Government"
             </p>
             {% endif %}
           </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Boards and commissions -->
+    <div class="mt-16">
+      <h2 class="text-2xl font-bold text-gray-900">
+        Boards and Commissions
+      </h2>
+      <p class="mt-2 max-w-3xl text-gray-700">
+        Appointed residents advise the City Council, hear appeals, and review public business in open meetings.
+      </p>
+      <ul role="list" class="mt-8 grid gap-6 md:grid-cols-2">
+        {% for body in site.data.public_bodies %}
+        <li class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div class="flex items-start justify-between gap-4">
+            <h3 class="text-lg font-bold text-gray-900">{{ body.name }}</h3>
+            <span class="rounded-full bg-primary-50 px-2.5 py-1 text-xs font-bold capitalize text-primary-800">{{ body.legislative_type }}</span>
+          </div>
+          <p class="mt-3 text-sm/6 text-gray-700">{{ body.description }}</p>
+          <dl class="mt-5 space-y-3 border-t border-gray-100 pt-4 text-sm">
+            <div>
+              <dt class="font-bold text-gray-900">Members</dt>
+              <dd class="text-gray-700">{{ body.size }} appointed seats</dd>
+            </div>
+            <div>
+              <dt class="font-bold text-gray-900">Regular meetings</dt>
+              <dd class="text-gray-700">{{ body.meeting_schedule }}</dd>
+            </div>
+            <div>
+              <dt class="font-bold text-gray-900">Terms</dt>
+              <dd class="text-gray-700">{{ body.term_length }}; {{ body.term_limits | downcase }}</dd>
+            </div>
+          </dl>
+          <a href="/meetings/?body={{ body.id }}" class="mt-5 inline-flex min-h-6 items-center font-bold text-primary-800 hover:text-primary-600">View {{ body.name }} meetings <span class="ml-1" aria-hidden="true">&rarr;</span></a>
         </li>
         {% endfor %}
       </ul>
