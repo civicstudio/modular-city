@@ -9,7 +9,8 @@ RSpec.describe 'WCAG AAA Accessibility', type: :feature do
     '/government.html',
     '/calendar.html',
     '/blog.html',
-    '/beta/index.html'
+    '/beta/index.html',
+    '/ledger/index.html'
   ].freeze
 
   # WCAG AAA includes all A, AA, and AAA criteria
