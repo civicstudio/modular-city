@@ -8,6 +8,8 @@ description: "A model municipal website demonstrating best practices for civic w
 # Hosted Touchpoints instance for feedback forms and request processes.
 # Pages link to it; the build never calls it.
 touchpoints_url: "https://touchpoints.app"
+# Query parameter that pre-fills the hidden "which page" question on Touchpoints feedback forms.
+touchpoints_page_param: "page"
 
 plugins:
   - jekyll-sitemap

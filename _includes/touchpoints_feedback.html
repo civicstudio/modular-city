@@ -7,6 +7,7 @@
     form           - touchpoints.feedback_form from _data (kind: "service" | "park", id: UUID or null)
     facilities     - optional list of park/facility names (park forms)
     contact_email  - email fallback
+    page_url       - this page's URL, sent as ?{{ site.touchpoints_page_param }}= so the form records where feedback came from
     section_class  - optional classes for the section wrapper
 {% endcomment %}
 {% assign tp_form = include.form %}
@@ -55,7 +56,7 @@
   {% endif %}
   {% if tp_form.id %}
   <a
-    href="{{ site.touchpoints_url }}/touchpoints/{{ tp_form.id }}"
+    href="{{ site.touchpoints_url }}/touchpoints/{{ tp_form.id }}{% if include.page_url %}?{{ site.touchpoints_page_param | default: 'page' }}={{ include.page_url | url_encode }}{% endif %}"
     class="inline-flex items-center rounded-md bg-primary-700 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-600"
     data-touchpoints-form-id="{{ tp_form.id }}"
   >
