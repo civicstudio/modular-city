@@ -26,7 +26,19 @@
       "Pay the $75 annual fee",
       "Receive your license within 3-5 business days"
     ],
-    "related_services": ["building-permit"]
+    "related_services": ["building-permit"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": null
+      },
+      "request": {
+        "process": "business-license",
+        "intake_form_id": null,
+        "process_model_id": null,
+        "process_url": null
+      }
+    }
   },
   {
     "id": "public-records",
@@ -55,7 +67,20 @@
       "Pay copying fees if applicable ($0.25 per page)",
       "Receive records within 5-10 business days"
     ],
-    "related_services": []
+    "related_services": [],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": null
+      },
+      "request": {
+        "process": "public-records",
+        "response_deadline_business_days": 10,
+        "intake_form_id": null,
+        "process_model_id": null,
+        "process_url": null
+      }
+    }
   },
   {
     "id": "voter-registration",
@@ -84,7 +109,13 @@
       "Complete the registration form",
       "Registration is immediate"
     ],
-    "related_services": []
+    "related_services": [],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": null
+      }
+    }
   },
   {
     "id": "pothole-report",
@@ -113,7 +144,20 @@
       "Optionally include a photo",
       "Repair typically completed within 7-14 days"
     ],
-    "related_services": ["streetlight-outage"]
+    "related_services": ["streetlight-outage"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": null
+      },
+      "request": {
+        "process": "pothole",
+        "open311_service_code": "MC311-POTHOLE",
+        "intake_form_id": null,
+        "process_model_id": null,
+        "process_url": null
+      }
+    }
   },
   {
     "id": "water-service",
@@ -142,7 +186,13 @@
       "Pay $25 service connection fee for new service",
       "Service will be activated/stopped on your requested date"
     ],
-    "related_services": ["streetlight-outage", "pothole-report"]
+    "related_services": ["streetlight-outage", "pothole-report"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": null
+      }
+    }
   },
   {
     "id": "streetlight-outage",
@@ -169,7 +219,13 @@
       "Submit a report online",
       "Repair typically completed within 5-7 business days"
     ],
-    "related_services": ["pothole-report"]
+    "related_services": ["pothole-report"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": null
+      }
+    }
   },
   {
     "id": "facility-rental",
@@ -198,7 +254,19 @@
       "Submit a rental application",
       "Pay rental fee ($50-$200 depending on facility)"
     ],
-    "related_services": ["program-registration"]
+    "related_services": ["program-registration"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "park",
+        "id": null
+      },
+      "request": {
+        "process": "facility-rental",
+        "intake_form_id": null,
+        "process_model_id": null,
+        "process_url": null
+      }
+    }
   },
   {
     "id": "program-registration",
@@ -227,7 +295,13 @@
       "Pay program fees (varies by program)",
       "Receive confirmation and start date information"
     ],
-    "related_services": ["facility-rental"]
+    "related_services": ["facility-rental"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "park",
+        "id": null
+      }
+    }
   },
   {
     "id": "building-permit",
@@ -256,7 +330,13 @@
       "Submit application with contractor license information",
       "Permit review takes 10-15 business days"
     ],
-    "related_services": ["business-license"]
+    "related_services": ["business-license"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": null
+      }
+    }
   },
   {
     "id": "tax-payment",
@@ -285,6 +365,12 @@
       "Pay online (no fee) or in person",
       "Receive payment confirmation"
     ],
-    "related_services": []
+    "related_services": [],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": null
+      }
+    }
   }
 ]

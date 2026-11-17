@@ -70,6 +70,74 @@ if (Array.isArray(services)) {
   });
 }
 
+// Touchpoints ids attach to service and department records (see TOUCHPOINTS_FORM_SPEC.md).
+// An id is null until Touchpoints assigns one; otherwise it must be a UUID.
+const uuidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const feedbackKinds = new Set(["service", "park"]);
+const requestTypes = parsed.get("request_types.json");
+const open311Codes = new Set(
+  Array.isArray(requestTypes) ? requestTypes.map((requestType) => requestType.service_code) : []
+);
+
+function checkOptionalUuid(value, location) {
+  if (value !== null && value !== undefined && !(typeof value === "string" && uuidPattern.test(value))) {
+    errors.push(`${location}: expected a UUID or null`);
+  }
+}
+
+function checkTouchpoints(touchpoints, location) {
+  if (touchpoints === undefined) return;
+  if (touchpoints === null || typeof touchpoints !== "object") {
+    errors.push(`${location}: expected an object`);
+    return;
+  }
+  const form = touchpoints.feedback_form;
+  if (form !== undefined) {
+    if (!form || !feedbackKinds.has(form.kind)) {
+      errors.push(`${location}.feedback_form.kind: expected "service" or "park"`);
+    }
+    checkOptionalUuid(form?.id, `${location}.feedback_form.id`);
+  }
+  const request = touchpoints.request;
+  if (request !== undefined) {
+    if (!request || typeof request.process !== "string" || request.process.trim() === "") {
+      errors.push(`${location}.request.process: expected a non-empty string`);
+    }
+    checkOptionalUuid(request?.intake_form_id, `${location}.request.intake_form_id`);
+    if (request?.open311_service_code !== undefined && !open311Codes.has(request.open311_service_code)) {
+      errors.push(`${location}.request.open311_service_code: no matching request type in request_types.json`);
+    }
+    if (
+      request?.response_deadline_business_days !== undefined &&
+      !(Number.isInteger(request.response_deadline_business_days) && request.response_deadline_business_days > 0)
+    ) {
+      errors.push(`${location}.request.response_deadline_business_days: expected a positive integer`);
+    }
+    if (
+      request?.process_url !== null &&
+      request?.process_url !== undefined &&
+      !/^https:\/\//.test(request.process_url)
+    ) {
+      errors.push(`${location}.request.process_url: expected an https URL or null`);
+    }
+  }
+}
+
+if (Array.isArray(services)) {
+  services.forEach((service, index) => checkTouchpoints(service.touchpoints, `services.json[${index}].touchpoints`));
+}
+if (Array.isArray(departments)) {
+  departments.forEach((department, index) => {
+    checkTouchpoints(department.touchpoints, `departments.json[${index}].touchpoints`);
+    if (
+      department.facilities !== undefined &&
+      !(Array.isArray(department.facilities) && department.facilities.every((name) => typeof name === "string" && name.trim() !== ""))
+    ) {
+      errors.push(`departments.json[${index}].facilities: expected an array of non-empty strings`);
+    }
+  });
+}
+
 if (errors.length > 0) {
   console.error("City data validation failed:");
   for (const error of errors) console.error(`- ${error}`);
