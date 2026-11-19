@@ -30,6 +30,8 @@ Live claims were re-checked with read-only GETs on 2026-11-19; everything else w
   There is no separate demo deployment.
 - **Blocked on Ryan:** civil_registry won't anchor Modular City records until Ryan runs the key ceremony (civil_registry docs/KEY_CEREMONY.md) and funds the treasury.
   The key ceremony also unblocks certificates and the DID cross-reference.
+- **Waiting on civil-registry-28:** confirmation of whether production anchors 1 (period 2026-11-17) and 2 (period 2026-11-18), both published before the key ceremony, carry proofs made with the throwaway boot key, and whether they'll be re-issued.
+  Until then, /ledger/ labels its links to them as pre-ceremony examples of a proof's shape.
 - **Blocked on Ryan:** Qart's `POST /api/v1/anchor`, which the registry's `Signer.Qart` and docs/QART_BOUNDARY.md expect, is unbuilt, and Ryan still has to choose its shape (https://github.com/afomi/qart/issues/268; registry side https://github.com/jurisdictional/registry/issues/33).
 
 ## Ranked demonstrations

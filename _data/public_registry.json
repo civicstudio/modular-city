@@ -67,6 +67,12 @@
       "id": "periods",
       "title": "A day's fingerprint",
       "path": "/api/periods/2026-11-18",
+      "pre_ceremony": true,
+      "pre_ceremony_checked_on": "2026-11-19",
+      "pre_ceremony_note": [
+        "These example roots were published before the registry's signing keys were in place.",
+        "Use them to see the shape of a proof, not to check a signature."
+      ],
       "status": "live",
       "status_label": "Live, roots not yet on chain",
       "checked_on": "2026-11-19",
@@ -76,6 +82,12 @@
       "id": "anchor-proof",
       "title": "One record's place in its day",
       "path": "/api/anchors/2/proof",
+      "pre_ceremony": true,
+      "pre_ceremony_checked_on": "2026-11-19",
+      "pre_ceremony_note": [
+        "These example roots were published before the registry's signing keys were in place.",
+        "Use them to see the shape of a proof, not to check a signature."
+      ],
       "status": "live",
       "status_label": "Live, roots not yet on chain",
       "checked_on": "2026-11-19",
