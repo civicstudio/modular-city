@@ -1,0 +1,60 @@
+{
+  "fictional": true,
+  "generated_by": "scripts/ledger_example.mjs",
+  "anchored_on_chain": false,
+  "artifact": {
+    "title": "Adopted minutes, City Council regular meeting, January 14, 2025",
+    "record": "MC-MTG-2025-0001",
+    "url": "/ledger/examples/2025-01-14-city-council-minutes.txt",
+    "sha256": "6fca8f7ff2c6b6af74ea3c22b16efb6b3f4cc43697fbcb5e2fae1d4213000e78"
+  },
+  "credential": {
+    "url": "/ledger/examples/2025-01-14-city-council-minutes.credential.json",
+    "sha256": "8ec99423b349e5929b56389043845f159cbd336071f2d5f73536a368a790bb86",
+    "names_sha256": "6fca8f7ff2c6b6af74ea3c22b16efb6b3f4cc43697fbcb5e2fae1d4213000e78"
+  },
+  "period": {
+    "period_kind": "day",
+    "period": "2025-01-28",
+    "algorithm": "rfc6962-sha256",
+    "leaf_count": 4,
+    "leaves": [
+      {
+        "index": 0,
+        "label": "Adopted minutes, City Council, January 14, 2025 (the credential above)",
+        "hash": "8ec99423b349e5929b56389043845f159cbd336071f2d5f73536a368a790bb86"
+      },
+      {
+        "index": 1,
+        "label": "Modular City fictional record: business license BL-2025-0007 issued",
+        "hash": "62304851db1275d3d57908757b2de36a78f1f9a502733c549a873d81b7fa9ddd"
+      },
+      {
+        "index": 2,
+        "label": "Modular City fictional record: building permit BP-2025-0013 finaled",
+        "hash": "906d016baf2ead8e304a3dc57d83cf205db04d72a0b14bb32d4f93ac02789982"
+      },
+      {
+        "index": 3,
+        "label": "Modular City fictional record: grant MCG-2025-0002 disbursement 1",
+        "hash": "6b03f3cee63db0e9bdf198af7f5c7b87b2b8daf8ac2139ed4f70d241a54bd982"
+      }
+    ],
+    "root": "df57eb2ec738021225988b3ca2bfbdff37660131d9ee995d527c403dbc2b91f1"
+  },
+  "inclusion_proof": {
+    "leaf": "8ec99423b349e5929b56389043845f159cbd336071f2d5f73536a368a790bb86",
+    "leaf_index": 0,
+    "root": "df57eb2ec738021225988b3ca2bfbdff37660131d9ee995d527c403dbc2b91f1",
+    "proof": [
+      {
+        "hash": "bb45d2d3a13c883845a4998390488fc79f42887f4ff31ef5d8fd27f66b5c629d",
+        "position": "right"
+      },
+      {
+        "hash": "218d11447384fdd140879f58d3684c8a396b4ac8de53989ec47e67adc2ad1075",
+        "position": "right"
+      }
+    ]
+  }
+}

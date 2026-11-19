@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /ledger/example-proof.json
+---
+{{ site.data.ledger | jsonify }}

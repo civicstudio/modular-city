@@ -1,0 +1,97 @@
+{
+  "name": "Public Registry",
+  "base_url": "https://registry.jurisdictional.org",
+  "source": "https://github.com/jurisdictional/registry",
+  "checked_on": "2026-11-19",
+  "checked_how": "Read-only GET of each URL. Edit this file by hand when a status changes; the site build makes no network calls.",
+  "modular_city_records": 0,
+  "modular_city_label": "Demo — fictional",
+  "on_chain": {
+    "checked_on": "2026-11-19",
+    "treasury_balance_satoshis": 0,
+    "anchors_remaining": 0,
+    "summary": "The registry publishes day roots and proofs, but its anchors are still pending: the anchoring treasury holds 0 sats, so no root has been written to a public blockchain yet."
+  },
+  "signing_keys": {
+    "checked_on": "2026-11-19",
+    "status": "pending",
+    "summary": "The registry's permanent signing keys are not in place yet, so it issues no signed Modular City records."
+  },
+  "checks": [
+    {
+      "id": "files-verify",
+      "title": "Check a file",
+      "path": "/files/verify",
+      "status": "live",
+      "status_label": "Live",
+      "checked_on": "2026-11-19",
+      "what": "Choose a file and the page hashes it in your browser, then looks the fingerprint up in the registry's anchored files. Only the fingerprint is sent."
+    },
+    {
+      "id": "verify",
+      "title": "Look up a record by its fingerprint",
+      "path": "/verify",
+      "status": "live",
+      "status_label": "Live",
+      "checked_on": "2026-11-19",
+      "what": "Enter an anchored record's fingerprint to see the record, its anchor status and any corrections."
+    },
+    {
+      "id": "licensed-merchant",
+      "title": "Licensed-merchant certificates",
+      "path": "/certificates/licensed-merchant",
+      "status": "live",
+      "status_label": "Live, no Modular City certificates yet",
+      "checked_on": "2026-11-19",
+      "what": "What a BRC-52 licensed-merchant certificate says, and how to check one. Modular City certificates wait for the registry's permanent signing keys."
+    },
+    {
+      "id": "events",
+      "title": "Event stream",
+      "path": "/api/events?after=0",
+      "status": "live",
+      "status_label": "Live",
+      "checked_on": "2026-11-19",
+      "what": "Every registry action in order, with no gaps, as JSON."
+    },
+    {
+      "id": "treasury",
+      "title": "Anchoring fee treasury",
+      "path": "/api/treasury",
+      "status": "live",
+      "status_label": "Live, balance 0 sats",
+      "checked_on": "2026-11-19",
+      "what": "Deposits and the fee spent on each anchor, as JSON. Until it is funded, no anchor is written to a public blockchain."
+    },
+    {
+      "id": "periods",
+      "title": "A day's fingerprint",
+      "path": "/api/periods/2026-11-18",
+      "pre_ceremony": true,
+      "pre_ceremony_checked_on": "2026-11-19",
+      "pre_ceremony_note": [
+        "These example roots were published before the registry's signing keys were in place.",
+        "Use them to see the shape of a proof, not to check a signature."
+      ],
+      "status": "live",
+      "status_label": "Live, roots not yet on chain",
+      "checked_on": "2026-11-19",
+      "what": "One Merkle root over every record the registry anchored that UTC day, with its leaves in order. Swap in any past date. Today's day answers that it is still open."
+    },
+    {
+      "id": "anchor-proof",
+      "title": "One record's place in its day",
+      "path": "/api/anchors/2/proof",
+      "pre_ceremony": true,
+      "pre_ceremony_checked_on": "2026-11-19",
+      "pre_ceremony_note": [
+        "These example roots were published before the registry's signing keys were in place.",
+        "Use them to see the shape of a proof, not to check a signature."
+      ],
+      "status": "live",
+      "status_label": "Live, roots not yet on chain",
+      "checked_on": "2026-11-19",
+      "what": "The inclusion proof linking one anchor to its day's root, in the same shape as the example on this page. Swap in any anchor number."
+    }
+  ]
+}
