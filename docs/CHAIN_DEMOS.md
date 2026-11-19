@@ -1,8 +1,8 @@
 # Chain demonstrations on modularcity.org
 
-Status: assessment, 2026-11-16.
+Status: assessment, 2026-11-16; production state and decisions updated 2026-11-19.
 Scope: what modularcity.org can show a public official about Public Registry (`~/workspace/civil_registry`, registry.jurisdictional.org) and Qart (`~/workspace/qart`) on a public chain, and whether the Ourquity demo belongs here.
-Live claims were checked with read-only GETs on 2026-11-16; everything else was read from each repo's code.
+Live claims were re-checked with read-only GETs on 2026-11-19; everything else was read from each repo's code.
 
 ## Site rules every demo must keep
 
@@ -12,16 +12,25 @@ Live claims were checked with read-only GETs on 2026-11-16; everything else was 
 - Every record is clearly fictional.
 - Nothing on this site broadcasts a transaction, holds a key or takes money.
 
-## What production looks like today
+## What production looks like today (checked 2026-11-19)
 
-- registry.jurisdictional.org serves a dev-fallback DID (`did:web:civil-registry.local`, an Ed25519 key regenerated on every boot, no `#certifier-1`).
+- registry.jurisdictional.org still serves a dev-fallback DID (`did:web:civil-registry.local`, an Ed25519 key regenerated on every boot, no `#certifier-1`).
   Anything signed against it now won't verify later, so certificates and signed credentials wait for the real keys.
 - `/api/v1/certificates` returns an empty list.
-- `/api/events?after=0` returns no events, and `/api/treasury` shows a balance of 0 sats, so no record has been anchored in production.
+- `/api/treasury` shows a balance of 0 sats and 0 anchors remaining.
 - `/files/verify` and `/verify` are live.
-- `/api/periods/:date` and `/api/anchors/:id/proof` are in the registry's code (commit 514561c) but answer 404 in production, so they aren't deployed yet.
-- Qart has no `POST /api/v1/anchor` route yet, though the registry's `Signer.Qart` and docs/QART_BOUNDARY.md expect one (https://github.com/jurisdictional/registry/issues/33).
-- Whether Modular City records go into production labelled fictional, or into a separate demo deployment, is Ryan's open decision.
+- `/api/periods/:date` and `/api/anchors/:id/proof` were deployed on 2026-11-16 and answer JSON.
+  Past days return their root (2026-11-18 has 48 leaves), today returns 409 while the day is open, and an unknown anchor returns `{"error":"No such anchor."}`.
+- Those anchors are rows in the registry, not transactions: `/verify` shows them as pending, and with an unfunded treasury nothing has been written to a public blockchain.
+- `/api/events?after=0` has 44 events, almost all `period_closed`, and no `record_anchored`.
+
+## Decisions and open items
+
+- **Decided (Ryan):** Modular City records go into production registry.jurisdictional.org, each labelled "Demo — fictional".
+  There is no separate demo deployment.
+- **Blocked on Ryan:** civil_registry won't anchor Modular City records until Ryan runs the key ceremony (civil_registry docs/KEY_CEREMONY.md) and funds the treasury.
+  The key ceremony also unblocks certificates and the DID cross-reference.
+- **Blocked on Ryan:** Qart's `POST /api/v1/anchor`, which the registry's `Signer.Qart` and docs/QART_BOUNDARY.md expect, is unbuilt, and Ryan still has to choose its shape (https://github.com/afomi/qart/issues/268; registry side https://github.com/jurisdictional/registry/issues/33).
 
 ## Ranked demonstrations
 
@@ -30,17 +39,16 @@ Ranked by how much a public official learns from it, weighted by how soon it can
 ### 1. Adopted minutes anyone can check (built as a worked example)
 
 - **Provides it:** Public Registry file anchoring, daily Merkle roots and inclusion proofs; the anchoring transaction is signed by the registry's BSV signer (Qart in the target design).
-- **Live vs designed:** `/files/verify` and `/verify` are live.
-  Period roots and proofs are built, not deployed.
-  No production anchors exist yet.
+- **Live vs designed:** `/files/verify`, `/verify`, period roots and inclusion proofs are live.
+  No root has been written on chain yet, because the treasury is unfunded.
 - **Resident sees:** `/ledger/` ("Check a city record", linked from every footer).
   It walks through recomputing the SHA-256 of a fictional set of adopted minutes, shows how that fingerprint sits in a credential, how the credential is one leaf of a day's RFC 6962 tree, and the inclusion proof that reaches the day root.
   It links the registry's live checks, and a `/files/verify?sha256=…` link that honestly answers "no record" until the file is anchored.
   `/ledger/example-proof.json` has the same fields as `/api/anchors/:id/proof`, so a script that checks the example checks real proofs.
 - **Effort:** site S (done in this branch); registry S once unblocked: upload the file, then send back the anchor id and day.
-- **Blockers:** a funded treasury and anchoring turned on in the chosen deployment; the period routes deployed; Ryan's production-vs-demo decision.
-  Hash anchoring itself doesn't depend on the DID keys, but the registry's anchor credential embeds an Ed25519 proof when a signing key is present, so anchoring before the real keys leaves a credential whose signature won't verify.
-  Either wait for the keys or anchor with signing switched off and say so.
+- **Blockers:** Ryan's key ceremony and a funded treasury.
+  civil_registry has said it won't anchor before both, which also avoids a credential whose Ed25519 proof would stop verifying once the fallback key is replaced.
+  Then the file goes into production labelled "Demo — fictional".
 
 ### 2. A licensed business whose license anyone can check
 
@@ -65,7 +73,7 @@ Ranked by how much a public official learns from it, weighted by how soon it can
 ### 4. The city's daily public receipt
 
 - **Provides it:** Public Registry's gap-free event stream, the treasury ledger and period roots.
-- **Live vs designed:** event stream and treasury live (both empty); period roots built.
+- **Live vs designed:** event stream, treasury (0 sats) and period roots are live; no roots are on chain yet.
 - **Resident sees:** a short "what the city recorded" table on `/ledger/`, imported by a script someone runs by hand and commits to `_data/`, with each day's root and a link to its anchor transaction.
 - **Effort:** M.
 - **Blockers:** records in the registry, which depend on demos 1 and 2.
@@ -128,7 +136,7 @@ So there is no separate Ourquity demo left to link; anything worth showing is no
 |---|---|---|---|
 | Proof a transaction is in a block | Anchors keep `beef_hex`; ARC callbacks fill confirmation | `Qart.SPV.Evidence` keeps raw tx plus TSC merkle proof; `Qart.SPV.Beef` strictly reads BEEF | BEEF (BRC-62, BRC-95, BRC-96) with BUMP merkle paths (BRC-74) |
 | Proof a record is in a day | RFC 6962 day roots and inclusion proofs | none | RFC 6962; the day root is what gets anchored |
-| Who holds the BSV key | Record semantics and payload only (docs/QART_BOUNDARY.md) | The WIF, UTXOs, signing, broadcast | `POST /api/v1/anchor`, not built in Qart yet |
+| Who holds the BSV key | Record semantics and payload only (docs/QART_BOUNDARY.md) | The WIF, UTXOs, signing, broadcast | `POST /api/v1/anchor`, unbuilt; shape awaits Ryan (https://github.com/afomi/qart/issues/268) |
 | Signed claims about a key | Issues BRC-52 certificates | Verifies BRC-52, checks BRC-77 key proofs, shows a W3C VC view | BRC-52, BRC-77, W3C VC 2.0; shared vector `docs/vectors/brc52_certificate_v1.json` |
 | Identity documents | Jurisdiction `did:web` | DID playground that generated `did:web:modularcity.org` | W3C DID, `did:web` |
 | Wallets | none for staff | BRC-100 wallet payments, BRC-42 derived keys | BRC-100, BRC-42 |
@@ -138,12 +146,13 @@ Recommendations, aligned with the BRCs above:
 
 1. Make the portable proof one chain of three links: file SHA-256, then the RFC 6962 inclusion proof to the day root, then a BEEF with a BUMP (BRC-74) from the anchoring transaction to a block header.
    A resident's checker then needs no API from either project.
-2. Have the registry publish that BEEF beside `/api/anchors/:id/proof`, and let Qart's `Qart.SPV.Beef` reader and the registry share one test vector, the way BRC-52 already does.
-3. Build Qart's `POST /api/v1/anchor` so the registry stops holding a WIF in production.
-   Until then, anchoring for Modular City should use the registry's testnet signer or wait.
+2. Have the registry publish that BEEF beside `/api/anchors/:id/proof`, checked against the shared BEEF/BUMP vectors that already exist: bitblocks' `priv/data/interop/vectors_v1.json` (v1.0.0), which civil_registry copies from bitblocks.
+   Qart's `Qart.SPV.Beef` reader should test against the same set, so no new vector is needed.
+3. Build Qart's `POST /api/v1/anchor` so the registry stops holding a WIF in production, once Ryan picks its shape (https://github.com/afomi/qart/issues/268).
+   Until then, Modular City anchoring waits on the key ceremony and treasury either way.
 4. Keep certificate and anchor formats standard (BRC-52, W3C VC, `did:web`), so a city can switch either tool without reissuing records.
 
 ## Requests sent
 
-- civil_registry: `~/workspace/civil_registry/.claude/inbox/from-modular-city-2026-11-16-anchor-example-minutes.md` (deploy the period routes; anchor the example minutes once keys, treasury and the deployment choice are settled; reply with the anchor id).
-- qart: `~/workspace/qart/.claude/inbox/from-modular-city-2026-11-16-shared-proof-vector.md` (a shared BEEF/BUMP vector with the registry, and the status of `POST /api/v1/anchor`).
+- civil_registry: `~/workspace/civil_registry/.claude/inbox/from-modular-city-2026-11-16-anchor-example-minutes.md` (deploy the period routes, done 2026-11-16; anchor the example minutes in production, labelled "Demo — fictional", after Ryan's key ceremony and treasury funding; reply with the anchor id).
+- qart: `~/workspace/qart/.claude/inbox/from-modular-city-2026-11-16-shared-proof-vector.md` (answered: `POST /api/v1/anchor` is https://github.com/afomi/qart/issues/268, shape not chosen; the shared vectors are bitblocks' `vectors_v1.json` v1.0.0).
