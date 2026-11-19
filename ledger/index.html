@@ -117,7 +117,7 @@ permalink: /ledger/
       <p class="mt-4 text-gray-700">
         Writing every record to a public blockchain one at a time would be slow and wasteful.
         Instead, Public Registry gathers each day's records into one fingerprint, called the day's root.
-        Only the root goes on chain, in one small transaction a day.
+        Only the root goes on chain, in one small transaction a day, once the registry's anchoring is funded.
         No names, addresses or other personal details go on chain, only fingerprints.
       </p>
       <ol class="mt-6 list-decimal space-y-3 pl-6 text-gray-800">
@@ -242,6 +242,13 @@ permalink: /ledger/
         {{ reg.name }} is the open-source record layer Modular City is adopting to anchor and sign its records.
         These pages and data feeds are open to anyone, with no account.
         Statuses were last checked on {{ reg.checked_on }}.
+      </p>
+      <p
+        class="mt-4 text-gray-700"
+        data-registry-on-chain
+      >
+        {{ reg.on_chain.summary }}
+        Modular City records in the registry will carry the label "{{ reg.modular_city_label }}".
       </p>
       <ul
         role="list"
