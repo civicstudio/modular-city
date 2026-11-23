@@ -83,6 +83,19 @@ RSpec.describe 'Check a city record (/ledger/)', type: :feature do
     end
   end
 
+  it 'explains each registry check that carries a note' do
+    visit '/ledger/'
+    registry = JSON.parse(File.read(File.expand_path('../_data/public_registry.json', __dir__)))
+    noted = registry['checks'].select { |check| check['note'] }
+    expect(noted.map { |check| check['id'] }).to include('periods', 'anchor-proof')
+    noted.each do |check|
+      note = find("[data-registry-check='#{check['id']}'] [data-registry-note]")
+      check['note'].each { |sentence| expect(note).to have_text(sentence) }
+    end
+    expect(page).to have_text('Anchor 2 shows as "Pending" until the treasury is funded')
+    expect(page).not_to have_text('before the registry\'s signing keys were in place')
+  end
+
   it 'is reachable from the footer on every page' do
     visit '/index.html'
     expect(page).to have_link('Check a City Record', href: '/ledger/')

@@ -273,12 +273,12 @@ permalink: /ledger/
           <p class="mt-1 text-sm text-gray-700">
             {{ check.what }}
           </p>
-          {% if check.pre_ceremony %}
+          {% if check.note %}
           <p
             class="mt-1 text-sm text-gray-800"
-            data-pre-ceremony
+            data-registry-note
           >
-            {% for sentence in check.pre_ceremony_note %}
+            {% for sentence in check.note %}
             {{ sentence }}
             {% endfor %}
           </p>
