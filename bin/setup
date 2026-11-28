@@ -41,7 +41,7 @@ if [[ "${data_only}" == true ]]; then
 fi
 
 command -v bundle >/dev/null 2>&1 || {
-  echo "Bundler is required. Install Ruby 3.4.8 and Bundler, then run bin/setup again." >&2
+  echo "Bundler is required. Install Ruby 4.0 or newer and Bundler, then run bin/setup again." >&2
   exit 1
 }
 command -v npm >/dev/null 2>&1 || {

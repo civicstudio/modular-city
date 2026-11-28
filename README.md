@@ -5,7 +5,7 @@ nonprofits. It uses Jekyll, JSON data files, Tailwind CSS, and GitHub Pages.
 
 ## Run the example in five minutes
 
-Prerequisites: Ruby 3.4.8 with Bundler and Node.js 22 with npm. The repository's
+Prerequisites: Ruby 4.0 or newer with Bundler and Node.js 22 with npm. The repository's
 `.ruby-version` and `.node-version` files work with common version managers.
 
 ```sh
