@@ -1,0 +1,31 @@
+FICTIONAL EXAMPLE RECORD
+Modular City is a model city. These minutes describe no real meeting, people or decisions.
+Published under CC0-1.0 so anyone can use this file to practise checking a record.
+
+MODULAR CITY CITY COUNCIL
+Minutes of the regular meeting of January 14, 2025
+Record: MC-MTG-2025-0001 (meeting-001)
+Place: Council Chamber, Modular City Hall, 100 Main Street, Modular City, EX 00001
+Format: hybrid (in person and online)
+
+1. Call to order
+The Mayor called the meeting to order at 6:00 p.m.
+A quorum was present.
+
+2. Public comment
+Three residents spoke during public comment.
+Topics were street lighting on Elm Avenue, library hours and the summer recreation program.
+
+3. Consent calendar
+The Council approved the consent calendar, 5 ayes and 0 noes.
+
+4. Publishing adopted minutes with a public fingerprint
+The City Clerk presented a proposal to publish a SHA-256 fingerprint of each set of adopted minutes.
+Anyone can recompute the fingerprint from the published file and compare it with the city's public record.
+The Council directed staff to publish fingerprints for all adopted minutes, 5 ayes and 0 noes.
+
+5. Adjournment
+The meeting adjourned at 7:12 p.m.
+
+Adopted by the City Council on January 28, 2025.
+Attest: City Clerk, Modular City

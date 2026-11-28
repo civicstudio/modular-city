@@ -21,7 +21,8 @@ RSpec.describe 'WCAG AAA Accessibility', type: :feature do
     '/services/business-license.html',
     '/services/facility-rental.html',
     '/services/public-records.html',
-    '/services/program-registration.html'
+    '/services/program-registration.html',
+    '/ledger/index.html'
   ].freeze
 
   # WCAG AAA includes all A, AA, and AAA criteria
