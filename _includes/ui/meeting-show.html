@@ -1,0 +1,101 @@
+<section class="py-14 sm:py-20" data-meeting-detail-page>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+      <a href="/meetings/" class="font-bold text-primary-800 underline underline-offset-4 hover:text-primary-600">&larr; Back to meetings</a>
+      <label class="block text-sm font-bold text-slate-900" for="meeting-detail-select">
+        Show another meeting
+        <select id="meeting-detail-select" class="ml-0 mt-2 block w-full rounded-md border border-slate-400 bg-white px-3 py-3 text-slate-950 focus:border-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-700 sm:ml-3 sm:mt-0 sm:inline-block sm:w-auto">
+          {% for meeting in site.data.public_meetings.meetings %}
+          <option value="{{ meeting.id }}">{{ meeting.title }}</option>
+          {% endfor %}
+        </select>
+      </label>
+    </div>
+
+    {% for meeting in site.data.public_meetings.meetings %}
+    <article data-meeting-detail="{{ meeting.id }}" {% unless forloop.first %}hidden{% endunless %} class="rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <header class="border-b border-slate-200 p-6 sm:p-8">
+        <div class="flex flex-wrap gap-2">
+          <span class="rounded-full bg-primary-50 px-2.5 py-1 text-xs font-bold text-primary-800">{{ meeting.body.name }}</span>
+          <span class="rounded-full bg-green-50 px-2.5 py-1 text-xs font-bold capitalize text-green-900">{{ meeting.status }}</span>
+          {% if meeting.is_hybrid %}<span class="rounded-full bg-blue-50 px-2.5 py-1 text-xs font-bold text-blue-900">Hybrid</span>{% endif %}
+        </div>
+        <h2 class="mt-5 text-3xl font-bold tracking-tight text-slate-950">{{ meeting.title }}</h2>
+        <p class="mt-3 max-w-3xl text-slate-700">{{ meeting.description }}</p>
+      </header>
+
+      <div class="grid gap-8 p-6 sm:p-8 lg:grid-cols-[minmax(0,1fr)_22rem]">
+        <div>
+          <h3 class="text-2xl font-bold text-slate-950">{{ meeting.agenda.title }}</h3>
+          <ol class="mt-6 space-y-4">
+            {% for item in meeting.agenda.items %}
+            <li class="rounded-xl border border-slate-200 bg-white p-5">
+              <div class="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wide text-slate-700">Item {{ item.item_number }} · {{ item.item_type | replace: "_", " " }}</p>
+                  <h4 class="mt-1 text-lg font-bold text-slate-950">{{ item.title }}</h4>
+                </div>
+                <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold capitalize text-slate-800">{{ item.outcome | replace: "_", " " }}</span>
+              </div>
+              <p class="mt-3 text-sm/6 text-slate-700">{{ item.description }}</p>
+              <dl class="mt-4 grid gap-3 border-t border-slate-100 pt-4 text-sm sm:grid-cols-2">
+                <div>
+                  <dt class="font-bold text-slate-900">Public hearing</dt>
+                  <dd class="text-slate-700">{% if item.public_hearing %}Yes{% else %}No{% endif %}</dd>
+                </div>
+                <div>
+                  <dt class="font-bold text-slate-900">Vote required</dt>
+                  <dd class="text-slate-700">{% if item.vote_required %}Yes{% else %}No{% endif %}</dd>
+                </div>
+              </dl>
+              <p class="mt-3 text-sm text-slate-700">{{ item.outcome_notes }}</p>
+              <div class="mt-4 flex flex-wrap gap-3 text-sm">
+                <a href="{{ item.document_url }}" class="font-bold text-primary-800 underline underline-offset-4 hover:text-primary-600">Item document</a>
+                {% if item.staff_report_url %}<a href="{{ item.staff_report_url }}" class="font-bold text-primary-800 underline underline-offset-4 hover:text-primary-600">Staff report</a>{% endif %}
+              </div>
+            </li>
+            {% endfor %}
+          </ol>
+        </div>
+
+        <aside class="space-y-5">
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+            <h3 class="font-bold text-slate-950">Meeting information</h3>
+            <dl class="mt-4 space-y-3 text-sm">
+              <div>
+                <dt class="font-bold text-slate-900">Date and time</dt>
+                <dd class="text-slate-700"><time datetime="{{ meeting.start_time }}">{{ meeting.local_date | date: "%A, %B %-d, %Y" }}, {{ meeting.local_start_time }}–{{ meeting.local_end_time }} Pacific time</time></dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-900">Location</dt>
+                <dd class="text-slate-700">{{ meeting.location_name }}, {{ meeting.location_room }}<br>{{ meeting.location_address }}</dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-900">Public body</dt>
+                <dd class="text-slate-700">{{ meeting.body.name }}</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <h3 class="font-bold text-slate-950">Public access</h3>
+            <ul class="mt-4 space-y-3 text-sm">
+              <li><a href="{{ meeting.virtual_url }}" class="font-bold text-primary-800 underline underline-offset-4 hover:text-primary-600">Join virtual meeting</a></li>
+              <li><a href="{{ meeting.agenda_url }}" class="font-bold text-primary-800 underline underline-offset-4 hover:text-primary-600">Agenda packet</a></li>
+              <li><a href="{{ meeting.minutes_url }}" class="font-bold text-primary-800 underline underline-offset-4 hover:text-primary-600">Minutes PDF</a></li>
+              <li><a href="{{ meeting.video_url }}" class="font-bold text-primary-800 underline underline-offset-4 hover:text-primary-600">Video recording</a></li>
+            </ul>
+          </div>
+
+          {% if meeting.public_comment_enabled %}
+          <div class="rounded-xl border border-blue-200 bg-blue-50 p-5 text-blue-950">
+            <h3 class="font-bold">Public comment</h3>
+            <p class="mt-2 text-sm">Email comments to <a href="mailto:{{ meeting.public_comment_email }}" class="font-bold underline underline-offset-4">{{ meeting.public_comment_email }}</a>.</p>
+          </div>
+          {% endif %}
+        </aside>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

@@ -26,7 +26,19 @@
       "Pay the $75 annual fee",
       "Receive your license within 3-5 business days"
     ],
-    "related_services": ["building-permit"]
+    "related_services": ["building-permit"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": "458a618e-a8e4-4c6f-baf2-226c0fdbfde6"
+      },
+      "request": {
+        "process": "business-license",
+        "intake_form_id": "2b089d93-57af-4d9f-b35a-bfc14de3b8e4",
+        "process_model_id": 92,
+        "process_story_url": "https://touchpoints.app/process-models/92/stories/DrZA3700LL5S_7d2sq7m-XI7"
+      }
+    }
   },
   {
     "id": "public-records",
@@ -55,7 +67,20 @@
       "Pay copying fees if applicable ($0.25 per page)",
       "Receive records within 5-10 business days"
     ],
-    "related_services": []
+    "related_services": [],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": "458a618e-a8e4-4c6f-baf2-226c0fdbfde6"
+      },
+      "request": {
+        "process": "public-records",
+        "response_deadline_business_days": 10,
+        "intake_form_id": "bd7688ed-d571-4b87-952e-a8382195d9db",
+        "process_model_id": 94,
+        "process_story_url": "https://touchpoints.app/process-models/94/stories/EX3tQ4NzABzwYllcH1Nxa0Oh"
+      }
+    }
   },
   {
     "id": "voter-registration",
@@ -84,7 +109,13 @@
       "Complete the registration form",
       "Registration is immediate"
     ],
-    "related_services": []
+    "related_services": [],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": "458a618e-a8e4-4c6f-baf2-226c0fdbfde6"
+      }
+    }
   },
   {
     "id": "pothole-report",
@@ -113,7 +144,20 @@
       "Optionally include a photo",
       "Repair typically completed within 7-14 days"
     ],
-    "related_services": ["streetlight-outage"]
+    "related_services": ["streetlight-outage"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": "458a618e-a8e4-4c6f-baf2-226c0fdbfde6"
+      },
+      "request": {
+        "process": "pothole",
+        "open311_service_code": "MC311-POTHOLE",
+        "intake_form_id": "37578aee-0e77-4463-9e69-0221517ca6b7",
+        "process_model_id": 91,
+        "process_story_url": "https://touchpoints.app/process-models/91/stories/o2droIn2bGrn1IDTCuHaO9QQ"
+      }
+    }
   },
   {
     "id": "water-service",
@@ -142,7 +186,13 @@
       "Pay $25 service connection fee for new service",
       "Service will be activated/stopped on your requested date"
     ],
-    "related_services": ["streetlight-outage", "pothole-report"]
+    "related_services": ["streetlight-outage", "pothole-report"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": "458a618e-a8e4-4c6f-baf2-226c0fdbfde6"
+      }
+    }
   },
   {
     "id": "streetlight-outage",
@@ -169,7 +219,13 @@
       "Submit a report online",
       "Repair typically completed within 5-7 business days"
     ],
-    "related_services": ["pothole-report"]
+    "related_services": ["pothole-report"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": "458a618e-a8e4-4c6f-baf2-226c0fdbfde6"
+      }
+    }
   },
   {
     "id": "facility-rental",
@@ -198,7 +254,19 @@
       "Submit a rental application",
       "Pay rental fee ($50-$200 depending on facility)"
     ],
-    "related_services": ["program-registration"]
+    "related_services": ["program-registration"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "park",
+        "id": "e767c280-61ab-49dd-b60f-f7dbfd7ea0fc"
+      },
+      "request": {
+        "process": "facility-rental",
+        "intake_form_id": "025fc390-b534-417d-a622-bd1ef98a3e95",
+        "process_model_id": 93,
+        "process_story_url": "https://touchpoints.app/process-models/93/stories/jTRJLwMdfOJQyNPFgALJ-Q7i"
+      }
+    }
   },
   {
     "id": "program-registration",
@@ -227,7 +295,13 @@
       "Pay program fees (varies by program)",
       "Receive confirmation and start date information"
     ],
-    "related_services": ["facility-rental"]
+    "related_services": ["facility-rental"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "park",
+        "id": "e767c280-61ab-49dd-b60f-f7dbfd7ea0fc"
+      }
+    }
   },
   {
     "id": "building-permit",
@@ -256,7 +330,13 @@
       "Submit application with contractor license information",
       "Permit review takes 10-15 business days"
     ],
-    "related_services": ["business-license"]
+    "related_services": ["business-license"],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": "458a618e-a8e4-4c6f-baf2-226c0fdbfde6"
+      }
+    }
   },
   {
     "id": "tax-payment",
@@ -285,6 +365,12 @@
       "Pay online (no fee) or in person",
       "Receive payment confirmation"
     ],
-    "related_services": []
+    "related_services": [],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "service",
+        "id": "458a618e-a8e4-4c6f-baf2-226c0fdbfde6"
+      }
+    }
   }
 ]

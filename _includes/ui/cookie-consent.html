@@ -1,0 +1,98 @@
+<section
+  id="cookie-consent"
+  class="fixed inset-x-0 bottom-0 z-50 border-t border-slate-300 bg-white shadow-2xl"
+  aria-labelledby="cookie-consent-heading"
+  data-cookie-consent
+>
+  <div class="mx-auto max-w-7xl px-6 py-5 lg:px-8">
+    <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
+      <div>
+        <p id="cookie-consent-heading" class="text-base font-bold text-slate-950">Privacy and cookie choices</p>
+        <p class="mt-2 max-w-3xl text-sm/6 text-slate-700">
+          Modular City uses essential cookies for site preferences. Optional analytics and service-improvement cookies are shown here as a static demonstration and are not connected to a backend service.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <button
+          type="button"
+          class="rounded-md border border-slate-400 bg-white px-4 py-2 text-sm font-bold text-slate-950 hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700"
+          data-consent-essential
+        >
+          Essential only
+        </button>
+        <button
+          type="button"
+          class="rounded-md border border-primary-700 bg-white px-4 py-2 text-sm font-bold text-primary-900 hover:bg-primary-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700"
+          aria-expanded="false"
+          aria-controls="gdpr-consent-panel"
+          data-consent-manage
+        >
+          Manage preferences
+        </button>
+        <button
+          type="button"
+          class="rounded-md bg-primary-700 px-4 py-2 text-sm font-bold text-white hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700"
+          data-consent-accept
+        >
+          Accept optional cookies
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="gdpr-consent-panel"
+      class="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-5"
+      data-consent-panel
+      hidden
+    >
+      <h2 class="text-lg font-bold text-slate-950">Consent preferences</h2>
+      <p class="mt-2 text-sm/6 text-slate-700">These controls demonstrate the UI pattern. Choices are saved only in this browser.</p>
+      <fieldset class="mt-5 space-y-4">
+        <legend class="sr-only">Cookie categories</legend>
+        <div class="rounded-lg border border-slate-200 bg-white p-4">
+          <div class="flex items-start gap-3">
+            <input id="consent-essential" type="checkbox" checked disabled class="mt-1 size-5 rounded border-slate-400 text-primary-700 focus:ring-primary-700">
+            <div>
+              <label for="consent-essential" class="font-bold text-slate-950">Essential cookies</label>
+              <p class="mt-1 text-sm text-slate-700">Required for accessibility preferences, security notices, and remembering your consent choice.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-lg border border-slate-200 bg-white p-4">
+          <div class="flex items-start gap-3">
+            <input id="consent-analytics" type="checkbox" class="mt-1 size-5 rounded border-slate-400 text-primary-700 focus:ring-primary-700" data-consent-category="analytics">
+            <div>
+              <label for="consent-analytics" class="font-bold text-slate-950">Analytics</label>
+              <p class="mt-1 text-sm text-slate-700">Helps staff understand which pages are useful. No analytics backend is enabled in this demo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-lg border border-slate-200 bg-white p-4">
+          <div class="flex items-start gap-3">
+            <input id="consent-improvement" type="checkbox" class="mt-1 size-5 rounded border-slate-400 text-primary-700 focus:ring-primary-700" data-consent-category="improvement">
+            <div>
+              <label for="consent-improvement" class="font-bold text-slate-950">Service improvement</label>
+              <p class="mt-1 text-sm text-slate-700">Would support surveys, feedback widgets, or usability experiments if wired to approved tools.</p>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <div class="mt-5 flex flex-wrap gap-3">
+        <button
+          type="button"
+          class="rounded-md bg-primary-700 px-4 py-2 text-sm font-bold text-white hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700"
+          data-consent-save
+        >
+          Save preferences
+        </button>
+        <button
+          type="button"
+          class="rounded-md border border-slate-400 bg-white px-4 py-2 text-sm font-bold text-slate-950 hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700"
+          data-consent-close-panel
+        >
+          Close preferences
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

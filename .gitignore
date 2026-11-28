@@ -2,3 +2,10 @@
 /node_modules/
 _site/
 assets/css/main.css
+
+# Agency-owned data. `bin/setup` creates this from the tracked example JSON.
+# A production fork can opt in to versioning it with: git add -f _data/city
+/_data/city/
+
+# Local research prototype; not part of the agency example-data contract.
+/_data/municipal_systems.json

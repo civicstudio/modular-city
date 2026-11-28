@@ -1,0 +1,95 @@
+<section class="py-14 sm:py-20" data-meeting-directory>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="grid gap-6 border-b border-slate-200 pb-8 lg:grid-cols-[minmax(0,1fr)_30rem] lg:items-end">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight text-slate-950">2025 meeting archive</h2>
+        <p class="mt-3 max-w-2xl text-slate-700">Ten fictional weekly meetings demonstrate a complete agenda and outcome record. Search by title, body, description, agenda item, or date range.</p>
+      </div>
+      <a href="/meetings-data.json" class="justify-self-start text-sm font-bold text-primary-800 underline underline-offset-4 hover:text-primary-600 lg:justify-self-end">View meeting data <span aria-hidden="true">&rarr;</span></a>
+    </div>
+
+    <form class="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-5 sm:p-6" data-meeting-filters>
+      <div class="grid gap-4 lg:grid-cols-[minmax(0,1fr)_16rem_11rem_11rem_auto] lg:items-end">
+        <div>
+          <label for="meeting-search" class="block text-sm font-bold text-slate-900">Search meetings</label>
+          <input id="meeting-search" type="search" class="mt-2 block w-full rounded-md border border-slate-400 bg-white px-4 py-3 text-base text-slate-950 shadow-sm focus:border-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-700" placeholder="Try “budget,” “park,” or “permit”" autocomplete="off">
+        </div>
+        <div>
+          <label for="meeting-body-filter" class="block text-sm font-bold text-slate-900">Board or commission</label>
+          <select id="meeting-body-filter" class="mt-2 block w-full rounded-md border border-slate-400 bg-white px-3 py-3 text-slate-950 focus:border-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-700">
+            <option value="">All public bodies</option>
+            {% for body in site.data.public_meetings.bodies %}<option value="{{ body.id }}">{{ body.name }}</option>{% endfor %}
+          </select>
+        </div>
+        <div>
+          <label for="meeting-date-from" class="block text-sm font-bold text-slate-900">From</label>
+          <input id="meeting-date-from" type="date" class="mt-2 block w-full rounded-md border border-slate-400 bg-white px-3 py-3 text-slate-950 focus:border-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-700">
+        </div>
+        <div>
+          <label for="meeting-date-to" class="block text-sm font-bold text-slate-900">To</label>
+          <input id="meeting-date-to" type="date" class="mt-2 block w-full rounded-md border border-slate-400 bg-white px-3 py-3 text-slate-950 focus:border-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-700">
+        </div>
+        <button type="button" id="meeting-filter-reset" class="rounded-md border border-slate-400 bg-white px-4 py-3 text-sm font-bold text-slate-900 hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700">Reset</button>
+      </div>
+    </form>
+
+    <div class="mt-7 flex flex-wrap items-center justify-between gap-4">
+      <p id="meeting-result-count" class="text-sm font-bold text-slate-800" aria-live="polite" aria-atomic="true">{{ site.data.public_meetings.meetings | size }} meetings</p>
+      <p class="text-sm text-slate-700">Dates are rendered in Pacific time.</p>
+    </div>
+
+    <div class="mt-6 space-y-6">
+      {% for meeting in site.data.public_meetings.meetings %}
+      {% capture meeting_search %}{{ meeting.title }} {{ meeting.description }} {{ meeting.body.name }} {{ meeting.location_name }} {{ meeting.location_room }} {% for item in meeting.agenda.items %}{{ item.title }} {{ item.description }} {{ item.item_type }} {{ item.outcome }} {% endfor %}{% endcapture %}
+      <article data-meeting-card data-body="{{ meeting.body_external_id }}" data-date="{{ meeting.local_date }}" data-search="{{ meeting_search | strip | escape }}" class="rounded-xl border border-slate-200 bg-white shadow-sm">
+        <header class="p-6 sm:p-8">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="rounded-full bg-primary-50 px-2.5 py-1 text-xs font-bold text-primary-800">{{ meeting.body.name }}</span>
+            <span class="rounded-full bg-green-50 px-2.5 py-1 text-xs font-bold capitalize text-green-900">{{ meeting.status }}</span>
+          </div>
+          <h2 class="mt-4 text-2xl font-bold text-slate-950">{{ meeting.title }}</h2>
+          <p class="mt-2 text-slate-700">
+            <time datetime="{{ meeting.start_time }}">{{ meeting.local_date | date: "%A, %B %-d, %Y" }}, {{ meeting.local_start_time }}–{{ meeting.local_end_time }} Pacific time</time>
+            <span aria-hidden="true"> · </span>{{ meeting.location_name }}, {{ meeting.location_room }}
+          </p>
+          <p class="mt-3 text-sm text-slate-700">{{ meeting.description }}</p>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a href="/meetings/show/?meeting={{ meeting.id }}" class="inline-flex rounded-md bg-primary-700 px-4 py-2 text-sm font-bold text-white hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700">View meeting detail</a>
+            <a href="{{ meeting.agenda_url }}" class="inline-flex rounded-md border border-slate-400 bg-white px-4 py-2 text-sm font-bold text-slate-950 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700">Agenda packet</a>
+          </div>
+        </header>
+
+        <details class="border-t border-slate-200">
+          <summary class="cursor-pointer px-6 py-5 font-bold text-primary-800 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-700 sm:px-8">
+            Preview agenda and {{ meeting.agenda.items | size }} items
+          </summary>
+          <div class="border-t border-slate-100 bg-slate-50 px-6 py-6 sm:px-8">
+            <h3 class="text-lg font-bold text-slate-950">{{ meeting.agenda.title }}</h3>
+            <ol class="mt-5 space-y-4">
+              {% for item in meeting.agenda.items %}
+              <li class="rounded-lg border border-slate-200 bg-white p-5">
+                <div class="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-wide text-slate-700">Item {{ item.item_number }} · {{ item.item_type | replace: "_", " " }}</p>
+                    <h4 class="mt-1 font-bold text-slate-950">{{ item.title }}</h4>
+                  </div>
+                  <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold capitalize text-slate-800">{{ item.outcome | replace: "_", " " }}</span>
+                </div>
+                <p class="mt-3 text-sm/6 text-slate-700">{{ item.description }}</p>
+                {% if item.public_comment_period %}<p class="mt-2 text-sm font-bold text-primary-800">Public comment received</p>{% endif %}
+                <p class="mt-2 text-sm text-slate-700">{{ item.outcome_notes }}</p>
+              </li>
+              {% endfor %}
+            </ol>
+          </div>
+        </details>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div id="meeting-empty-state" class="mt-8 rounded-xl border border-dashed border-slate-400 bg-slate-50 p-10 text-center" hidden>
+      <h2 class="text-xl font-bold text-slate-950">No meetings found</h2>
+      <p class="mt-2 text-slate-700">Try a broader search, remove the date range, or choose another board or commission.</p>
+    </div>
+  </div>
+</section>

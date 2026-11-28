@@ -1,0 +1,68 @@
+[
+  {
+    "service_code": "MC311-POTHOLE",
+    "service_name": "Pothole or damaged street",
+    "description": "Report a pothole, pavement failure, or dangerous street surface.",
+    "metadata": true,
+    "type": "realtime",
+    "group": "Streets and sidewalks",
+    "department": "Public Works",
+    "expected_response": "Inspection within 3 business days",
+    "keywords": "road, street, pavement, pothole"
+  },
+  {
+    "service_code": "MC311-STREETLIGHT",
+    "service_name": "Street light outage",
+    "description": "Report a street light that is dark, flickering, or damaged.",
+    "metadata": true,
+    "type": "realtime",
+    "group": "Streets and sidewalks",
+    "department": "Public Works",
+    "expected_response": "Inspection within 5 business days",
+    "keywords": "light, lamp, dark, pole"
+  },
+  {
+    "service_code": "MC311-GRAFFITI",
+    "service_name": "Graffiti on public property",
+    "description": "Report graffiti on a city building, sign, bridge, park, or other public asset.",
+    "metadata": true,
+    "type": "realtime",
+    "group": "Public property",
+    "department": "Public Works",
+    "expected_response": "Review within 2 business days",
+    "keywords": "graffiti, paint, tagging, vandalism"
+  },
+  {
+    "service_code": "MC311-TRASH",
+    "service_name": "Missed trash or recycling pickup",
+    "description": "Report a scheduled city collection that was missed.",
+    "metadata": true,
+    "type": "realtime",
+    "group": "Sanitation",
+    "department": "Public Works",
+    "expected_response": "Review by the next business day",
+    "keywords": "trash, garbage, recycling, collection"
+  },
+  {
+    "service_code": "MC311-VEHICLE",
+    "service_name": "Abandoned vehicle",
+    "description": "Report a vehicle that appears abandoned on a public street.",
+    "metadata": true,
+    "type": "realtime",
+    "group": "Vehicles and parking",
+    "department": "Police Department",
+    "expected_response": "Review within 5 business days",
+    "keywords": "vehicle, car, abandoned, parking"
+  },
+  {
+    "service_code": "MC311-SIDEWALK",
+    "service_name": "Damaged sidewalk",
+    "description": "Report a broken, lifted, or obstructed public sidewalk.",
+    "metadata": true,
+    "type": "realtime",
+    "group": "Streets and sidewalks",
+    "department": "Public Works",
+    "expected_response": "Inspection within 5 business days",
+    "keywords": "sidewalk, curb, accessibility, trip hazard"
+  }
+]
