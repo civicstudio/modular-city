@@ -1,0 +1,20 @@
+---
+layout: default
+title: "Meeting Detail"
+description: "Preview a Modular City public meeting detail page with metadata, agenda items, documents, and public-comment information."
+permalink: /meetings/show/
+---
+
+<main class="bg-white">
+  <section class="border-b border-slate-200 bg-slate-950 text-white">
+    <div class="mx-auto max-w-7xl px-6 py-14 lg:px-8 lg:py-20">
+      <p class="text-sm font-bold uppercase tracking-widest text-slate-200">Meeting detail UI</p>
+      <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Meeting detail</h1>
+      <p class="mt-5 max-w-3xl text-lg text-slate-200">A static detail view for public meetings. Select a meeting or use a link from the meetings index.</p>
+    </div>
+  </section>
+
+  {% include ui/meeting-show.html %}
+</main>
+
+<script src="{{ '/assets/js/meetings.js' | relative_url }}" defer></script>

@@ -35,7 +35,7 @@ title: "Services"
               href="/services/{{ service_detail.slug }}"
               class="hover:text-primary-700"
             >
-              {{ service.name }}
+              {{ service_detail.name | default: service.name }}
             </a>
             {% else %}
             {{ service.name }}
@@ -82,7 +82,7 @@ title: "Services"
             Provided by:
             <a
               href="/departments/{{ agency.id | remove: 'modular-city-' }}"
-              class="text-primary-800 underline hover:text-primary-950"
+              class="text-primary-800 underline underline-offset-2 hover:text-primary-500"
             >
               {{ agency.name }}
             </a>

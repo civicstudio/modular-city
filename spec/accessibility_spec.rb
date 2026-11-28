@@ -10,6 +10,18 @@ RSpec.describe 'WCAG AAA Accessibility', type: :feature do
     '/calendar.html',
     '/blog.html',
     '/beta/index.html',
+    '/311/index.html',
+    '/meetings/index.html',
+    '/meetings/show/index.html',
+    '/components/index.html',
+    '/login/index.html',
+    '/stack-comparison/index.html',
+    '/departments/parks-recreation.html',
+    '/services/pothole-report.html',
+    '/services/business-license.html',
+    '/services/facility-rental.html',
+    '/services/public-records.html',
+    '/services/program-registration.html',
     '/ledger/index.html'
   ].freeze
 

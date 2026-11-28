@@ -1,0 +1,56 @@
+[
+  {
+    "id": "cookie-consent",
+    "name": "Cookie consent banner",
+    "include": "ui/cookie-consent.html",
+    "url": "/components/#component-cookie-consent",
+    "status": "visible",
+    "description": "A first-run cookie notice with actions for accepting essential-only or opening detailed preferences.",
+    "backend_required": false
+  },
+  {
+    "id": "gdpr-consent",
+    "name": "GDPR-style consent preferences",
+    "include": "ui/cookie-consent.html",
+    "url": "/components/#component-gdpr-consent",
+    "status": "visible",
+    "description": "A preference panel for essential, analytics, and service-improvement categories. Preferences are stored locally in the browser.",
+    "backend_required": false
+  },
+  {
+    "id": "calendar-list",
+    "name": "Calendar and events list",
+    "include": "ui/calendar-list.html",
+    "url": "/calendar.html",
+    "status": "visible",
+    "description": "A month-grouped list of public meetings, community events, and deadlines generated from calendar JSON.",
+    "backend_required": false
+  },
+  {
+    "id": "meetings-index",
+    "name": "Meetings index with search",
+    "include": "ui/meetings-index.html",
+    "url": "/meetings/",
+    "status": "visible",
+    "description": "A searchable, filterable public-meetings archive with text, body, start-date, and end-date filters.",
+    "backend_required": false
+  },
+  {
+    "id": "meeting-show",
+    "name": "Meeting detail",
+    "include": "ui/meeting-show.html",
+    "url": "/meetings/show/",
+    "status": "visible",
+    "description": "A detail view for one public meeting, including meeting metadata, agenda items, document links, and public-comment instructions.",
+    "backend_required": false
+  },
+  {
+    "id": "login-panel",
+    "name": "User login",
+    "include": "ui/login-panel.html",
+    "url": "/login/",
+    "status": "visible",
+    "description": "A static sign-in panel for a future resident or staff account workflow. The form intentionally does not authenticate.",
+    "backend_required": true
+  }
+]

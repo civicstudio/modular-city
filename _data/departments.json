@@ -57,6 +57,19 @@
       "weekday": "8:00 AM - 6:00 PM",
       "saturday": "9:00 AM - 3:00 PM",
       "sunday": null
+    },
+    "facilities": [
+      "Central Park",
+      "Riverside Park",
+      "Recreation Lane Athletic Fields",
+      "Modular City Community Center",
+      "Maple Neighborhood Park"
+    ],
+    "touchpoints": {
+      "feedback_form": {
+        "kind": "park",
+        "id": "e767c280-61ab-49dd-b60f-f7dbfd7ea0fc"
+      }
     }
   },
   {

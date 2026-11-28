@@ -71,7 +71,7 @@ RSpec.describe 'Check a city record (/ledger/)', type: :feature do
   end
 
   it 'links registry checks only when they are live' do
-    visit '/ledger/'
+    visit '/ledger/index.html'
     registry = JSON.parse(File.read(File.expand_path('../_data/public_registry.json', __dir__)))
     registry['checks'].each do |check|
       item = find("[data-registry-check='#{check['id']}']")
@@ -84,7 +84,7 @@ RSpec.describe 'Check a city record (/ledger/)', type: :feature do
   end
 
   it 'explains each registry check that carries a note' do
-    visit '/ledger/'
+    visit '/ledger/index.html'
     registry = JSON.parse(File.read(File.expand_path('../_data/public_registry.json', __dir__)))
     noted = registry['checks'].select { |check| check['note'] }
     expect(noted.map { |check| check['id'] }).to include('periods', 'anchor-proof')

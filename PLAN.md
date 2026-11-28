@@ -6,9 +6,8 @@ Handoffs arrive in `.claude/inbox/`; drain them into this file, then move them t
 
 ## Now
 
-Land the two open pull requests:
-- [modular-city#1](https://github.com/civicstudio/modular-city/pull/1), Touchpoints feedback and request processes, now carrying the production Touchpoints ids.
-- [modular-city#2](https://github.com/civicstudio/modular-city/pull/2), the `/ledger/` "Check a city record" page and chain demos.
+Registry dogfooding (task 3), which waits on Ryan's key ceremony and treasury funding.
+Landed 2026-11-27: Ruby 4.0 and the Chrome 158 test fix ([modular-city#17](https://github.com/civicstudio/modular-city/pull/17)), Touchpoints ([modular-city#1](https://github.com/civicstudio/modular-city/pull/1)) and the ledger ([modular-city#2](https://github.com/civicstudio/modular-city/pull/2)).
 
 ## Authoritative docs
 
@@ -22,7 +21,8 @@ Land the two open pull requests:
 **As a** resident on `/services/pothole-report/`, **I want** to say whether the page helped and see how my request is handled, **so that** the city hears me and I know what happens next.
 - [x] Service and park records carry Touchpoints form and process ids (`_data/services.json`, `_data/departments.json`).
 - [x] Production ids filled in from the Touchpoints handoff of 2026-11-19: forms `458a618e…` (service) and `e767c280…` (park), process models 91–94 with their public path stories.
-- [ ] Confirm the built pages link the production forms and stories, then merge [modular-city#1](https://github.com/civicstudio/modular-city/pull/1).
+- [x] Every record links its production forms and stories; merged in [modular-city#1](https://github.com/civicstudio/modular-city/pull/1).
+- [ ] 🖐 Local copies of `_data/city/` made before the merge still have empty ids; refresh with `rm _data/city/*.json && bin/setup --data-only`.
 - [ ] 🖐 Once modularcity.org has a real inbox, ask Touchpoints to rerun its installer with `--notify-to`.
 - [ ] Touchpoints moves the forms from the Civic Studio organization (34) to Modular City (74); ids stay the same, so no site change.
 
@@ -32,7 +32,7 @@ Land the two open pull requests:
 **As a** curious resident on `/ledger/`, **I want** to check a city record against the public registry myself, **so that** I don't have to take the city's word for it.
 - [x] Worked example: fictional adopted minutes, their fingerprint, and an RFC 6962 proof to the day root.
 - [x] Registry checks linked only when live; the day-root and anchor-proof links say they are unsigned hash data, and that anchor 2 stays "Pending" until the treasury is funded.
-- [ ] Merge [modular-city#2](https://github.com/civicstudio/modular-city/pull/2).
+- [x] Merged in [modular-city#2](https://github.com/civicstudio/modular-city/pull/2).
 
 **Tests:** `spec/ledger_spec.rb`, `spec/accessibility_spec.rb`.
 
@@ -48,9 +48,9 @@ Land the two open pull requests:
 ### 4. Fix link contrast on government, services and beta
 **As a** resident with low vision on `/government.html`, **I want** links to stand out from body text, **so that** I can find the City Clerk.
 - [x] Underline the "Provided by" department links on `/services.html` (axe `link-in-text-block`).
-- [x] Darken the official initials on `/government.html` (`bg-primary-700`) and the stat labels on `/beta/index.html` (`text-slate-700`) to reach 7:1.
+- [x] Darken the official initials on `/government.html` and the stat labels on `/beta/index.html` to reach 7:1 (landed with [modular-city#1](https://github.com/civicstudio/modular-city/pull/1)'s version of the same fix).
 
-**Tests:** `spec/accessibility_spec.rb` (33 examples, 0 failures on 2026-11-22).
+**Tests:** `spec/accessibility_spec.rb` (81 examples across all specs, 0 failures on 2026-11-27).
 
 ## Decisions for Ryan
 
@@ -59,4 +59,6 @@ Land the two open pull requests:
 
 ## Housekeeping
 
-- The main checkout holds uncommitted changes of unknown origin (`Gemfile`, `.ruby-version`, `.well-known/did.json`, the deploy workflow, `bin/setup`, `spec/spec_helper.rb`) and untracked notes at the root (`IDEALVILLE.md`, `PUBLISHING_A_DID.md`, `TOUCHPOINTS_*.md`, `*.html.erb`); `/tidy-strays` can sort them.
+- Capybara 3.40.0 sends a "*" origin that Chrome 158 rejects; `spec/spec_helper.rb` works around it.
+  Remove the workaround once a Capybara release fixes it.
+- The main checkout holds untracked notes at the root (`IDEALVILLE.md`, `PUBLISHING_A_DID.md`, `TOUCHPOINTS_*.md`, `*.html.erb`); `/tidy-strays` can sort them.

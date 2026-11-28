@@ -1,0 +1,94 @@
+{% comment %}
+  How a request for this service is handled, backed by a Touchpoints BPMN process.
+  Plain links only; ids come from touchpoints.request in _data/services.json.
+
+  Parameters:
+    request  - touchpoints.request (process, intake_form_id, process_model_id, process_story_url,
+               optional open311_service_code, optional response_deadline_business_days)
+    agency   - the owning agency (from civic.json)
+{% endcomment %}
+{% assign tp_request = include.request %}
+{% if tp_request.open311_service_code %}
+{% assign tp_request_type = site.data.request_types | where: "service_code", tp_request.open311_service_code | first %}
+{% endif %}
+<section
+  class="mt-10 pt-10 border-t border-gray-200"
+  aria-labelledby="request-heading"
+>
+  <h2
+    id="request-heading"
+    class="text-lg font-semibold text-gray-900 mb-2"
+  >
+    How your request is handled
+  </h2>
+  <p class="text-gray-700">
+    Each request moves through the same steps, from submission through review to a decision or closure.
+    You receive a confirmation and a link to check its status.
+  </p>
+  {% if tp_request_type %}
+  <dl class="mt-4 grid gap-4 sm:grid-cols-2">
+    <div class="rounded-lg border border-gray-200 p-4">
+      <dt class="text-sm text-gray-700">
+        311 request type
+      </dt>
+      <dd class="mt-1 font-medium text-gray-900">
+        {{ tp_request_type.service_name }} ({{ tp_request_type.service_code }})
+      </dd>
+    </div>
+    <div class="rounded-lg border border-gray-200 p-4">
+      <dt class="text-sm text-gray-700">
+        Expected response
+      </dt>
+      <dd class="mt-1 font-medium text-gray-900">
+        {{ tp_request_type.expected_response }}
+      </dd>
+    </div>
+  </dl>
+  {% endif %}
+  {% if tp_request.response_deadline_business_days %}
+  <p class="mt-4 text-gray-700">
+    The City responds within {{ tp_request.response_deadline_business_days }} business days.
+    {% if tp_request.process_model_id %}
+    If the review takes longer, it is escalated to a supervisor and you are told about the extension.
+    {% endif %}
+  </p>
+  {% endif %}
+  <ul class="mt-4 space-y-2">
+    {% if tp_request.intake_form_id %}
+    <li>
+      <a
+        href="{{ site.touchpoints_url }}/touchpoints/{{ tp_request.intake_form_id }}"
+        class="font-semibold text-primary-800 hover:text-primary-500"
+      >
+        Start your request online
+      </a>
+    </li>
+    {% endif %}
+    {% if tp_request.open311_service_code %}
+    <li>
+      <a
+        href="/311/#new-request"
+        class="font-semibold text-primary-800 hover:text-primary-500"
+      >
+        Report it through Modular City 311
+      </a>
+    </li>
+    {% endif %}
+    {% if tp_request.process_story_url %}
+    <li>
+      <a
+        href="{{ tp_request.process_story_url }}"
+        class="font-semibold text-primary-800 hover:text-primary-500"
+      >
+        Follow one example request through the process
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+  {% unless tp_request.intake_form_id %}
+  <p class="mt-4 text-sm text-gray-700">
+    Online requests through Touchpoints are being set up.
+    Until then, contact {{ include.agency.name | default: "the department" }}.
+  </p>
+  {% endunless %}
+</section>

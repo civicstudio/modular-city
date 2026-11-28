@@ -166,6 +166,14 @@ layout: default
       </ol>
     </section>
 
+    <!-- Request process (Touchpoints BPMN) -->
+    {% if page.touchpoints.request %}
+    {% include touchpoints_request.html
+      request=page.touchpoints.request
+      agency=agency
+    %}
+    {% endif %}
+
     <!-- Service details -->
     <section
       class="mt-10 pt-10 border-t border-gray-200"
@@ -220,7 +228,7 @@ layout: default
         {% endif %}
       </dl>
       {% if civic_service.documents_required %}
-      <div class="mt-6 rounded-lg border border-gray-200 p-4">
+      <dl class="mt-6 rounded-lg border border-gray-200 p-4">
         <dt class="text-sm text-gray-700 mb-2">
           Documents required
         </dt>
@@ -231,7 +239,7 @@ layout: default
             {% endfor %}
           </ul>
         </dd>
-      </div>
+      </dl>
       {% endif %}
     </section>
 
@@ -246,7 +254,7 @@ layout: default
         </p>
         <div class="mt-4 flex flex-wrap gap-4">
           <a
-            href="{{ civic_service.url | default: '#' }}"
+            href="{% if page.touchpoints.request.intake_form_id %}{{ site.touchpoints_url }}/touchpoints/{{ page.touchpoints.request.intake_form_id }}{% elsif page.touchpoints.request.open311_service_code %}/311/#new-request{% else %}{{ civic_service.url | default: '#' }}{% endif %}"
             class="inline-flex items-center rounded-md bg-primary-700 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-600"
           >
             Start this service
@@ -305,51 +313,17 @@ layout: default
     {% endif %}
 
     <!-- Feedback (Touchpoints) -->
-    <section
-      class="mt-10 pt-10 border-t border-gray-200"
-      aria-labelledby="feedback-heading"
-    >
-      <h2
-        id="feedback-heading"
-        class="text-lg font-semibold text-gray-900 mb-2"
-      >
-        Was this page helpful?
-      </h2>
-      <p class="text-sm text-gray-700 mb-4">
-        Share feedback about this service.
-        Responses are collected via
-        <a
-          href="https://touchpoints.app"
-          class="text-primary-800 hover:text-primary-500"
-          target="_blank"
-          rel="noopener"
-        >
-          Touchpoints
-        </a>,
-        an open user-feedback platform for public service teams.
-      </p>
-      <div
-        id="touchpoints-form-container"
-        data-touchpoints-form-id="REPLACE_WITH_FORM_UUID"
-      >
-        <noscript>
-          <p class="text-sm text-gray-700">
-            JavaScript is required to load the feedback form.
-            You can also email feedback to
-            <a
-              href="mailto:{{ site.data.civic.jurisdiction.contact_email | default: 'feedback@modularcity.org' }}"
-              class="text-primary-800 hover:text-primary-500"
-            >
-              {{ site.data.civic.jurisdiction.contact_email | default: 'feedback@modularcity.org' }}
-            </a>.
-          </p>
-        </noscript>
-      </div>
-      <script
-        src="https://touchpoints.app/assets/touchpoints.js"
-        async
-      ></script>
-    </section>
+    {% if page.touchpoints.feedback_form.kind == "park" %}
+    {% assign feedback_email = dept.email | default: site.data.civic.jurisdiction.contact_email | default: 'feedback@modularcity.org' %}
+    {% else %}
+    {% assign feedback_email = site.data.civic.jurisdiction.contact_email | default: 'feedback@modularcity.org' %}
+    {% endif %}
+    {% include touchpoints_feedback.html
+      form=page.touchpoints.feedback_form
+      facilities=dept.facilities
+      page_url=page.url
+      contact_email=feedback_email
+    %}
 
     <!-- Data source -->
     <footer class="mt-12 pt-6 border-t border-gray-200 text-center">

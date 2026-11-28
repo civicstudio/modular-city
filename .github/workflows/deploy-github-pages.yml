@@ -15,6 +15,10 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+# Install gems exactly as Gemfile.lock pins them; fail rather than re-resolve.
+env:
+  BUNDLE_FROZEN: "true"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,12 +35,12 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.4.8"
+          ruby-version: "4.0"
           bundler-cache: true
 
       - name: Install dependencies
         run: |
-          npm install
+          npm ci
           gem install bundler
           gem install jekyll
           bundle config path vendor/bundle
@@ -44,6 +48,12 @@ jobs:
 
       - name: Build CSS
         run: npm run build:css
+
+      - name: Prepare example city data
+        run: bin/setup --data-only
+
+      - name: Validate city data
+        run: npm run test:data
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

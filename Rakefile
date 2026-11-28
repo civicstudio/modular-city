@@ -30,8 +30,8 @@ namespace :accessibility do
 
     begin
       # Run the accessibility specs
-      puts "Running WCAG AAA accessibility tests..."
-      success = system('bundle exec rspec spec/accessibility_spec.rb spec/ledger_spec.rb --format documentation')
+      puts "Running WCAG AAA accessibility and page specs..."
+      success = system('bundle exec rspec --format documentation')
       exit(1) unless success
     ensure
       # Shut down the server
